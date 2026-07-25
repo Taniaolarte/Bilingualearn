@@ -176,6 +176,12 @@
   .coach-badge small{color:var(--muted);font-size:.72rem}
   .coach-creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .coach-creds span{font-size:.8rem;font-weight:800;color:var(--primary-d);background:var(--halo);padding:7px 12px;border-radius:999px}
+  .pullquote{margin:22px 0 0;padding:16px 20px;border-left:4px solid var(--primary);background:var(--halo);border-radius:0 14px 14px 0;font-weight:750;font-size:1.06rem;line-height:1.45;color:var(--ink)}
+  .story{margin-top:18px}
+  .story summary{color:var(--primary-d);font-size:.95rem}
+  .story p{color:var(--muted);font-size:.95rem;padding:0}
+  .story p+p{margin-top:12px}
+  .story .body{padding-bottom:20px}
   .speech{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
   .speech li{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
   .speech .dot{width:26px;height:26px;border-radius:8px;background:var(--halo);color:var(--primary-d);display:grid;place-items:center;font-weight:900;flex:none;font-size:.9rem}
@@ -400,15 +406,23 @@
       <div class="coach-photo">
         <div class="halo-bg" aria-hidden="true"></div>
         <div class="frame"><img data-img="aura-coach" alt="Aura, your BilinguaLearn English coach"/></div>
-        <div class="coach-badge"><img data-img="face" alt=""/><span><b lang-en>Aura</b><b lang-es>Aura</b><small lang-en>Your coach &amp; founder</small><small lang-es>Tu coach y fundadora</small></span></div>
+        <div class="coach-badge"><img data-img="face" alt=""/><span><b>Aura María Estacio</b><small lang-en>Founder &amp; coach · VIT/AITSL</small><small lang-es>Fundadora y coach · VIT/AITSL</small></span></div>
       </div>
     </div>
     <div class="reveal">
       <span class="eyebrow"><span lang-en>Meet your coach</span><span lang-es>Conoce a tu coach</span></span>
-      <h2><span lang-en>Hi, I'm Aura — and I know exactly where you are.</span><span lang-es>Hola, soy Aura — y sé exactamente dónde estás.</span></h2>
+      <h2><span lang-en>Hi, I'm Aura María — I've walked your path.</span><span lang-es>Hola, soy Aura María — he recorrido tu camino.</span></h2>
       <p class="lead" style="margin-top:16px">
-        <span lang-en>I'm a registered Australian teacher and a certified test coach — trained by IDP, Pearson and Paragon, the very organisations that create IELTS, PTE and CELPIP. But I'm also someone who understands the pressure of needing a score to move your life forward. That's why every plan I build is personal.</span>
-        <span lang-es>Soy docente registrada en Australia y coach de exámenes certificada — formada por IDP, Pearson y Paragon, las mismas organizaciones que crean IELTS, PTE y CELPIP. Pero también entiendo la presión de necesitar un puntaje para avanzar en tu vida. Por eso cada plan que armo es personal.</span>
+        <span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. Today I'm a registered Australian teacher (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon — the creators of PTE, CELPIP and IELTS.</span>
+        <span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Hoy soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon — los creadores del PTE, CELPIP e IELTS.</span>
+      </p>
+      <p style="margin-top:14px;color:var(--muted)">
+        <span lang-en>But before the degrees, there's my story as a migrant — the reason Bilingualearn exists. Like many of you, I went through student visas, the COVID visa, VET courses and even residency in Canada, before Australia became the country I chose to stay in. I know first-hand that the international English exam is often the stone in the shoe between a qualified professional and the life they came here to build.</span>
+        <span lang-es>Pero antes de los títulos, está mi historia como migrante — la razón de ser de Bilingualearn. Como muchos de ustedes, pasé por visas de estudiante, la visa COVID, cursos VET e incluso una residencia en Canadá, antes de que Australia se convirtiera en el país donde decidí quedarme. Sé de primera mano que el examen internacional de inglés suele ser la piedra en el zapato entre un profesional capacitado y la vida que vino a construir aquí.</span>
+      </p>
+      <p class="pullquote">
+        <span lang-en>"I don't just teach exam strategies — I guide you through the whole migration journey, because I've lived it."</span>
+        <span lang-es>"No enseño solo estrategias de examen — acompaño todo un proceso migratorio, porque lo he vivido."</span>
       </p>
       <div class="coach-creds">
         <span>✔ VIT / AITSL</span>
@@ -416,11 +430,15 @@
         <span>✔ Pearson · PTE</span>
         <span>✔ Paragon · CELPIP</span>
       </div>
-      <ul class="speech" style="margin-top:20px">
-        <li><span class="dot">🎯</span><span lang-en><b>Certified by the exam creators</b> — you learn the real scoring criteria, not myths.</span><span lang-es><b>Certificada por los creadores del examen</b> — aprendes los criterios reales de calificación, no mitos.</span></li>
-        <li><span class="dot">💜</span><span lang-en><b>Bilingual and human</b> — I explain in Spanish when it helps, and I meet you at your level.</span><span lang-es><b>Bilingüe y cercana</b> — te explico en español cuando ayuda, y te acompaño en tu nivel.</span></li>
-      </ul>
-      <div class="hero-cta">
+      <details class="story">
+        <summary><span><span lang-en>Read my full story</span><span lang-es>Lee mi historia completa</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p><span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. I did my undergraduate degree at the Universidad Pedagógica Nacional de Colombia and my master's at the Universidad Distrital Francisco José de Caldas, and ever since, my path has been tied to language teaching: I've worked as an academic coordinator of English and, today, I'm a registered teacher in Australia (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon — the creators of PTE, CELPIP and IELTS.</span><span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Estudié mi pregrado en la Universidad Pedagógica Nacional de Colombia y mi maestría en la Universidad Distrital Francisco José de Caldas, y desde entonces mi camino ha estado ligado a la enseñanza de idiomas: he trabajado como coordinadora académica de inglés y, hoy, soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon — los creadores del PTE, CELPIP e IELTS.</span></p>
+          <p><span lang-en>But before the degrees and certifications, there's my story as a migrant, which is the reason Bilingualearn exists. Like many of you, I went through student visas, the COVID visa, VET courses, and I even obtained residency in Canada. It was a long road, made of exams, paperwork and starting over again and again. And along that road, Australia was the country that captivated me: here I decided to stay, and here the idea was born to help other Latino migrants avoid getting lost in the same maze I went through.</span><span lang-es>Pero antes de los títulos y las certificaciones, está mi historia como migrante, que es la razón de ser de Bilingualearn. Como muchos de ustedes, pasé por visas de estudiante, por la visa COVID, por cursos VET, e incluso logré una residencia en Canadá. Fue un camino largo, hecho de exámenes, papeleo y recomenzar una y otra vez. Y en ese camino, Australia fue el país que me cautivó: aquí decidí quedarme, y aquí nació la idea de ayudar a otros migrantes latinos a no perderse en el mismo laberinto que yo recorrí.</span></p>
+          <p><span lang-en>I know, first-hand, that the international English exam is often the stone in the shoe that separates a qualified professional from the life they came to build in Australia. That's why I created Bilingualearn: so that exam stops being an obstacle and becomes the step that finally lets you practise your profession, get your residency, or reach the goal that brought you here. I don't just teach exam strategies. I guide you through an entire migration journey — because I've lived it.</span><span lang-es>Sé, de primera mano, que el examen internacional de inglés suele ser la piedra en el zapato que separa a un profesional capacitado de la vida que vino a construir en Australia. Por eso creé Bilingualearn: para que ese examen deje de ser un obstáculo y se convierta en el paso que por fin les permita ejercer su profesión, obtener su residencia o alcanzar la meta que los trajo hasta aquí. No enseño solo estrategias de examen. Acompaño un proceso migratorio completo, porque lo he vivido.</span></p>
+        </div>
+      </details>
+      <div class="hero-cta" style="margin-top:22px">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Message Aura</span><span lang-es>Escríbele a Aura</span></a>
       </div>
     </div>
