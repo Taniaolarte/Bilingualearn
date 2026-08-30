@@ -192,17 +192,31 @@
   .quote-side blockquote{margin:0;font-size:1.18rem;font-weight:650;line-height:1.5}
   .qmeta{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.9rem;font-weight:700}
   .qmeta img{width:44px;height:44px;border-radius:12px;background:var(--halo)}
-  .rev-grid{columns:3;column-gap:18px}
+  .rev-carousel{position:relative}
+  .rev-grid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;
+            padding:4px 2px 8px;scrollbar-width:none;-ms-overflow-style:none}
+  .rev-grid::-webkit-scrollbar{display:none}
   .rev-grid:empty{display:none}
-  .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;margin:0 0 18px;break-inside:avoid;-webkit-column-break-inside:avoid}
+  .rev{flex:0 0 336px;scroll-snap-align:start;display:flex;flex-direction:column;
+       background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px}
   .rev .stars{color:var(--gold);letter-spacing:.1em;font-size:1.05rem}
-  .rev blockquote{margin:12px 0 0;font-size:.96rem;line-height:1.6;color:var(--ink)}
+  .rev blockquote{margin:12px 0 0;font-size:.94rem;line-height:1.6;color:var(--ink)}
   .rev blockquote p{margin:0}
   .rev blockquote p+p{margin-top:10px}
-  .rev .who{margin-top:16px;display:flex;align-items:center;gap:11px}
+  .rev .body{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden}
+  .rev.open .body{display:block;overflow:visible}
+  .rev .more{align-self:flex-start;margin-top:8px;border:0;background:none;padding:0;cursor:pointer;
+             font:inherit;font-size:.84rem;font-weight:800;color:var(--primary-d);text-decoration:underline}
+  .rev .who{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:11px}
   .rev .who .av{width:36px;height:36px;border-radius:50%;background:var(--halo);color:var(--primary-d);display:grid;place-items:center;font-weight:900;flex:none}
   .rev .who b{font-size:.9rem;display:block}
   .rev .who small{color:var(--muted);font-size:.78rem}
+  .rev-nav{display:flex;justify-content:center;gap:10px;margin-top:16px}
+  .rev-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);
+                  color:var(--primary-d);font-size:1.1rem;font-weight:900;cursor:pointer;display:grid;place-items:center;
+                  transition:background .15s,border-color .15s,opacity .15s}
+  .rev-nav button:hover:not(:disabled){background:var(--halo);border-color:var(--primary)}
+  .rev-nav button:disabled{opacity:.35;cursor:default}
   .rev-cta{margin-top:26px;background:linear-gradient(150deg,var(--deep),var(--deep2));color:#fff;border-radius:34px;padding:38px;text-align:center;box-shadow:var(--shadow)}
   .rev-cta p{color:rgba(255,255,255,.84);margin:14px 0 22px}
   .rev-score .v{font-size:2.4rem;font-weight:900;line-height:1;color:var(--gold)}
@@ -266,7 +280,7 @@
     .nav-links{display:none}
     .hero-grid,.split,.results-grid{grid-template-columns:1fr}
     .g3,.g4,.steps,.pkg-grid{grid-template-columns:repeat(2,1fr)}
-    .rev-grid{columns:2}
+    .rev{flex-basis:300px}
     .trust-in{grid-template-columns:1fr}
     .trust-label{max-width:none}
     .badges{grid-template-columns:repeat(2,1fr)}
@@ -276,7 +290,7 @@
     section{padding:56px 0}
     .g2,.g3,.g4,.steps,.pkg-grid,.stat-row{grid-template-columns:1fr}
     .badges{grid-template-columns:1fr}
-    .rev-grid{columns:1}
+    .rev{flex-basis:80vw}
     .rev-cta{padding:30px 22px}
     .final{padding:40px 22px}
     .foot-grid{grid-template-columns:1fr}
@@ -690,7 +704,13 @@
       <p class="lead" id="revIntro" style="margin-top:12px;display:none"><span lang-en>Every review below is a real, verified review from our Google Business profile.</span><span lang-es>Cada reseña de abajo es una reseña real y verificable de nuestro perfil de Google.</span></p>
     </div>
 
-    <div class="rev-grid reveal" id="revGrid"></div>
+    <div class="rev-carousel reveal" id="revCarousel" hidden>
+      <div class="rev-grid" id="revGrid"></div>
+      <div class="rev-nav">
+        <button type="button" id="revPrev" aria-label="Previous reviews">&#8592;</button>
+        <button type="button" id="revNext" aria-label="Next reviews">&#8594;</button>
+      </div>
+    </div>
 
     <div class="rev-cta reveal">
       <div class="rev-score">
@@ -843,6 +863,7 @@
     });
     refreshWa();
     refreshPay();
+    if (window.refreshMoreLabels) window.refreshMoreLabels();
   }
   document.querySelectorAll('[data-lang-btn]').forEach(function(b){
     b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang-btn')); });
@@ -884,28 +905,86 @@
       text: 'Excellent and professional English coaching service! The lessons are personalised, practical, and focused on achieving the required PTE, CELPIP, or IELTS scores. Highly recommended for anyone preparing for an English exam or visa application.' }
   ];
 
+  var MORE_LABEL = { more: { en: 'Read more', es: 'Leer más' },
+                     less: { en: 'Show less', es: 'Ver menos' } };
+
   (function renderReviews(){
     var grid = document.getElementById('revGrid');
+    var wrap = document.getElementById('revCarousel');
     var avg  = document.getElementById('revAvg');
     if (avg) avg.textContent = GOOGLE_RATING ? GOOGLE_RATING + '\u2605' : '\u2605\u2605\u2605\u2605\u2605';
     if (!grid || !REVIEWS.length) return;
+    if (wrap) wrap.hidden = false;
     var intro = document.getElementById('revIntro');
     if (intro) intro.style.display = '';
+
     function esc(v){ return String(v == null ? '' : v).replace(/[&<>"]/g, function(c){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
     grid.innerHTML = REVIEWS.map(function(r){
       var stars   = '\u2605'.repeat(r.stars || 5);
       var initial = (r.name || '?').charAt(0).toUpperCase();
       var body    = esc(r.text).split('\n\n').map(function(par){ return '<p>' + par + '</p>'; }).join('');
       var when_en = r.when_en ? '<small lang-en>Google \u00b7 ' + esc(r.when_en) + '</small>' : '<small lang-en>Google review</small>';
       var when_es = r.when_es ? '<small lang-es>Google \u00b7 ' + esc(r.when_es) + '</small>' : '<small lang-es>Rese\u00f1a de Google</small>';
-      return '<div class="rev">' +
+      return '<figure class="rev">' +
         '<div class="stars">' + stars + '</div>' +
-        '<blockquote>' + body + '</blockquote>' +
-        '<div class="who"><span class="av">' + initial + '</span>' +
-        '<span><b>' + esc(r.name) + '</b>' + when_en + when_es + '</span></div>' +
-      '</div>';
+        '<blockquote class="body">' + body + '</blockquote>' +
+        '<figcaption class="who"><span class="av">' + initial + '</span>' +
+        '<span><b>' + esc(r.name) + '</b>' + when_en + when_es + '</span></figcaption>' +
+      '</figure>';
     }).join('');
+
+    /* a "read more" only where the clamp actually hides something */
+    grid.querySelectorAll('.rev').forEach(function(card){
+      var body = card.querySelector('.body');
+      if (body.scrollHeight - body.clientHeight < 4) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'more';
+      btn.addEventListener('click', function(){
+        card.classList.toggle('open');
+        labelMore(btn, card.classList.contains('open'));
+        updateNav();
+      });
+      body.insertAdjacentElement('afterend', btn);
+      labelMore(btn, false);
+    });
+
+    function labelMore(btn, open){
+      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      btn.textContent = MORE_LABEL[open ? 'less' : 'more'][lang];
+      btn.setAttribute('data-open', open ? '1' : '0');
+    }
+    /* keep the labels correct when the visitor flips the language */
+    window.refreshMoreLabels = function(){
+      grid.querySelectorAll('.more').forEach(function(b){
+        labelMore(b, b.getAttribute('data-open') === '1');
+      });
+    };
+
+    /* ---- arrows ---- */
+    var prev = document.getElementById('revPrev'), next = document.getElementById('revNext');
+    function step(){
+      var card = grid.querySelector('.rev');
+      return card ? card.getBoundingClientRect().width + 18 : 340;
+    }
+    function updateNav(){
+      var TOL = 12;   /* snap can rest a few px off either end */
+      var max = grid.scrollWidth - grid.clientWidth;
+      prev.disabled = grid.scrollLeft <= TOL;
+      next.disabled = grid.scrollLeft >= max - TOL;
+    }
+    function go(dir){
+      grid.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      setTimeout(updateNav, 450);   /* don't wait only on the scroll event */
+    }
+    prev.addEventListener('click', function(){ go(-1); });
+    next.addEventListener('click', function(){ go(1); });
+    grid.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav);
+    updateNav();
+
     setLang(document.documentElement.getAttribute('data-lang') || 'en');
   })();
 
