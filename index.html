@@ -192,12 +192,14 @@
   .quote-side blockquote{margin:0;font-size:1.18rem;font-weight:650;line-height:1.5}
   .qmeta{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.9rem;font-weight:700}
   .qmeta img{width:44px;height:44px;border-radius:12px;background:var(--halo)}
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rev-grid{columns:3;column-gap:18px}
   .rev-grid:empty{display:none}
-  .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+  .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;margin:0 0 18px;break-inside:avoid;-webkit-column-break-inside:avoid}
   .rev .stars{color:var(--gold);letter-spacing:.1em;font-size:1.05rem}
-  .rev blockquote{margin:0;font-size:.96rem;line-height:1.6;color:var(--ink)}
-  .rev .who{margin-top:auto;display:flex;align-items:center;gap:11px;padding-top:6px}
+  .rev blockquote{margin:12px 0 0;font-size:.96rem;line-height:1.6;color:var(--ink)}
+  .rev blockquote p{margin:0}
+  .rev blockquote p+p{margin-top:10px}
+  .rev .who{margin-top:16px;display:flex;align-items:center;gap:11px}
   .rev .who .av{width:36px;height:36px;border-radius:50%;background:var(--halo);color:var(--primary-d);display:grid;place-items:center;font-weight:900;flex:none}
   .rev .who b{font-size:.9rem;display:block}
   .rev .who small{color:var(--muted);font-size:.78rem}
@@ -263,13 +265,15 @@
   @media (max-width:900px){
     .nav-links{display:none}
     .hero-grid,.split,.results-grid{grid-template-columns:1fr}
-    .g3,.g4,.steps,.pkg-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+    .g3,.g4,.steps,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-grid{columns:2}
     .trust-in{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:560px){
     section{padding:56px 0}
-    .g2,.g3,.g4,.steps,.pkg-grid,.stat-row,.rev-grid{grid-template-columns:1fr}
+    .g2,.g3,.g4,.steps,.pkg-grid,.stat-row{grid-template-columns:1fr}
+    .rev-grid{columns:1}
     .rev-cta{padding:30px 22px}
     .final{padding:40px 22px}
     .foot-grid{grid-template-columns:1fr}
@@ -282,8 +286,7 @@
     .nav-right{gap:8px}
     .toggle{padding:3px;font-size:.76rem}
     .toggle button{padding:5px 9px}
-    .nav .btn-wa{padding:10px 12px}
-    .nav .btn-wa span{display:none}
+    .nav .btn{padding:10px 14px;font-size:.88rem}
   }
   @media (max-width:380px){
     .brand b{display:none}
@@ -308,7 +311,7 @@
         <button data-lang-btn="en" class="on" aria-pressed="true">EN</button>
         <button data-lang-btn="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>WhatsApp</span><span lang-es>WhatsApp</span></a>
+      <a class="btn btn-primary" href="#packages"><span lang-en>Book</span><span lang-es>Reservar</span></a>
     </div>
   </div>
 </header>
@@ -793,18 +796,21 @@
     document.querySelectorAll('a.wa').forEach(function(a){ a.href = href; });
   }
 
-  /* ---- payment links ----------------------------------------------------
-     Paste the Calendly URL for each hour pack here. While a value is empty,
-     that button falls back to WhatsApp and reads "Ask about it / Consultar",
-     so nothing on the page is ever a dead link.                            */
+  /* ---- booking links -----------------------------------------------------
+     Calendly URL per hour pack. While a value is empty that button falls
+     back to WhatsApp and reads "Ask about it / Consultar", so no button on
+     the page is ever a dead link.                                          */
+  var BASE = 'https://calendly.com/aura-estacio-bilingualearneduau/';
   var PAY_LINKS = {
-    h1:  '',   /* 1 hour  · $80 AUD  */
-    h4:  '',   /* 4 hours · $250 AUD */
-    h10: '',   /* 10 hours · $600 AUD */
-    h20: ''    /* 20 hours · $1000 AUD */
+    h1:  BASE + 'bilingualearn',                                        /* 1 hour  · $80 AUD   */
+    h4:  BASE + 'packages/5d764ee8-5cb7-4dd7-9385-cc6b69ab41c1',        /* 4 hours · $250 AUD  */
+    h10: BASE + 'packages/0f7db65f-6dce-419a-93ab-46a640d24f9e',        /* 10 hours · $600 AUD */
+    h20: ''  /* 20 hours · $1000 AUD — the supplied URL 404s: the UUID
+                .../packages/87baedb3-907b-4794-97fe-36561a6bdb0 ends in 11
+                characters instead of 12, so one was lost when copying.     */
   };
   var PAY_LABEL = {
-    pay: { en: 'Pay here',     es: 'Paga aquí' },
+    pay: { en: 'Book',         es: 'Reservar' },
     ask: { en: 'Ask about it', es: 'Consultar' }
   };
   function refreshPay(){
@@ -836,13 +842,37 @@
 
 
   /* ---- reviews -----------------------------------------------------------
-     Real reviews from the Google Business profile. Paste each one verbatim.
-     Leave GOOGLE_RATING as the number shown on the profile.
-     While the list is empty the section shows only the "read them on Google"
-     card, so no invented testimonial is ever displayed.                      */
-  var GOOGLE_RATING = '';           /* e.g. '5.0' */
+     Verbatim reviews from the Google Business profile. The text is shown in
+     the language it was written in and is never translated, so a real review
+     is never put into words its author did not use.
+     NOTE: Google shows a star count per review that was not supplied; every
+     entry is set to 5 below because every text is unreservedly positive.
+     Correct any that differ.                                                */
+  var GOOGLE_RATING = '';   /* the number on the profile, e.g. '5.0' */
   var REVIEWS = [
-    /* { name:'', initial:'', stars:5, meta_en:'', meta_es:'', text_en:'', text_es:'' }, */
+    { name: 'Ana María Sánchez Echeverri', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'She is the best!! Te ayuda, te apoya, te corrige y está pendiente de ti en todo el proceso. Además, tiene una personalidad hermosa 💗 Super recomendada!!' },
+
+    { name: 'Danilo Guerrero', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'Since I started preparing for my English test with BilinguaLearn, I have improved a lot and I am really close to getting the score. The teacher is really good at teaching, so I got the strategies I need for each part of my test pretty quickly. I believe I will probably get my goal soon and will take my CELPIP test for my PR.' },
+
+    { name: 'Daniela Caicedo', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'Gracias Aura porque en 4 clases me ayudaste más de lo que había podido imaginar, el amor con el que haces las cosas es increíblemente grande y eso lo transmites en las clases. Gracias por tu apoyo, comprensión y buenos tips.' },
+
+    { name: 'Ana Monroy', stars: 5, when_en: '3 weeks ago', when_es: 'hace 3 semanas',
+      text: 'Miss Aura is so patient with the course and she cares about you! 🙌 I really recommend' },
+
+    { name: 'Monica Giraldo', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'Demasiado agradecida y afortunada de haberte encontrado a tiempo! Aura el acompañamiento, la confianza, el soporte para mi fueron esenciales para cumplir la meta! Muchas muchas gracias por tu apoyo en este proceso del PTE y de verdad que labor tan bonita haces desde el corazón ♥️ haces tu trabajo con mucho amor.' },
+
+    { name: 'Johana Posada Marulanda', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'From the very beginning, she was empathetic to my needs. She was approachable with the learning material and adapted her teaching to suit the way I learn. To me, she represents the perfect balance between professionalism and a genuine passion for what she…' },
+
+    { name: 'Jazmin Hernandez', stars: 5, when_en: '1 month ago', when_es: 'hace un mes',
+      text: 'I had a wonderful experience learning with Aura. She is patient, supportive, and explains concepts in a way that is easy to understand. She identifies your strengths and areas for improvement to create personalised lessons, and every lesson is well prepared, engaging, and encourages students to participate and build confidence in speaking English.\n\nAura always creates a positive and welcoming space ❣️ so you feel comfortable with what you already know while still being encouraged to improve. She provides helpful feedback and tailored her lessons to suit each student\u2019s needs. Not only have I improved my English and PTE test score, but since I have known Aura, she has supported me throughout my long journey of learning a new language since high school 💯\n\nI will always highly recommend her as a teacher. She is highly knowledgeable and has strong experience in different settings, making her a complete professional.' },
+
+    { name: 'Tania Olarte', stars: 5, when_en: '', when_es: '',
+      text: 'Excellent and professional English coaching service! The lessons are personalised, practical, and focused on achieving the required PTE, CELPIP, or IELTS scores. Highly recommended for anyone preparing for an English exam or visa application.' }
   ];
 
   (function renderReviews(){
@@ -852,19 +882,19 @@
     if (!grid || !REVIEWS.length) return;
     var intro = document.getElementById('revIntro');
     if (intro) intro.style.display = '';
+    function esc(v){ return String(v == null ? '' : v).replace(/[&<>"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
     grid.innerHTML = REVIEWS.map(function(r){
-      var stars = '\u2605'.repeat(r.stars || 5);
-      var initial = r.initial || (r.name || '?').charAt(0).toUpperCase();
-      function esc(v){ return String(v == null ? '' : v).replace(/[&<>"]/g, function(c){
-        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+      var stars   = '\u2605'.repeat(r.stars || 5);
+      var initial = (r.name || '?').charAt(0).toUpperCase();
+      var body    = esc(r.text).split('\n\n').map(function(par){ return '<p>' + par + '</p>'; }).join('');
+      var when_en = r.when_en ? '<small lang-en>Google \u00b7 ' + esc(r.when_en) + '</small>' : '<small lang-en>Google review</small>';
+      var when_es = r.when_es ? '<small lang-es>Google \u00b7 ' + esc(r.when_es) + '</small>' : '<small lang-es>Rese\u00f1a de Google</small>';
       return '<div class="rev">' +
         '<div class="stars">' + stars + '</div>' +
-        '<blockquote><span lang-en>' + esc(r.text_en) + '</span>' +
-        '<span lang-es>' + esc(r.text_es || r.text_en) + '</span></blockquote>' +
-        '<div class="who"><span class="av">' + esc(initial) + '</span>' +
-        '<span><b>' + esc(r.name) + '</b>' +
-        '<small lang-en>' + esc(r.meta_en) + '</small>' +
-        '<small lang-es>' + esc(r.meta_es || r.meta_en) + '</small></span></div>' +
+        '<blockquote>' + body + '</blockquote>' +
+        '<div class="who"><span class="av">' + initial + '</span>' +
+        '<span><b>' + esc(r.name) + '</b>' + when_en + when_es + '</span></div>' +
       '</div>';
     }).join('');
     setLang(document.documentElement.getAttribute('data-lang') || 'en');
