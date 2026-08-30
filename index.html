@@ -22,32 +22,6 @@
     --radius:26px; --maxw:1120px;
     --sans:ui-rounded,'SF Pro Rounded','Segoe UI',Roboto,'Helvetica Neue',Arial,system-ui,sans-serif;
   }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#141130; --bg2:#191541; --surface:#211c46; --surface2:#26205050;
-      --ink:#efeafd; --muted:#a9a2d0; --line:#332c60;
-      --primary:#9d92f6; --primary-d:#8b7ff0; --deep:#0f0b28; --deep2:#171238;
-      --accent:#f39cc3; --accent-ink:#f7b6d5; --good:#6fd0a4;
-      --halo:rgba(157,146,246,.16); --shadow:0 24px 52px -24px rgba(0,0,0,.7);
-      --shadow-sm:0 14px 30px -18px rgba(0,0,0,.6);
-    }
-  }
-  :root[data-theme="light"]{
-    --bg:#f4f3fe; --bg2:#eceafc; --surface:#ffffff; --surface2:#faf9ff;
-    --ink:#221d47; --muted:#6c6790; --line:#e6e2f7;
-    --primary:#7c6ff0; --primary-d:#6357cf; --deep:#5b52b8; --deep2:#463f97;
-    --accent:#ef8fbb; --accent-ink:#c04d80; --good:#57b98d;
-    --halo:rgba(124,111,240,.16); --shadow:0 22px 48px -26px rgba(70,55,150,.55);
-    --shadow-sm:0 12px 26px -16px rgba(70,55,150,.5);
-  }
-  :root[data-theme="dark"]{
-    --bg:#141130; --bg2:#191541; --surface:#211c46; --surface2:#26205050;
-    --ink:#efeafd; --muted:#a9a2d0; --line:#332c60;
-    --primary:#9d92f6; --primary-d:#8b7ff0; --deep:#0f0b28; --deep2:#171238;
-    --accent:#f39cc3; --accent-ink:#f7b6d5; --good:#6fd0a4;
-    --halo:rgba(157,146,246,.16); --shadow:0 24px 52px -24px rgba(0,0,0,.7);
-    --shadow-sm:0 14px 30px -18px rgba(0,0,0,.6);
-  }
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -101,17 +75,16 @@
     backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);
     border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;gap:16px;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.16rem;letter-spacing:-.02em}
-  .brand img{width:38px;height:38px;border-radius:11px;background:var(--halo)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.16rem;letter-spacing:-.02em;flex:0 1 auto;min-width:0;white-space:nowrap}
+  .brand img{width:38px;height:38px;border-radius:11px;background:var(--halo);flex:none}
   .brand b{color:var(--primary-d)}
   .nav-links{display:flex;gap:26px;margin-left:14px}
   .nav-links a{font-weight:650;color:var(--muted);font-size:.95rem}
   .nav-links a:hover{color:var(--ink)}
-  .nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
-  .toggle{display:inline-flex;background:var(--halo);border-radius:999px;padding:4px;font-weight:800;font-size:.82rem}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:12px;flex:none}
+  .toggle{display:inline-flex;flex:none;background:var(--halo);border-radius:999px;padding:4px;font-weight:800;font-size:.82rem}
   .toggle button{border:0;background:transparent;color:var(--muted);padding:6px 13px;border-radius:999px;cursor:pointer;font-weight:800;font-family:inherit}
   .toggle button.on{background:var(--surface);color:var(--primary-d);box-shadow:var(--shadow-sm)}
-  .theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:40px;height:40px;border-radius:12px;cursor:pointer;font-size:1.05rem;display:grid;place-items:center}
   .nav .btn{padding:11px 18px;font-size:.92rem}
 
   /* hero */
@@ -120,7 +93,6 @@
   .hero h1 .hl{color:var(--primary-d);position:relative;white-space:nowrap}
   .hero .lead{margin-top:18px;max-width:34ch}
   .hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
-  .hero-note{margin-top:16px;font-size:.9rem;color:var(--muted);display:flex;align-items:center;gap:8px}
   .hero-art{position:relative;display:grid;place-items:center;min-height:360px}
   .blob{position:absolute;inset:6% 4%;
     background:radial-gradient(circle at 40% 35%,#b7aef8,var(--primary) 55%,var(--deep));
@@ -187,7 +159,7 @@
   .speech .dot{width:26px;height:26px;border-radius:8px;background:var(--halo);color:var(--primary-d);display:grid;place-items:center;font-weight:900;flex:none;font-size:.9rem}
 
   /* methodology steps */
-  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
   .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;position:relative}
   .step .n{counter-increment:s;width:44px;height:44px;border-radius:13px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.2rem;margin-bottom:16px;box-shadow:var(--shadow-sm)}
   .step .n::before{content:counter(s,decimal-leading-zero)}
@@ -196,13 +168,16 @@
 
   /* packages */
   .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .pkg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:transform .18s,box-shadow .2s,border-color .2s}
+  .pkg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:transform .18s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
   .pkg:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary)}
   .pkg.featured{border-color:var(--primary);box-shadow:var(--shadow)}
   .pkg .tag{font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-ink);min-height:16px;display:block;margin-bottom:6px}
   .pkg .hrs{font-size:2.6rem;font-weight:900;color:var(--primary-d);line-height:1;font-variant-numeric:tabular-nums}
   .pkg .unit{font-size:.95rem;color:var(--muted);font-weight:700}
+  .pkg .price{margin-top:14px;font-size:1.72rem;font-weight:900;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+  .pkg .price .cur{font-size:.95rem;font-weight:800;color:var(--muted)}
   .pkg .desc{font-size:.86rem;color:var(--muted);margin:12px 0 18px;min-height:38px}
+  .pkg .desc:last-of-type{margin-bottom:auto;padding-bottom:18px}
   .pkg .btn{width:100%;font-size:.9rem;padding:11px}
 
   /* results */
@@ -219,19 +194,25 @@
   .quote-side blockquote{margin:0;font-size:1.18rem;font-weight:650;line-height:1.5}
   .qmeta{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.9rem;font-weight:700}
   .qmeta img{width:44px;height:44px;border-radius:12px;background:var(--halo)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rev-grid:empty{display:none}
+  .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+  .rev .stars{color:var(--gold);letter-spacing:.1em;font-size:1.05rem}
+  .rev blockquote{margin:0;font-size:.96rem;line-height:1.6;color:var(--ink)}
+  .rev .who{margin-top:auto;display:flex;align-items:center;gap:11px;padding-top:6px}
+  .rev .who .av{width:36px;height:36px;border-radius:50%;background:var(--halo);color:var(--primary-d);display:grid;place-items:center;font-weight:900;flex:none}
+  .rev .who b{font-size:.9rem;display:block}
+  .rev .who small{color:var(--muted);font-size:.78rem}
+  .rev-cta{margin-top:26px;background:linear-gradient(150deg,var(--deep),var(--deep2));color:#fff;border-radius:34px;padding:38px;text-align:center;box-shadow:var(--shadow)}
+  .rev-cta p{color:rgba(255,255,255,.84);margin:14px 0 22px}
+  .rev-score .v{font-size:2.4rem;font-weight:900;line-height:1;color:var(--gold)}
+  .rev-score .l{font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:6px}
   .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
   .stat{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 14px}
   .stat .v{font-size:2rem;font-weight:900;color:var(--primary-d);font-variant-numeric:tabular-nums}
   .stat .l{color:var(--muted);font-size:.88rem;font-weight:650}
 
   /* qa band */
-  .qa{background:linear-gradient(150deg,var(--deep),var(--deep2));color:#fff;border-radius:34px;padding:46px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;box-shadow:var(--shadow);overflow:hidden;position:relative}
-  .qa .pill{background:rgba(255,255,255,.16);color:#fff;display:inline-flex;padding:6px 14px;border-radius:999px;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
-  .qa h2{color:#fff}
-  .qa p{color:rgba(255,255,255,.82);margin-top:12px}
-  .qa-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-  .qa-art{display:grid;place-items:center}
-  .qa-art img{width:min(74%,220px);filter:drop-shadow(0 20px 24px rgba(0,0,0,.35));animation:floaty 6s ease-in-out infinite}
 
   /* faq */
   .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
@@ -283,19 +264,32 @@
   }
   @media (max-width:900px){
     .nav-links{display:none}
-    .hero-grid,.split,.results-grid,.qa{grid-template-columns:1fr}
-    .g3,.g4,.steps,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-grid,.split,.results-grid{grid-template-columns:1fr}
+    .g3,.g4,.steps,.pkg-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
     .trust-in{grid-template-columns:1fr}
-    .qa-art{order:-1}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:560px){
     section{padding:56px 0}
-    .g2,.g3,.g4,.steps,.pkg-grid,.stat-row{grid-template-columns:1fr}
+    .g2,.g3,.g4,.steps,.pkg-grid,.stat-row,.rev-grid{grid-template-columns:1fr}
+    .rev-cta{padding:30px 22px}
     .final{padding:40px 22px}
-    .qa{padding:32px 24px}
     .foot-grid{grid-template-columns:1fr}
     .wa-float span{display:none}
+    /* keep the EN/ES switch from colliding with the brand */
+    .wrap{padding:0 16px}
+    .nav-in{gap:8px}
+    .brand{font-size:1rem;gap:8px}
+    .brand img{width:32px;height:32px;border-radius:9px}
+    .nav-right{gap:8px}
+    .toggle{padding:3px;font-size:.76rem}
+    .toggle button{padding:5px 9px}
+    .nav .btn-wa{padding:10px 12px}
+    .nav .btn-wa span{display:none}
+  }
+  @media (max-width:380px){
+    .brand b{display:none}
+    .brand{font-size:.94rem}
   }
 </style>
 
@@ -307,7 +301,8 @@
       <a href="#programs" lang-en>Programs</a><a href="#programs" lang-es>Programas</a>
       <a href="#method" lang-en>Method</a><a href="#method" lang-es>Método</a>
       <a href="#aura" lang-en>Meet Aura</a><a href="#aura" lang-es>Conoce a Aura</a>
-      <a href="#results" lang-en>Results</a><a href="#results" lang-es>Resultados</a>
+      <a href="#packages" lang-en>Prices</a><a href="#packages" lang-es>Precios</a>
+      <a href="#results" lang-en>Reviews</a><a href="#results" lang-es>Reseñas</a>
       <a href="#faq" lang-en>FAQ</a><a href="#faq" lang-es>Preguntas</a>
     </nav>
     <div class="nav-right">
@@ -315,7 +310,6 @@
         <button data-lang-btn="en" class="on" aria-pressed="true">EN</button>
         <button data-lang-btn="es" aria-pressed="false">ES</button>
       </div>
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
       <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>WhatsApp</span><span lang-es>WhatsApp</span></a>
     </div>
   </div>
@@ -338,12 +332,7 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
-        <a class="btn btn-ghost" href="#qa"><span lang-en>Free Sunday Q&amp;A</span><span lang-es>Q&amp;A gratis del domingo</span></a>
-      </div>
-      <div class="hero-note">
-        <span>✅</span>
-        <span lang-en>No pricing games — message us and we build a plan around your target score.</span>
-        <span lang-es>Sin juegos de precios — escríbenos y armamos un plan según tu puntaje objetivo.</span>
+        <a class="btn btn-ghost" href="#packages"><span lang-en>See prices</span><span lang-es>Ver precios</span></a>
       </div>
     </div>
     <div class="hero-art reveal">
@@ -493,14 +482,47 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>The method</span><span lang-es>El método</span></span>
-      <h2><span lang-en>Lessons are never one-size-fits-all.</span><span lang-es>Las clases nunca son de talla única.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Every student has a different story, level and starting point. Here's how we turn that into a score.</span><span lang-es>Cada estudiante tiene una historia, nivel y punto de partida distintos. Así lo convertimos en un puntaje.</span></p>
+      <h2><span lang-en>I focus on your weak spots — not on a generic syllabus.</span><span lang-es>Me enfoco en tus debilidades, no en un temario genérico.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>Every student has a different story, level and starting point. Here is how we turn that into a score.</span><span lang-es>Cada estudiante tiene una historia, un nivel y un punto de partida distintos. Así lo convertimos en un puntaje.</span></p>
     </div>
     <div class="steps reveal">
-      <div class="step"><div class="n"></div><h3 lang-en>Mock test</h3><h3 lang-es>Examen de prueba</h3><p lang-en>We start by measuring your real current level under exam conditions.</p><p lang-es>Empezamos midiendo tu nivel real actual en condiciones de examen.</p></div>
-      <div class="step"><div class="n"></div><h3 lang-en>Study plan</h3><h3 lang-es>Plan de estudio</h3><p lang-en>A personalised plan built from your results and your target score.</p><p lang-es>Un plan personalizado según tus resultados y tu puntaje objetivo.</p></div>
-      <div class="step"><div class="n"></div><h3 lang-en>Target weaknesses</h3><h3 lang-es>Ataca lo débil</h3><p lang-en>Each session tackles what's holding you back. Skills you own, we skip.</p><p lang-es>Cada sesión ataca lo que te frena. Lo que ya dominas, lo saltamos.</p></div>
-      <div class="step"><div class="n"></div><h3 lang-en>Strategy &amp; resources</h3><h3 lang-es>Estrategia y recursos</h3><p lang-en>Targeted techniques and materials to lift your score efficiently.</p><p lang-es>Técnicas y materiales dirigidos para subir tu puntaje de forma eficiente.</p></div>
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>Initial diagnosis</h3><h3 lang-es>Diagnóstico inicial</h3>
+        <p lang-en>We start by pinpointing exactly where you stand, with an initial mock test under real exam conditions.</p>
+        <p lang-es>Empezamos identificando exactamente tu punto de partida por medio de un mock test inicial.</p>
+      </div>
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>A plan built for you</h3><h3 lang-es>Plan a tu medida</h3>
+        <p lang-en>Every session attacks your real weak points; we don't repeat what you already master.</p>
+        <p lang-es>Cada sesión ataca tus puntos débiles reales; no repetimos lo que ya dominas.</p>
+      </div>
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>You decide when</h3><h3 lang-es>Tú decides cuándo</h3>
+        <p lang-en>You book each class at the time that works best for you — no fixed timetable.</p>
+        <p lang-es>Agendas cada clase en el horario que mejor te funcione, sin horarios fijos.</p>
+      </div>
+    </div>
+
+    <div class="sec-head center reveal" style="margin-top:64px">
+      <span class="eyebrow"><span lang-en>How the classes work</span><span lang-es>Cómo son las clases</span></span>
+      <h2><span lang-en>Personalised online lessons.</span><span lang-es>Clases virtuales personalizadas.</span></h2>
+    </div>
+    <div class="grid g3 reveal">
+      <div class="card hoverable"><div class="ic">💻</div>
+        <h3 lang-en>1-to-1 on Google Meet</h3><h3 lang-es>Clases 1 a 1 por Google Meet</h3>
+        <p lang-en>Fully personalised live sessions, working directly with you: solving your doubts, finding the real reasons you're not hitting your target score, and practising by your side.</p>
+        <p lang-es>Sesiones virtuales totalmente personalizadas, en vivo, trabajando directamente contigo: resolviendo tus dudas, identificando las razones por las cuales no alcanzas tu puntaje deseado y practicando a tu lado.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">📅</div>
+        <h3 lang-en>You choose when to take them</h3><h3 lang-es>Tú eliges cuándo tomarlas</h3>
+        <p lang-en>Book your sessions at whatever time fits your routine.</p>
+        <p lang-es>Agenda tus sesiones en el horario que mejor se acomode a tu rutina.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">⏱️</div>
+        <h3 lang-en>Buy by the hour, at your own pace</h3><h3 lang-es>Compra por horas, a tu ritmo</h3>
+        <p lang-en>Pick the pack of hours you need: 1, 4, 10 or 20 hours of class.</p>
+        <p lang-es>Elige el paquete de horas que necesites: 1, 4, 10 o 20 horas de clase.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -510,12 +532,67 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>What's included</span><span lang-es>Qué incluye</span></span>
-      <h2><span lang-en>More than a lesson — a whole system.</span><span lang-es>Más que una clase — todo un sistema.</span></h2>
+      <h2><span lang-en>Resources included in your program.</span><span lang-es>Recursos incluidos en tu programa.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>More than a lesson — a whole system that keeps working between sessions.</span><span lang-es>Más que una clase — todo un sistema que sigue trabajando entre sesiones.</span></p>
     </div>
     <div class="grid g3 reveal">
-      <div class="card hoverable"><div class="ic">📼</div><h3 lang-en>Recorded lessons</h3><h3 lang-es>Clases grabadas</h3><p lang-en>Every session is recorded so you can review explanations and strategies anytime.</p><p lang-es>Cada sesión se graba para que repases explicaciones y estrategias cuando quieras.</p></div>
-      <div class="card hoverable"><div class="ic">🐨</div><h3 lang-en>Daily practice app</h3><h3 lang-es>App de práctica diaria</h3><p lang-en>Aura's general-English app keeps you improving with small daily tasks between lessons.</p><p lang-es>La app de inglés general de Aura te mantiene mejorando con tareas diarias entre clases.</p></div>
-      <div class="card hoverable"><div class="ic">📚</div><h3 lang-en>Resource bank</h3><h3 lang-es>Banco de recursos</h3><p lang-en>A full library of practice materials — pick exactly what your plan calls for.</p><p lang-es>Una biblioteca completa de materiales de práctica — elige justo lo que tu plan necesita.</p></div>
+      <div class="card hoverable"><div class="ic">🐨</div>
+        <h3 lang-en>Official BilinguaLearn app</h3><h3 lang-es>App oficial Bilingualearn</h3>
+        <p lang-en>Your daily guide: what to study each day to strengthen your general English, practice links and daily vocabulary exercises.</p>
+        <p lang-es>Tu guía diaria: qué estudiar cada día para fortalecer tu inglés general, links de práctica y ejercicios de vocabulario diario.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">📈</div>
+        <h3>Score Tracker</h3>
+        <p lang-en>A defined study plan for each day, plus an app where you log your scores, see your progress and get tips to attack your weak spots. I review your progress too, and we meet to work on every weak area.</p>
+        <p lang-es>Un plan de estudio definido para cada día, y una app donde registras tus puntajes, ves tu progreso y recibes consejos para atacar las partes débiles. Yo reviso tu progreso también y nos reunimos para ver cómo mejorar cada aspecto débil.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">📚</div>
+        <h3 lang-en>Study guide</h3><h3 lang-es>Guía de estudio</h3>
+        <p lang-en>A manual in Spanish explaining what to do in every question type, with proven strategies.</p>
+        <p lang-es>Te entrego un manual en español donde te explico qué hacer en cada tipo de pregunta y te doy estrategias probadas.</p>
+      </div>
+    </div>
+
+    <div class="sec-head center reveal" style="margin-top:64px">
+      <span class="eyebrow"><span lang-en>Practice tools</span><span lang-es>Herramientas de práctica</span></span>
+      <h2><span lang-en>External practice apps.</span><span lang-es>Apps externas de práctica.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>Your classes are complemented with each exam's official practice platforms.</span><span lang-es>Complemento tus clases con las plataformas oficiales de práctica.</span></p>
+    </div>
+    <div class="grid g3 reveal">
+      <div class="card hoverable"><div class="ic">📱</div><h3>Ape Uni</h3>
+        <p lang-en><b>For PTE</b><br/>Requires your own membership.</p>
+        <p lang-es><b>Para PTE</b><br/>Requiere membresía propia.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">📱</div><h3>One IELTS</h3>
+        <p lang-en><b>For IELTS</b><br/>Requires your own membership.</p>
+        <p lang-es><b>Para IELTS</b><br/>Requiere membresía propia.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">🎁</div><h3>Prep Amigo</h3>
+        <p lang-en><b>For CELPIP</b><br/>Free access.</p>
+        <p lang-es><b>Para CELPIP</b><br/>Acceso gratuito.</p>
+      </div>
+    </div>
+    <p class="center" style="margin-top:22px;color:var(--muted)">
+      <span lang-en>I also use each exam's official platforms during the classes.</span>
+      <span lang-es>Adicionalmente uso plataformas oficiales de cada examen durante las clases.</span>
+    </p>
+
+    <div class="sec-head center reveal" style="margin-top:64px">
+      <span class="eyebrow"><span lang-en>Community</span><span lang-es>Comunidad</span></span>
+      <h2><span lang-en>Community and support.</span><span lang-es>Comunidad y acompañamiento.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>You don't study alone: you have constant support.</span><span lang-es>No estudias sola/o: tienes soporte constante.</span></p>
+    </div>
+    <div class="grid g2 reveal">
+      <div class="card hoverable"><div class="ic">💬</div>
+        <h3 lang-en>Community WhatsApp group</h3><h3 lang-es>Grupo de WhatsApp de la comunidad</h3>
+        <p lang-en>I constantly post study tips for the whole BilinguaLearn community: strategies, reminders and motivation.</p>
+        <p lang-es>Publico constantemente tips de estudio para toda la comunidad de Bilingualearn: estrategias, recordatorios y motivación.</p>
+      </div>
+      <div class="card hoverable"><div class="ic">📲</div>
+        <h3 lang-en>Direct contact whenever you need it</h3><h3 lang-es>Contacto directo cuando lo necesites</h3>
+        <p lang-en>You can message me on WhatsApp whenever you have a question, and I'll gladly sort it out.</p>
+        <p lang-es>Me puedes escribir por WhatsApp cuando tengas cualquier duda, y te la resuelvo con gusto.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -524,16 +601,74 @@
 <section id="packages" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow"><span lang-en>Flexible packages</span><span lang-es>Paquetes flexibles</span></span>
-      <h2><span lang-en>Choose the hours you actually need.</span><span lang-es>Elige las horas que realmente necesitas.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>No lock-in, no fixed course length. Message us and we'll recommend the right pack for your target.</span><span lang-es>Sin permanencia, sin duración fija. Escríbenos y te recomendamos el paquete ideal para tu meta.</span></p>
+      <span class="eyebrow"><span lang-en>Hour packs</span><span lang-es>Paquetes de horas</span></span>
+      <h2><span lang-en>Choose the pack that fits your goal.</span><span lang-es>Elige el paquete que se ajuste a tu meta.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>Pick the pack that fits your goal and your time. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Elige el paquete que se ajuste a tu meta y tu tiempo. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
     <div class="pkg-grid reveal">
-      <div class="pkg"><span class="tag"></span><div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div><p class="desc" lang-en>A single focused session or a mock-test check-in.</p><p class="desc" lang-es>Una sesión enfocada o un chequeo con examen de prueba.</p><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-en>Ask about it</a><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-es>Consultar</a></div>
-      <div class="pkg"><span class="tag"></span><div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div><p class="desc" lang-en>Target one or two weak areas before test day.</p><p class="desc" lang-es>Ataca una o dos áreas débiles antes del examen.</p><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-en>Ask about it</a><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-es>Consultar</a></div>
-      <div class="pkg featured"><span class="tag" lang-en>Most popular</span><span class="tag" lang-es>Más popular</span><div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div><p class="desc" lang-en>A full plan across your weak skills — the sweet spot for most.</p><p class="desc" lang-es>Un plan completo sobre tus habilidades débiles — el punto ideal para la mayoría.</p><a class="btn btn-primary wa" target="_blank" rel="noopener" lang-en>Ask about it</a><a class="btn btn-primary wa" target="_blank" rel="noopener" lang-es>Consultar</a></div>
-      <div class="pkg"><span class="tag"></span><div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div><p class="desc" lang-en>Deep transformation from a lower band to your goal.</p><p class="desc" lang-es>Transformación profunda desde una banda baja hasta tu meta.</p><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-en>Ask about it</a><a class="btn btn-ghost wa" target="_blank" rel="noopener" lang-es>Consultar</a></div>
+
+      <div class="pkg">
+        <span class="tag"></span>
+        <div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div>
+        <div class="price"><span class="cur">$</span>80<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>You want a diagnosis of your current level and only need to clear up specific doubts, or a final review before your exam date.</p>
+        <p class="desc" lang-es>Quieres un diagnóstico de tu nivel actual y solo necesitas resolver dudas puntuales o un repaso final antes de tu fecha del examen.</p>
+        <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+      </div>
+
+      <div class="pkg">
+        <span class="tag"></span>
+        <div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>You want a clear guide on how to study. Your score is close to the target; we fine-tune the one or two specific skills holding you back.</p>
+        <p class="desc" lang-es>Quieres una guía clara de cómo estudiar. Tu puntaje está cerca de la meta; afinamos 1 o 2 habilidades específicas que te están frenando.</p>
+        <a class="btn btn-ghost pay" data-pay="h4" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+      </div>
+
+      <div class="pkg featured">
+        <span class="tag" lang-en>Most popular</span><span class="tag" lang-es>Más popular</span>
+        <div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>You need more support to raise your level. There's a moderate gap between your current and target score; we work several skills in depth.</p>
+        <p class="desc" lang-es>Necesitas más acompañamiento para mejorar tu nivel. Hay una brecha moderada entre tu puntaje actual y el deseado; trabajamos varias habilidades a fondo.</p>
+        <a class="btn btn-primary pay" data-pay="h10" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+      </div>
+
+      <div class="pkg">
+        <span class="tag"></span>
+        <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>You're just starting your learning journey — full preparation across every skill.</p>
+        <p class="desc" lang-es>Recién empiezas tu camino de aprendizaje — preparación integral en todas las habilidades.</p>
+        <a class="btn btn-ghost pay" data-pay="h20" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+      </div>
+
     </div>
+
+    <div class="sec-head center reveal" style="margin-top:64px">
+      <span class="eyebrow"><span lang-en>Join</span><span lang-es>Únete</span></span>
+      <h2><span lang-en>Want to be part of this community?</span><span lang-es>¿Quieres ser parte de esta comunidad?</span></h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>Confirm your payment</h3><h3 lang-es>Confirma tu pago</h3>
+        <p lang-en>Choose your pack, pay via Calendly and confirm the payment with me on WhatsApp.</p>
+        <p lang-es>Elige tu paquete, realiza el pago vía Calendly y confirma el proceso de pago conmigo vía WhatsApp.</p>
+      </div>
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>Get your calendar</h3><h3 lang-es>Recibe tu calendario</h3>
+        <p lang-en>Your first payment-confirmation email contains the link to book each session.</p>
+        <p lang-es>En tu primer correo de confirmación de pago encuentras el link para agendar cada sesión.</p>
+      </div>
+      <div class="step"><div class="n"></div>
+        <h3 lang-en>Attend your session</h3><h3 lang-es>Asiste a tu sesión</h3>
+        <p lang-en>Your access link arrives by email as soon as you book each session.</p>
+        <p lang-es>Tu link de acceso llegará a tu correo una vez agendes cada sesión.</p>
+      </div>
+    </div>
+    <p class="center" style="margin-top:26px">
+      <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Questions? Message me on WhatsApp</span><span lang-es>¿Tienes dudas? Escríbeme por WhatsApp</span></a>
+    </p>
   </div>
 </section>
 
@@ -541,52 +676,31 @@
 <section id="results">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow"><span lang-en>Proven results</span><span lang-es>Resultados comprobados</span></span>
-      <h2><span lang-en>Real students. Real score jumps.</span><span lang-es>Estudiantes reales. Saltos de puntaje reales.</span></h2>
+      <span class="eyebrow"><span lang-en>Reviews</span><span lang-es>Reseñas</span></span>
+      <h2><span lang-en>What my students say.</span><span lang-es>Lo que dicen mis estudiantes.</span></h2>
+      <p class="lead" id="revIntro" style="margin-top:12px;display:none"><span lang-en>Every review below is a real, verified review from our Google Business profile.</span><span lang-es>Cada reseña de abajo es una reseña real y verificable de nuestro perfil de Google.</span></p>
     </div>
-    <div class="results reveal">
-      <div class="results-grid">
-        <div class="case-side">
-          <span class="eyebrow" style="background:rgba(255,255,255,.2);color:#fff"><span lang-en>Writing case study</span><span lang-es>Caso de Writing</span></span>
-          <div class="scorebar">
-            <div class="score"><div class="v">19</div><div class="l" lang-en>Before</div><div class="l" lang-es>Antes</div></div>
-            <div class="arrow">→</div>
-            <div class="score" style="background:rgba(255,255,255,.28)"><div class="v">53</div><div class="l" lang-en>After</div><div class="l" lang-es>Después</div></div>
-          </div>
-          <p style="font-weight:700"><span lang-en>+34 points in Writing — from a failing band to a confident pass.</span><span lang-es>+34 puntos en Writing — de una banda reprobatoria a un aprobado seguro.</span></p>
-        </div>
-        <div class="quote-side">
-          <div class="stars">★★★★★</div>
-          <blockquote><span lang-en>"I'd failed Writing twice on my own. Aura found exactly what I was doing wrong, gave me a template that clicked, and my score jumped from 19 to 53. I finally got the score for my visa."</span><span lang-es>"Había reprobado Writing dos veces por mi cuenta. Aura encontró justo lo que hacía mal, me dio una plantilla que hizo clic, y mi puntaje saltó de 19 a 53. Por fin conseguí el puntaje para mi visa."</span></blockquote>
-          <div class="qmeta"><img data-img="m-celebrate" alt=""/><span><span lang-en>PTE Writing student · Melbourne</span><span lang-es>Estudiante de PTE Writing · Melbourne</span></span></div>
-        </div>
-      </div>
-    </div>
-    <div class="stat-row reveal">
-      <div class="stat"><div class="v">4.9★</div><div class="l" lang-en>Google review rating</div><div class="l" lang-es>Calificación en Google</div></div>
-      <div class="stat"><div class="v">100%</div><div class="l" lang-en>Plans built around your target</div><div class="l" lang-es>Planes según tu meta</div></div>
-      <div class="stat"><div class="v">3</div><div class="l" lang-en>Exams coached: PTE · IELTS · CELPIP</div><div class="l" lang-es>Exámenes: PTE · IELTS · CELPIP</div></div>
-    </div>
-    <p class="center" style="margin-top:22px;color:var(--muted)">
-      <span lang-en>See more student wins on <a href="#" style="color:var(--primary-d);font-weight:800">Instagram →</a></span>
-      <span lang-es>Mira más logros de estudiantes en <a href="#" style="color:var(--primary-d);font-weight:800">Instagram →</a></span>
-    </p>
-  </div>
-</section>
 
-<!-- ============ SUNDAY Q&A ============ -->
-<section id="qa">
-  <div class="wrap">
-    <div class="qa reveal">
-      <div>
-        <span class="pill"><span lang-en>Free · every Sunday</span><span lang-es>Gratis · cada domingo</span></span>
-        <h2><span lang-en>Pregúntame lo que sea sobre tu examen</span><span lang-es>Pregúntame lo que sea sobre tu examen</span></h2>
-        <p><span lang-en>Not ready to commit? Join our free Sunday Q&amp;A and ask anything about PTE, IELTS or CELPIP — in Spanish or English. No pressure, just answers.</span><span lang-es>¿Aún no quieres comprometerte? Únete al Q&amp;A gratis del domingo y pregunta lo que sea sobre PTE, IELTS o CELPIP — en español o inglés. Sin presión, solo respuestas.</span></p>
-        <div class="qa-cta">
-          <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Save my spot</span><span lang-es>Reservar mi lugar</span></a>
-        </div>
+    <div class="rev-grid reveal" id="revGrid"></div>
+
+    <div class="rev-cta reveal">
+      <div class="rev-score">
+        <div class="v" id="revAvg">★</div>
+        <div class="l"><span lang-en>on Google</span><span lang-es>en Google</span></div>
       </div>
-      <div class="qa-art"><img data-img="m-idle" alt="Aura the koala ready to answer your questions"/></div>
+      <p>
+        <span lang-en>Read every review — unedited — on our Google Business profile.</span>
+        <span lang-es>Lee todas las reseñas — sin editar — en nuestro perfil de Google.</span>
+      </p>
+      <a class="btn btn-primary" href="https://www.google.com/maps?cid=675299211831576716" target="_blank" rel="noopener">
+        <span lang-en>Read our Google reviews →</span><span lang-es>Ver nuestras reseñas en Google →</span>
+      </a>
+    </div>
+
+    <div class="stat-row reveal">
+      <div class="stat"><div class="v">3</div><div class="l" lang-en>Exams coached: PTE · IELTS · CELPIP</div><div class="l" lang-es>Exámenes: PTE · IELTS · CELPIP</div></div>
+      <div class="stat"><div class="v">+15</div><div class="l" lang-en>Years teaching languages</div><div class="l" lang-es>Años enseñando idiomas</div></div>
+      <div class="stat"><div class="v">1:1</div><div class="l" lang-en>Every lesson, live on Google Meet</div><div class="l" lang-es>Cada clase, en vivo por Google Meet</div></div>
     </div>
   </div>
 </section>
@@ -617,7 +731,7 @@
       <p><span lang-en>Tell us your exam and your deadline. We'll build the plan — you bring the ambition.</span><span lang-es>Cuéntanos tu examen y tu fecha límite. Nosotros armamos el plan — tú pones la ambición.</span></p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
-        <a class="btn btn-light" href="#qa"><span lang-en>Try the free Q&amp;A first</span><span lang-es>Prueba primero el Q&amp;A gratis</span></a>
+        <a class="btn btn-light" href="#packages"><span lang-en>See the hour packs</span><span lang-es>Ver los paquetes de horas</span></a>
       </div>
     </div>
   </div>
@@ -641,12 +755,12 @@
         <a href="#programs" lang-en>Programs</a><a href="#programs" lang-es>Programas</a>
         <a href="#method" lang-en>Method</a><a href="#method" lang-es>Método</a>
         <a href="#aura" lang-en>Meet Aura</a><a href="#aura" lang-es>Conoce a Aura</a>
-        <a href="#results" lang-en>Results</a><a href="#results" lang-es>Resultados</a>
+        <a href="#packages" lang-en>Prices</a><a href="#packages" lang-es>Precios</a>
+      <a href="#results" lang-en>Reviews</a><a href="#results" lang-es>Reseñas</a>
       </div>
       <div class="foot-col">
         <h4 lang-en>Get started</h4><h4 lang-es>Empieza</h4>
         <a class="wa" target="_blank" rel="noopener" lang-en>Enrol on WhatsApp</a><a class="wa" target="_blank" rel="noopener" lang-es>Inscríbete por WhatsApp</a>
-        <a href="#qa" lang-en>Free Sunday Q&amp;A</a><a href="#qa" lang-es>Q&amp;A gratis del domingo</a>
         <a href="#faq" lang-en>FAQ</a><a href="#faq" lang-es>Preguntas</a>
       </div>
     </div>
@@ -671,12 +785,40 @@
   });
 
   /* ---- WhatsApp links (replace the number below with your real WhatsApp) ---- */
-  var WA_NUMBER = '61000000000';
+  var WA_NUMBER = '61468261956';
   var WA_MSG = { en: 'Hi BilinguaLearn! I want to prepare for my English exam.', es: '¡Hola BilinguaLearn! Quiero prepararme para mi examen de inglés.' };
+  function waHref(lang){
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MSG[lang]);
+  }
   function refreshWa(){
     var lang = document.documentElement.getAttribute('data-lang') || 'en';
-    var href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MSG[lang]);
+    var href = waHref(lang);
     document.querySelectorAll('a.wa').forEach(function(a){ a.href = href; });
+  }
+
+  /* ---- payment links ----------------------------------------------------
+     Paste the Calendly URL for each hour pack here. While a value is empty,
+     that button falls back to WhatsApp and reads "Ask about it / Consultar",
+     so nothing on the page is ever a dead link.                            */
+  var PAY_LINKS = {
+    h1:  '',   /* 1 hour  · $80 AUD  */
+    h4:  '',   /* 4 hours · $250 AUD */
+    h10: '',   /* 10 hours · $600 AUD */
+    h20: ''    /* 20 hours · $1000 AUD */
+  };
+  var PAY_LABEL = {
+    pay: { en: 'Pay here',     es: 'Paga aquí' },
+    ask: { en: 'Ask about it', es: 'Consultar' }
+  };
+  function refreshPay(){
+    var lang = document.documentElement.getAttribute('data-lang') || 'en';
+    document.querySelectorAll('a.pay').forEach(function(a){
+      var url = PAY_LINKS[a.getAttribute('data-pay')] || '';
+      var kind = url ? 'pay' : 'ask';
+      a.href = url || waHref(lang);
+      a.querySelector('[lang-en]').textContent = PAY_LABEL[kind].en;
+      a.querySelector('[lang-es]').textContent = PAY_LABEL[kind].es;
+    });
   }
 
   /* ---- language toggle ---- */
@@ -688,24 +830,48 @@
       b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true':'false');
     });
     refreshWa();
+    refreshPay();
   }
   document.querySelectorAll('[data-lang-btn]').forEach(function(b){
     b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang-btn')); });
   });
   setLang('en');
 
-  /* ---- theme toggle ---- */
-  var themeBtn = document.getElementById('themeBtn');
-  function currentTheme(){
-    return document.documentElement.getAttribute('data-theme')
-      || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
-  }
-  function setTheme(t){
-    document.documentElement.setAttribute('data-theme', t);
-    themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
-  }
-  setTheme(currentTheme());
-  themeBtn.addEventListener('click', function(){ setTheme(currentTheme()==='dark'?'light':'dark'); });
+
+  /* ---- reviews -----------------------------------------------------------
+     Real reviews from the Google Business profile. Paste each one verbatim.
+     Leave GOOGLE_RATING as the number shown on the profile.
+     While the list is empty the section shows only the "read them on Google"
+     card, so no invented testimonial is ever displayed.                      */
+  var GOOGLE_RATING = '';           /* e.g. '5.0' */
+  var REVIEWS = [
+    /* { name:'', initial:'', stars:5, meta_en:'', meta_es:'', text_en:'', text_es:'' }, */
+  ];
+
+  (function renderReviews(){
+    var grid = document.getElementById('revGrid');
+    var avg  = document.getElementById('revAvg');
+    if (avg) avg.textContent = GOOGLE_RATING ? GOOGLE_RATING + '\u2605' : '\u2605\u2605\u2605\u2605\u2605';
+    if (!grid || !REVIEWS.length) return;
+    var intro = document.getElementById('revIntro');
+    if (intro) intro.style.display = '';
+    grid.innerHTML = REVIEWS.map(function(r){
+      var stars = '\u2605'.repeat(r.stars || 5);
+      var initial = r.initial || (r.name || '?').charAt(0).toUpperCase();
+      function esc(v){ return String(v == null ? '' : v).replace(/[&<>"]/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+      return '<div class="rev">' +
+        '<div class="stars">' + stars + '</div>' +
+        '<blockquote><span lang-en>' + esc(r.text_en) + '</span>' +
+        '<span lang-es>' + esc(r.text_es || r.text_en) + '</span></blockquote>' +
+        '<div class="who"><span class="av">' + esc(initial) + '</span>' +
+        '<span><b>' + esc(r.name) + '</b>' +
+        '<small lang-en>' + esc(r.meta_en) + '</small>' +
+        '<small lang-es>' + esc(r.meta_es || r.meta_en) + '</small></span></div>' +
+      '</div>';
+    }).join('');
+    setLang(document.documentElement.getAttribute('data-lang') || 'en');
+  })();
 
   /* ---- year ---- */
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -717,6 +883,5 @@
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 </script>
 
-<!-- rebuild nudge 2026-07-25 -->
 </body>
 </html>
