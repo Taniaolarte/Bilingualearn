@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#7c6ff0"/>
 <meta name="description" content="PTE, IELTS & CELPIP coaching for Spanish-speaking migrants in Australia. Certified, personalised, bilingual."/>
 <link rel="icon" type="image/png" href="koala/face.png"/>
-<title>BilinguaLearn — English Exam Coaching in Australia</title>
+<title>BilinguaLearn · English Exam Coaching in Australia</title>
 </head>
 <body>
 
@@ -240,7 +240,13 @@
 
   /* final cta */
   .final{background:linear-gradient(150deg,var(--primary),var(--deep));color:#fff;border-radius:36px;padding:56px 44px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .final img.koala{width:150px;margin:0 auto 18px;animation:floaty 5s ease-in-out infinite}
+  /* m-grad.png bakes CELPIP/IELTS/PTE labels at y62-85 and y435-454, which
+     read as dirt on the purple panel. Crop to the koala itself: the 300px
+     square at (105,95) of the 512px artwork. The float runs on the frame so
+     the motion can never uncover a label. */
+  .final .koala-crop{position:relative;width:min(280px,64vw);aspect-ratio:1;margin:0 auto 20px;
+                     overflow:hidden;animation:floaty 5s ease-in-out infinite}
+  .final img.koala{position:absolute;width:170.7%;max-width:none;left:-35%;top:-31.7%;margin:0}
   .final h2{color:#fff;max-width:16ch;margin:0 auto}
   .final p{color:rgba(255,255,255,.85);margin:14px auto 0;max-width:52ch}
   .final .hero-cta{justify-content:center}
@@ -345,8 +351,8 @@
         <span lang-es>Consigue el puntaje de inglés que necesitas para <span class="hl">avanzar</span> en Australia.</span>
       </h1>
       <p class="lead">
-        <span lang-en>PTE, IELTS &amp; CELPIP prep with a certified coach who understands your journey — personalised online lessons, on your schedule.</span>
-        <span lang-es>Preparación de PTE, IELTS y CELPIP con una coach certificada que entiende tu camino — clases online personalizadas, en tu horario.</span>
+        <span lang-en>PTE, IELTS &amp; CELPIP prep with a certified coach who understands your journey. Personalised online lessons, on your schedule.</span>
+        <span lang-es>Preparación de PTE, IELTS y CELPIP con una coach certificada que entiende tu camino. Clases online personalizadas, en tu horario.</span>
       </p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
@@ -385,13 +391,13 @@
       <span class="eyebrow"><span lang-en>Who it's for</span><span lang-es>Para quién es</span></span>
       <h2><span lang-en>Built for Spanish-speaking migrants chasing an English score.</span><span lang-es>Hecho para migrantes hispanohablantes que buscan un puntaje de inglés.</span></h2>
       <p class="lead" style="margin-top:16px">
-        <span lang-en>Visa, job, or study — the English test is standing between you and your next step. BilinguaLearn is the coaching that gets you across the line, without the generic classroom that ignores where you actually struggle.</span>
-        <span lang-es>Visa, trabajo o estudio — el examen de inglés es lo único entre tú y tu siguiente paso. BilinguaLearn es el coaching que te hace cruzar la meta, sin la clase genérica que ignora dónde realmente te cuesta.</span>
+        <span lang-en>Visa, job, or study: the English test is standing between you and your next step. BilinguaLearn is the coaching that gets you across the line, without the generic classroom that ignores where you actually struggle.</span>
+        <span lang-es>Visa, trabajo o estudio: el examen de inglés es lo único entre tú y tu siguiente paso. BilinguaLearn es el coaching que te hace cruzar la meta, sin la clase genérica que ignora dónde realmente te cuesta.</span>
       </p>
       <ul class="speech" style="margin-top:22px">
-        <li><span class="dot">✓</span><span lang-en><b>Bilingual support</b> — explained in Spanish when you need it, practised in English.</span><span lang-es><b>Apoyo bilingüe</b> — te lo explico en español cuando lo necesitas, practicamos en inglés.</span></li>
-        <li><span class="dot">✓</span><span lang-en><b>Only what you need</b> — we skip the skills you've already mastered.</span><span lang-es><b>Solo lo que necesitas</b> — saltamos las habilidades que ya dominas.</span></li>
-        <li><span class="dot">✓</span><span lang-en><b>Real deadlines</b> — coaching built around your visa or application date.</span><span lang-es><b>Fechas reales</b> — coaching pensado según tu fecha de visa o postulación.</span></li>
+        <li><span class="dot">✓</span><span lang-en><b>Bilingual support</b>, explained in Spanish when you need it and practised in English.</span><span lang-es><b>Apoyo bilingüe</b>: te lo explico en español cuando lo necesitas y practicamos en inglés.</span></li>
+        <li><span class="dot">✓</span><span lang-en><b>Only what you need</b>, so we skip the skills you've already mastered.</span><span lang-es><b>Solo lo que necesitas</b>, así que saltamos las habilidades que ya dominas.</span></li>
+        <li><span class="dot">✓</span><span lang-en><b>Real deadlines</b>, with coaching built around your visa or application date.</span><span lang-es><b>Fechas reales</b>, con coaching pensado según tu fecha de visa o postulación.</span></li>
       </ul>
     </div>
     <div class="reveal">
@@ -417,18 +423,18 @@
     </div>
     <div class="reveal">
       <span class="eyebrow"><span lang-en>Meet your coach</span><span lang-es>Conoce a tu coach</span></span>
-      <h2><span lang-en>Hi, I'm Aura María — I've walked your path.</span><span lang-es>Hola, soy Aura María — he recorrido tu camino.</span></h2>
+      <h2><span lang-en>Hi, I'm Aura María, and I've walked your path.</span><span lang-es>Hola, soy Aura María, y he recorrido tu camino.</span></h2>
       <p class="lead" style="margin-top:16px">
-        <span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. Today I'm a registered Australian teacher (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon — the creators of PTE, CELPIP and IELTS.</span>
-        <span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Hoy soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon — los creadores del PTE, CELPIP e IELTS.</span>
+        <span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. Today I'm a registered Australian teacher (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon, the creators of PTE, CELPIP and IELTS.</span>
+        <span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Hoy soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon, los creadores del PTE, CELPIP e IELTS.</span>
       </p>
       <p style="margin-top:14px;color:var(--muted)">
-        <span lang-en>But before the degrees, there's my story as a migrant — the reason Bilingualearn exists. Like many of you, I went through student visas, the COVID visa, VET courses and even residency in Canada, before Australia became the country I chose to stay in. I know first-hand that the international English exam is often the stone in the shoe between a qualified professional and the life they came here to build.</span>
-        <span lang-es>Pero antes de los títulos, está mi historia como migrante — la razón de ser de Bilingualearn. Como muchos de ustedes, pasé por visas de estudiante, la visa COVID, cursos VET e incluso una residencia en Canadá, antes de que Australia se convirtiera en el país donde decidí quedarme. Sé de primera mano que el examen internacional de inglés suele ser la piedra en el zapato entre un profesional capacitado y la vida que vino a construir aquí.</span>
+        <span lang-en>But before the degrees, there's my story as a migrant, the reason Bilingualearn exists. Like many of you, I went through student visas, the COVID visa, VET courses and even residency in Canada, before Australia became the country I chose to stay in. I know first-hand that the international English exam is often the stone in the shoe between a qualified professional and the life they came here to build.</span>
+        <span lang-es>Pero antes de los títulos, está mi historia como migrante, la razón de ser de Bilingualearn. Como muchos de ustedes, pasé por visas de estudiante, la visa COVID, cursos VET e incluso una residencia en Canadá, antes de que Australia se convirtiera en el país donde decidí quedarme. Sé de primera mano que el examen internacional de inglés suele ser la piedra en el zapato entre un profesional capacitado y la vida que vino a construir aquí.</span>
       </p>
       <p class="pullquote">
-        <span lang-en>"I don't just teach exam strategies — I guide you through the whole migration journey, because I've lived it."</span>
-        <span lang-es>"No enseño solo estrategias de examen — acompaño todo un proceso migratorio, porque lo he vivido."</span>
+        <span lang-en>"I don't just teach exam strategies. I guide you through the whole migration journey, because I've lived it."</span>
+        <span lang-es>"No enseño solo estrategias de examen. Acompaño todo un proceso migratorio, porque lo he vivido."</span>
       </p>
       <div class="coach-creds">
         <span>✔ VIT / AITSL</span>
@@ -439,9 +445,9 @@
       <details class="story">
         <summary><span><span lang-en>Read my full story</span><span lang-es>Lee mi historia completa</span></span><span class="plus">+</span></summary>
         <div class="body">
-          <p><span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. I did my undergraduate degree at the Universidad Pedagógica Nacional de Colombia and my master's at the Universidad Distrital Francisco José de Caldas, and ever since, my path has been tied to language teaching: I've worked as an academic coordinator of English and, today, I'm a registered teacher in Australia (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon — the creators of PTE, CELPIP and IELTS.</span><span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Estudié mi pregrado en la Universidad Pedagógica Nacional de Colombia y mi maestría en la Universidad Distrital Francisco José de Caldas, y desde entonces mi camino ha estado ligado a la enseñanza de idiomas: he trabajado como coordinadora académica de inglés y, hoy, soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon — los creadores del PTE, CELPIP e IELTS.</span></p>
+          <p><span lang-en>I'm a teacher, researcher and educational designer, and I speak Spanish, English and French. I did my undergraduate degree at the Universidad Pedagógica Nacional de Colombia and my master's at the Universidad Distrital Francisco José de Caldas, and ever since, my path has been tied to language teaching: I've worked as an academic coordinator of English and, today, I'm a registered teacher in Australia (VIT/AITSL) and an exam coach certified directly by IDP, Pearson and Paragon, the creators of PTE, CELPIP and IELTS.</span><span lang-es>Soy profesora, investigadora y diseñadora educativa, y hablo español, inglés y francés. Estudié mi pregrado en la Universidad Pedagógica Nacional de Colombia y mi maestría en la Universidad Distrital Francisco José de Caldas, y desde entonces mi camino ha estado ligado a la enseñanza de idiomas: he trabajado como coordinadora académica de inglés y, hoy, soy profesora registrada en Australia (VIT/AITSL) y coach de examen certificada directamente por IDP, Pearson y Paragon, los creadores del PTE, CELPIP e IELTS.</span></p>
           <p><span lang-en>But before the degrees and certifications, there's my story as a migrant, which is the reason Bilingualearn exists. Like many of you, I went through student visas, the COVID visa, VET courses, and I even obtained residency in Canada. It was a long road, made of exams, paperwork and starting over again and again. And along that road, Australia was the country that captivated me: here I decided to stay, and here the idea was born to help other Latino migrants avoid getting lost in the same maze I went through.</span><span lang-es>Pero antes de los títulos y las certificaciones, está mi historia como migrante, que es la razón de ser de Bilingualearn. Como muchos de ustedes, pasé por visas de estudiante, por la visa COVID, por cursos VET, e incluso logré una residencia en Canadá. Fue un camino largo, hecho de exámenes, papeleo y recomenzar una y otra vez. Y en ese camino, Australia fue el país que me cautivó: aquí decidí quedarme, y aquí nació la idea de ayudar a otros migrantes latinos a no perderse en el mismo laberinto que yo recorrí.</span></p>
-          <p><span lang-en>I know, first-hand, that the international English exam is often the stone in the shoe that separates a qualified professional from the life they came to build in Australia. That's why I created Bilingualearn: so that exam stops being an obstacle and becomes the step that finally lets you practise your profession, get your residency, or reach the goal that brought you here. I don't just teach exam strategies. I guide you through an entire migration journey — because I've lived it.</span><span lang-es>Sé, de primera mano, que el examen internacional de inglés suele ser la piedra en el zapato que separa a un profesional capacitado de la vida que vino a construir en Australia. Por eso creé Bilingualearn: para que ese examen deje de ser un obstáculo y se convierta en el paso que por fin les permita ejercer su profesión, obtener su residencia o alcanzar la meta que los trajo hasta aquí. No enseño solo estrategias de examen. Acompaño un proceso migratorio completo, porque lo he vivido.</span></p>
+          <p><span lang-en>I know, first-hand, that the international English exam is often the stone in the shoe that separates a qualified professional from the life they came to build in Australia. That's why I created Bilingualearn: so that exam stops being an obstacle and becomes the step that finally lets you practise your profession, get your residency, or reach the goal that brought you here. I don't just teach exam strategies. I guide you through an entire migration journey, because I've lived it.</span><span lang-es>Sé, de primera mano, que el examen internacional de inglés suele ser la piedra en el zapato que separa a un profesional capacitado de la vida que vino a construir en Australia. Por eso creé Bilingualearn: para que ese examen deje de ser un obstáculo y se convierta en el paso que por fin les permita ejercer su profesión, obtener su residencia o alcanzar la meta que los trajo hasta aquí. No enseño solo estrategias de examen. Acompaño un proceso migratorio completo, porque lo he vivido.</span></p>
         </div>
       </details>
       <div class="hero-cta" style="margin-top:22px">
@@ -458,13 +464,13 @@
       <span class="eyebrow"><span lang-en>Between your lessons</span><span lang-es>Entre tus clases</span></span>
       <h2><span lang-en>Keep improving with the Aura practice app.</span><span lang-es>Sigue mejorando con la app de práctica Aura.</span></h2>
       <p class="lead" style="margin-top:16px">
-        <span lang-en>Your coaching comes with our friendly koala's free general-English app. Small daily tasks keep your English warm — so every paid session goes straight to strategy, not warm-ups.</span>
-        <span lang-es>Tu coaching incluye la app gratuita de inglés general de nuestro koala. Tareas diarias cortas mantienen tu inglés activo — así cada sesión pagada va directo a la estrategia, no al calentamiento.</span>
+        <span lang-en>Your coaching comes with our friendly koala's free general-English app. Small daily tasks keep your English warm, so every paid session goes straight to strategy, not warm-ups.</span>
+        <span lang-es>Tu coaching incluye la app gratuita de inglés general de nuestro koala. Tareas diarias cortas mantienen tu inglés activo, así que cada sesión pagada va directo a la estrategia, no al calentamiento.</span>
       </p>
       <ul class="speech" style="margin-top:20px">
-        <li><span class="dot">📅</span><span lang-en><b>Daily micro-practice</b> — a few minutes a day, offline and private.</span><span lang-es><b>Micro-práctica diaria</b> — unos minutos al día, offline y privada.</span></li>
-        <li><span class="dot">🎧</span><span lang-en><b>All four skills</b> — speaking, writing, reading and listening.</span><span lang-es><b>Las cuatro habilidades</b> — speaking, writing, reading y listening.</span></li>
-        <li><span class="dot">📼</span><span lang-en><b>Every lesson recorded</b> — review your session any time.</span><span lang-es><b>Cada clase grabada</b> — repasa tu sesión cuando quieras.</span></li>
+        <li><span class="dot">📅</span><span lang-en><b>Daily micro-practice</b>: a few minutes a day, offline and private.</span><span lang-es><b>Micro-práctica diaria</b>: unos minutos al día, offline y privada.</span></li>
+        <li><span class="dot">🎧</span><span lang-en><b>All four skills</b>: speaking, writing, reading and listening.</span><span lang-es><b>Las cuatro habilidades</b>: speaking, writing, reading y listening.</span></li>
+        <li><span class="dot">📼</span><span lang-en><b>Every lesson recorded</b>, so you can review your session any time.</span><span lang-es><b>Cada clase grabada</b>, para que repases tu sesión cuando quieras.</span></li>
       </ul>
     </div>
     <div class="reveal">
@@ -483,13 +489,13 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Programs</span><span lang-es>Programas</span></span>
       <h2><span lang-en>Coaching for the exam that unlocks your plan.</span><span lang-es>Coaching para el examen que desbloquea tu plan.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Choose your test — or build general English fluency. Every path is personalised.</span><span lang-es>Elige tu examen — o desarrolla fluidez en inglés general. Cada camino es personalizado.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>Choose your test, or build general English fluency. Every path is personalised.</span><span lang-es>Elige tu examen, o desarrolla fluidez en inglés general. Cada camino es personalizado.</span></p>
     </div>
     <div class="grid g4 reveal">
-      <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading &amp; Listening — the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening — la vía más rápida para muchos migrantes.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic &amp; General Training — band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training — preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>Canada-bound? Fully computer-delivered CELPIP coaching, certified by Paragon-trained methods.</p><p lang-es>¿Rumbo a Canadá? Coaching de CELPIP 100% por computadora, con métodos certificados por Paragon.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>Confidence, pronunciation and everyday fluency for life and work in Australia.</p><p lang-es>Confianza, pronunciación y fluidez cotidiana para la vida y el trabajo en Australia.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for life and work in Australia. Same hour packs, same prices.</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para la vida y el trabajo en Australia. Mismos paquetes de horas, mismos precios.</p></div>
     </div>
   </div>
 </section>
@@ -499,7 +505,7 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>The method</span><span lang-es>El método</span></span>
-      <h2><span lang-en>I focus on your weak spots — not on a generic syllabus.</span><span lang-es>Me enfoco en tus debilidades, no en un temario genérico.</span></h2>
+      <h2><span lang-en>I focus on your weak spots, not on a generic syllabus.</span><span lang-es>Me enfoco en tus debilidades, no en un temario genérico.</span></h2>
       <p class="lead" style="margin-top:12px"><span lang-en>Every student has a different story, level and starting point. Here is how we turn that into a score.</span><span lang-es>Cada estudiante tiene una historia, un nivel y un punto de partida distintos. Así lo convertimos en un puntaje.</span></p>
     </div>
     <div class="steps reveal">
@@ -515,7 +521,7 @@
       </div>
       <div class="step"><div class="n"></div>
         <h3 lang-en>You decide when</h3><h3 lang-es>Tú decides cuándo</h3>
-        <p lang-en>You book each class at the time that works best for you — no fixed timetable.</p>
+        <p lang-en>You book each class at the time that works best for you, with no fixed timetable.</p>
         <p lang-es>Agendas cada clase en el horario que mejor te funcione, sin horarios fijos.</p>
       </div>
     </div>
@@ -556,7 +562,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>What's included</span><span lang-es>Qué incluye</span></span>
       <h2><span lang-en>Resources included in your program.</span><span lang-es>Recursos incluidos en tu programa.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>More than a lesson — a whole system that keeps working between sessions.</span><span lang-es>Más que una clase — todo un sistema que sigue trabajando entre sesiones.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>More than a lesson: a whole system that keeps working between sessions.</span><span lang-es>Más que una clase: todo un sistema que sigue trabajando entre sesiones.</span></p>
     </div>
     <div class="grid g3 reveal">
       <div class="card hoverable"><div class="ic">🐨</div>
@@ -626,7 +632,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Hour packs</span><span lang-es>Paquetes de horas</span></span>
       <h2><span lang-en>Choose the pack that fits your goal.</span><span lang-es>Elige el paquete que se ajuste a tu meta.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Pick the pack that fits your goal and your time. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Elige el paquete que se ajuste a tu meta y tu tiempo. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>Pick the pack that fits your goal and your time. The same prices cover one-to-one general English coaching. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Elige el paquete que se ajuste a tu meta y tu tiempo. Los mismos precios aplican para el coaching individual de inglés general. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
     <div class="pkg-grid reveal">
 
@@ -661,8 +667,8 @@
         <span class="tag"></span>
         <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
         <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You're just starting your learning journey — full preparation across every skill.</p>
-        <p class="desc" lang-es>Recién empiezas tu camino de aprendizaje — preparación integral en todas las habilidades.</p>
+        <p class="desc" lang-en>You're just starting your learning journey, with full preparation across every skill.</p>
+        <p class="desc" lang-es>Recién empiezas tu camino de aprendizaje, con preparación integral en todas las habilidades.</p>
         <a class="btn btn-ghost pay" data-pay="h20" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
       </div>
 
@@ -718,8 +724,8 @@
         <div class="l"><span lang-en>on Google</span><span lang-es>en Google</span></div>
       </div>
       <p>
-        <span lang-en>Read every review — unedited — on our Google Business profile.</span>
-        <span lang-es>Lee todas las reseñas — sin editar — en nuestro perfil de Google.</span>
+        <span lang-en>Read every review, unedited, on our Google Business profile.</span>
+        <span lang-es>Lee todas las reseñas, sin editar, en nuestro perfil de Google.</span>
       </p>
       <a class="btn btn-primary" href="https://www.google.com/maps?cid=675299211831576716" target="_blank" rel="noopener">
         <span lang-en>Read our Google reviews →</span><span lang-es>Ver nuestras reseñas en Google →</span>
@@ -742,10 +748,10 @@
       <h2><span lang-en>Everything migrants ask before starting.</span><span lang-es>Todo lo que preguntan los migrantes antes de empezar.</span></h2>
     </div>
     <div class="faq reveal">
-      <details open><summary><span><span lang-en>Which exam should I take — PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar — PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you — many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida — muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
-      <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level — the 19→53 Writing jump started well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real — el salto de 19 a 53 en Writing empezó muy por debajo del aprobado.</span></p></details>
+      <details open><summary><span><span lang-en>Which exam should I take: PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar: PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you. Many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida. Muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
+      <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level, whatever that is. Plenty of students start well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real, sea cual sea. Muchos estudiantes empiezan muy por debajo del aprobado.</span></p></details>
       <details><summary><span><span lang-en>How are lessons scheduled?</span><span lang-es>¿Cómo se agendan las clases?</span></span><span class="plus">+</span></summary><p><span lang-en>Online and flexible. You book timeslots that suit you, and every lesson is recorded so you can review it later.</span><span lang-es>Online y flexibles. Reservas los horarios que te convienen, y cada clase se graba para que la repases después.</span></p></details>
-      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. After your mock test we recommend a package — 1, 4, 10 or 20 hours. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Tras tu examen de prueba te recomendamos un paquete — 1, 4, 10 o 20 horas. Sin curso fijo, sin desperdicio.</span></p></details>
+      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. After your mock test we recommend a package: 1, 4, 10 or 20 hours. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Tras tu examen de prueba te recomendamos un paquete: 1, 4, 10 o 20 horas. Sin curso fijo, sin desperdicio.</span></p></details>
       <details><summary><span><span lang-en>How much does it cost?</span><span lang-es>¿Cuánto cuesta?</span></span><span class="plus">+</span></summary><p><span lang-en>Because every plan is personalised, we share pricing directly. Message us on WhatsApp with your target and we'll send options.</span><span lang-es>Como cada plan es personalizado, compartimos los precios directamente. Escríbenos por WhatsApp con tu meta y te enviamos opciones.</span></p></details>
     </div>
   </div>
@@ -755,9 +761,9 @@
 <section>
   <div class="wrap">
     <div class="final reveal">
-      <img class="koala" data-img="m-grad" alt="Aura the koala celebrating a graduation"/>
+      <div class="koala-crop"><img class="koala" data-img="m-grad" alt="Aura the koala celebrating a graduation"/></div>
       <h2><span lang-en>Your target score is one message away.</span><span lang-es>Tu puntaje objetivo está a un mensaje de distancia.</span></h2>
-      <p><span lang-en>Tell us your exam and your deadline. We'll build the plan — you bring the ambition.</span><span lang-es>Cuéntanos tu examen y tu fecha límite. Nosotros armamos el plan — tú pones la ambición.</span></p>
+      <p><span lang-en>Tell us your exam and your deadline. We'll build the plan, you bring the ambition.</span><span lang-es>Cuéntanos tu examen y tu fecha límite. Nosotros armamos el plan, tú pones la ambición.</span></p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
         <a class="btn btn-light" href="#packages"><span lang-en>See the hour packs</span><span lang-es>Ver los paquetes de horas</span></a>
@@ -834,7 +840,7 @@
     h1:  BASE + 'bilingualearn',                                        /* 1 hour  · $80 AUD   */
     h4:  BASE + 'packages/5d764ee8-5cb7-4dd7-9385-cc6b69ab41c1',        /* 4 hours · $250 AUD  */
     h10: BASE + 'packages/0f7db65f-6dce-419a-93ab-46a640d24f9e',        /* 10 hours · $600 AUD */
-    h20: ''  /* 20 hours · $1000 AUD — the supplied URL 404s: the UUID
+    h20: ''  /* 20 hours · $1000 AUD. The supplied URL 404s: the UUID
                 .../packages/87baedb3-907b-4794-97fe-36561a6bdb0 ends in 11
                 characters instead of 12, so one was lost when copying.     */
   };
@@ -967,7 +973,9 @@
     var prev = document.getElementById('revPrev'), next = document.getElementById('revNext');
     function step(){
       var card = grid.querySelector('.rev');
-      return card ? card.getBoundingClientRect().width + 18 : 340;
+      if (!card) return 340;
+      var gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+      return card.getBoundingClientRect().width + gap;
     }
     function updateNav(){
       var TOL = 12;   /* snap can rest a few px off either end */
