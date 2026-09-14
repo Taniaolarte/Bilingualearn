@@ -172,6 +172,7 @@
   .pkg .tag{font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-ink);min-height:16px;display:block;margin-bottom:6px}
   .pkg .hrs{font-size:2.6rem;font-weight:900;color:var(--primary-d);line-height:1;font-variant-numeric:tabular-nums}
   .pkg .unit{font-size:.95rem;color:var(--muted);font-weight:700}
+  .pkg .for{display:inline-block;align-self:center;margin-top:12px;padding:4px 10px;border-radius:999px;background:var(--bg,#f4f5fa);border:1px solid var(--line);font-size:.72rem;font-weight:800;color:var(--primary-d);letter-spacing:.02em}
   .pkg .price{margin-top:14px;font-size:1.72rem;font-weight:900;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
   .pkg .price .cur{font-size:.95rem;font-weight:800;color:var(--muted)}
   .pkg .desc{font-size:.86rem;color:var(--muted);margin:12px 0 18px;min-height:38px}
@@ -495,7 +496,7 @@
       <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Same hour packs, same prices.</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Mismos paquetes de horas, mismos precios.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in 10 and 20-hour packs.</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 10 y 20 horas.</p></div>
     </div>
   </div>
 </section>
@@ -632,13 +633,14 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Hour packs</span><span lang-es>Paquetes de horas</span></span>
       <h2><span lang-en>Choose the pack that fits your goal.</span><span lang-es>Elige el paquete que se ajuste a tu meta.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Pick the pack that fits your goal and your time. The same prices cover one-to-one general English coaching. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Elige el paquete que se ajuste a tu meta y tu tiempo. Los mismos precios aplican para el coaching individual de inglés general. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>The 1 and 4-hour packs are for exam prep (PTE, IELTS and CELPIP). The 10 and 20-hour packs are for one-to-one general English coaching only. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Los paquetes de 1 y 4 horas son para preparación de examen (PTE, IELTS y CELPIP). Los paquetes de 10 y 20 horas son solo para coaching individual de inglés general. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
     <div class="pkg-grid reveal">
 
       <div class="pkg">
         <span class="tag"></span>
         <div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div>
+        <span class="for">PTE · IELTS · CELPIP</span>
         <div class="price"><span class="cur">$</span>80<span class="cur"> AUD</span></div>
         <p class="desc" lang-en>You want a diagnosis of your current level and only need to clear up specific doubts, or a final review before your exam date.</p>
         <p class="desc" lang-es>Quieres un diagnóstico de tu nivel actual y solo necesitas resolver dudas puntuales o un repaso final antes de tu fecha del examen.</p>
@@ -648,6 +650,7 @@
       <div class="pkg">
         <span class="tag"></span>
         <div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <span class="for">PTE · IELTS · CELPIP</span>
         <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
         <p class="desc" lang-en>You want a clear guide on how to study. Your score is close to the target; we fine-tune the one or two specific skills holding you back.</p>
         <p class="desc" lang-es>Quieres una guía clara de cómo estudiar. Tu puntaje está cerca de la meta; afinamos 1 o 2 habilidades específicas que te están frenando.</p>
@@ -657,18 +660,20 @@
       <div class="pkg featured">
         <span class="tag" lang-en>Most popular</span><span class="tag" lang-es>Más popular</span>
         <div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
         <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You need more support to raise your level. There's a moderate gap between your current and target score; we work several skills in depth.</p>
-        <p class="desc" lang-es>Necesitas más acompañamiento para mejorar tu nivel. Hay una brecha moderada entre tu puntaje actual y el deseado; trabajamos varias habilidades a fondo.</p>
+        <p class="desc" lang-en>You want to gain confidence and fluency. We work on conversation, pronunciation and the English you need for your work and daily life.</p>
+        <p class="desc" lang-es>Quieres ganar confianza y fluidez. Trabajamos conversación, pronunciación y el inglés que necesitas para tu trabajo y tu vida diaria.</p>
         <a class="btn btn-primary pay" data-pay="h10" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
       </div>
 
       <div class="pkg">
         <span class="tag"></span>
         <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+        <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
         <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You're just starting your learning journey, with full preparation across every skill.</p>
-        <p class="desc" lang-es>Recién empiezas tu camino de aprendizaje, con preparación integral en todas las habilidades.</p>
+        <p class="desc" lang-en>You're just starting your English journey and want a complete, step-by-step process across speaking, listening, reading and writing.</p>
+        <p class="desc" lang-es>Recién empiezas tu camino con el inglés y quieres un proceso completo, paso a paso, en conversación, escucha, lectura y escritura.</p>
         <a class="btn btn-ghost pay" data-pay="h20" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
       </div>
 
@@ -751,7 +756,7 @@
       <details open><summary><span><span lang-en>Which exam should I take: PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar: PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you. Many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida. Muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
       <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level, whatever that is. Plenty of students start well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real, sea cual sea. Muchos estudiantes empiezan muy por debajo del aprobado.</span></p></details>
       <details><summary><span><span lang-en>How are lessons scheduled?</span><span lang-es>¿Cómo se agendan las clases?</span></span><span class="plus">+</span></summary><p><span lang-en>Online and flexible. You book timeslots that suit you, and every lesson is recorded so you can review it later.</span><span lang-es>Online y flexibles. Reservas los horarios que te convienen, y cada clase se graba para que la repases después.</span></p></details>
-      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. After your mock test we recommend a package: 1, 4, 10 or 20 hours. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Tras tu examen de prueba te recomendamos un paquete: 1, 4, 10 o 20 horas. Sin curso fijo, sin desperdicio.</span></p></details>
+      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. For exam prep there are 1 and 4-hour packs; for general English, 10 and 20-hour packs. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para preparación de examen hay paquetes de 1 y 4 horas; para inglés general, paquetes de 10 y 20 horas. Sin curso fijo, sin desperdicio.</span></p></details>
       <details><summary><span><span lang-en>How much does it cost?</span><span lang-es>¿Cuánto cuesta?</span></span><span class="plus">+</span></summary><p><span lang-en>Because every plan is personalised, we share pricing directly. Message us on WhatsApp with your target and we'll send options.</span><span lang-es>Como cada plan es personalizado, compartimos los precios directamente. Escríbenos por WhatsApp con tu meta y te enviamos opciones.</span></p></details>
     </div>
   </div>
