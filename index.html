@@ -16,7 +16,7 @@
     --bg:#f4f3fe; --bg2:#eceafc; --surface:#ffffff; --surface2:#faf9ff;
     --ink:#221d47; --muted:#6c6790; --line:#e6e2f7;
     --primary:#7c6ff0; --primary-d:#6357cf; --deep:#5b52b8; --deep2:#463f97;
-    --accent:#ef8fbb; --accent-ink:#c04d80; --gold:#f2b757; --good:#57b98d;
+    --accent:#ef8fbb; --accent-ink:#c04d80; --gold:#f2b757; --good:#57b98d; --good-d:#2a8a62; --good-bg:#e8f7ef; --good-line:#bfe6d2;
     --halo:rgba(124,111,240,.16); --shadow:0 22px 48px -26px rgba(70,55,150,.55);
     --shadow-sm:0 12px 26px -16px rgba(70,55,150,.5);
     --radius:26px; --maxw:1120px;
@@ -172,11 +172,34 @@
   .pkg .tag{font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-ink);min-height:16px;display:block;margin-bottom:6px}
   .pkg .hrs{font-size:2.6rem;font-weight:900;color:var(--primary-d);line-height:1;font-variant-numeric:tabular-nums}
   .pkg .unit{font-size:.95rem;color:var(--muted);font-weight:700}
+  .pkg .for{display:inline-block;align-self:center;margin-top:12px;padding:4px 10px;border-radius:999px;background:var(--bg,#f4f5fa);border:1px solid var(--line);font-size:.72rem;font-weight:800;color:var(--primary-d);letter-spacing:.02em}
   .pkg .price{margin-top:14px;font-size:1.72rem;font-weight:900;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
   .pkg .price .cur{font-size:.95rem;font-weight:800;color:var(--muted)}
   .pkg .desc{font-size:.86rem;color:var(--muted);margin:12px 0 18px;min-height:38px}
   .pkg .desc:last-of-type{margin-bottom:auto;padding-bottom:18px}
   .pkg .btn{width:100%;font-size:.9rem;padding:11px}
+  /* two clearly separated groups: exam prep (lavender) vs general English (green) */
+  .pkg-group{border-radius:calc(var(--radius) + 6px);padding:22px 22px 24px;border:2px solid var(--line);background:var(--surface2)}
+  .pkg-group+.pkg-group{margin-top:26px}
+  .pkg-group-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:18px}
+  .pkg-group-head h3{font-size:1.25rem;margin:0}
+  .pkg-group-head .note{flex-basis:100%;margin:0;color:var(--muted);font-size:.92rem}
+  .grp{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:.74rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+  .pkg-grid.two{grid-template-columns:repeat(2,1fr);max-width:640px;margin:0 auto}
+  .pkg-group.exam{border-color:var(--primary);background:linear-gradient(180deg,var(--bg2),var(--surface2))}
+  .pkg-group.exam .grp{background:var(--primary);color:#fff}
+  .pkg-group.exam .pkg{border-top:6px solid var(--primary)}
+  .pkg-group.general{border-color:var(--good);background:linear-gradient(180deg,var(--good-bg),var(--surface2))}
+  .pkg-group.general .grp{background:var(--good-d);color:#fff}
+  .pkg-group.general .pkg{border-top:6px solid var(--good)}
+  .pkg-group.general .pkg:hover,.pkg-group.general .pkg.featured{border-color:var(--good);border-top-color:var(--good)}
+  .pkg-group.general .pkg .hrs{color:var(--good-d)}
+  .pkg-group.general .pkg .for{background:var(--good-bg);border-color:var(--good-line);color:var(--good-d)}
+  .pkg-group.general .pkg .btn-primary{background:var(--good-d)}
+  .pkg-group.general .pkg .btn-primary:hover{background:#22704f}
+  .pkg-group.general .pkg .btn-ghost:hover{border-color:var(--good-d);color:var(--good-d)}
+  .pkg .warn{display:flex;align-items:flex-start;gap:6px;text-align:left;margin:0 0 14px;padding:8px 10px;border-radius:12px;background:#fff1f6;border:1px solid #f7c6da;color:var(--accent-ink);font-size:.78rem;font-weight:800;line-height:1.3}
+  .pkg .warn::before{content:"⚠";flex:none}
 
   /* results */
   .results{background:var(--surface);border-radius:34px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
@@ -294,7 +317,8 @@
   }
   @media (max-width:560px){
     section{padding:56px 0}
-    .g2,.g3,.g4,.steps,.pkg-grid,.stat-row{grid-template-columns:1fr}
+    .g2,.g3,.g4,.steps,.pkg-grid,.pkg-grid.two,.stat-row{grid-template-columns:1fr}
+    .pkg-group{padding:16px 14px 18px}
     .badges{grid-template-columns:1fr}
     .rev{flex-basis:80vw}
     .rev-cta{padding:30px 22px}
@@ -495,7 +519,7 @@
       <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Same hour packs, same prices.</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Mismos paquetes de horas, mismos precios.</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in 10 and 20-hour packs (not for exam prep).</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 10 y 20 horas (no es para preparación de examen).</p></div>
     </div>
   </div>
 </section>
@@ -549,8 +573,8 @@
       </div>
       <div class="card hoverable"><div class="ic">⏱️</div>
         <h3 lang-en>Buy by the hour, at your own pace</h3><h3 lang-es>Compra por horas, a tu ritmo</h3>
-        <p lang-en>Pick the pack of hours you need: 1, 4, 10 or 20 hours of class.</p>
-        <p lang-es>Elige el paquete de horas que necesites: 1, 4, 10 o 20 horas de clase.</p>
+        <p lang-en>Exam prep (PTE, IELTS, CELPIP): 1 or 4-hour packs. General English: 10 or 20-hour packs.</p>
+        <p lang-es>Preparación de examen (PTE, IELTS, CELPIP): paquetes de 1 o 4 horas. Inglés general: paquetes de 10 o 20 horas.</p>
       </div>
     </div>
   </div>
@@ -631,47 +655,76 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Hour packs</span><span lang-es>Paquetes de horas</span></span>
-      <h2><span lang-en>Choose the pack that fits your goal.</span><span lang-es>Elige el paquete que se ajuste a tu meta.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Pick the pack that fits your goal and your time. The same prices cover one-to-one general English coaching. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>Elige el paquete que se ajuste a tu meta y tu tiempo. Los mismos precios aplican para el coaching individual de inglés general. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <h2><span lang-en>Two kinds of packs. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose a <strong>purple exam pack</strong> (1 or 4 hours). Want to improve your everyday English? Choose a <strong>green general English pack</strong> (10 or 20 hours). If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige un <strong>paquete morado de examen</strong> (1 o 4 horas). ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (10 o 20 horas). Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
-    <div class="pkg-grid reveal">
 
-      <div class="pkg">
-        <span class="tag"></span>
-        <div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div>
-        <div class="price"><span class="cur">$</span>80<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You want a diagnosis of your current level and only need to clear up specific doubts, or a final review before your exam date.</p>
-        <p class="desc" lang-es>Quieres un diagnóstico de tu nivel actual y solo necesitas resolver dudas puntuales o un repaso final antes de tu fecha del examen.</p>
-        <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+    <div class="pkg-group exam reveal" id="exam-packs">
+      <div class="pkg-group-head">
+        <span class="grp"><span lang-en>Exam prep</span><span lang-es>Preparación de examen</span></span>
+        <h3>PTE · IELTS · CELPIP</h3>
+        <p class="note" lang-en>For students with an exam date or a target score. Only these two packs are for exam preparation.</p>
+        <p class="note" lang-es>Para estudiantes con fecha de examen o puntaje objetivo. Solo estos dos paquetes son de preparación de examen.</p>
       </div>
+      <div class="pkg-grid two">
 
-      <div class="pkg">
-        <span class="tag"></span>
-        <div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
-        <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You want a clear guide on how to study. Your score is close to the target; we fine-tune the one or two specific skills holding you back.</p>
-        <p class="desc" lang-es>Quieres una guía clara de cómo estudiar. Tu puntaje está cerca de la meta; afinamos 1 o 2 habilidades específicas que te están frenando.</p>
-        <a class="btn btn-ghost pay" data-pay="h4" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div>
+          <span class="for" lang-en>Exam prep · PTE · IELTS · CELPIP</span><span class="for" lang-es>Examen · PTE · IELTS · CELPIP</span>
+          <div class="price"><span class="cur">$</span>80<span class="cur"> AUD</span></div>
+          <p class="desc" lang-en>You want a diagnosis of your current level and only need to clear up specific doubts, or a final review before your exam date.</p>
+          <p class="desc" lang-es>Quieres un diagnóstico de tu nivel actual y solo necesitas resolver dudas puntuales o un repaso final antes de tu fecha del examen.</p>
+          <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+
+        <div class="pkg featured">
+          <span class="tag" lang-en>Most chosen for exams</span><span class="tag" lang-es>El más elegido para examen</span>
+          <div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+          <span class="for" lang-en>Exam prep · PTE · IELTS · CELPIP</span><span class="for" lang-es>Examen · PTE · IELTS · CELPIP</span>
+          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
+          <p class="desc" lang-en>You want a clear guide on how to study. Your score is close to the target; we fine-tune the one or two specific skills holding you back.</p>
+          <p class="desc" lang-es>Quieres una guía clara de cómo estudiar. Tu puntaje está cerca de la meta; afinamos 1 o 2 habilidades específicas que te están frenando.</p>
+          <a class="btn btn-primary pay" data-pay="h4" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+
       </div>
+    </div>
 
-      <div class="pkg featured">
-        <span class="tag" lang-en>Most popular</span><span class="tag" lang-es>Más popular</span>
-        <div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
-        <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You need more support to raise your level. There's a moderate gap between your current and target score; we work several skills in depth.</p>
-        <p class="desc" lang-es>Necesitas más acompañamiento para mejorar tu nivel. Hay una brecha moderada entre tu puntaje actual y el deseado; trabajamos varias habilidades a fondo.</p>
-        <a class="btn btn-primary pay" data-pay="h10" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+    <div class="pkg-group general reveal" id="general-packs">
+      <div class="pkg-group-head">
+        <span class="grp"><span lang-en>General English</span><span lang-es>Inglés general</span></span>
+        <h3><span lang-en>One-to-one coaching · not for exams</span><span lang-es>Coaching individual · no es para examen</span></h3>
+        <p class="note" lang-en>For confidence, pronunciation and everyday fluency. These packs do <strong>not</strong> include PTE, IELTS or CELPIP preparation.</p>
+        <p class="note" lang-es>Para ganar confianza, pronunciación y fluidez cotidiana. Estos paquetes <strong>no</strong> incluyen preparación de PTE, IELTS ni CELPIP.</p>
       </div>
+      <div class="pkg-grid two">
 
-      <div class="pkg">
-        <span class="tag"></span>
-        <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
-        <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
-        <p class="desc" lang-en>You're just starting your learning journey, with full preparation across every skill.</p>
-        <p class="desc" lang-es>Recién empiezas tu camino de aprendizaje, con preparación integral en todas las habilidades.</p>
-        <a class="btn btn-ghost pay" data-pay="h20" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        <div class="pkg featured">
+          <span class="tag" lang-en>Most popular for general English</span><span class="tag" lang-es>El más popular en inglés general</span>
+          <div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
+          <p class="desc" lang-en>You want to gain confidence and fluency. We work on conversation, pronunciation and the English you need for your work and daily life.</p>
+          <p class="desc" lang-es>Quieres ganar confianza y fluidez. Trabajamos conversación, pronunciación y el inglés que necesitas para tu trabajo y tu vida diaria.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1 or 4-hour pack above.</p>
+          <p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas de arriba.</p>
+          <a class="btn btn-primary pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
+          <p class="desc" lang-en>You're just starting your English journey and want a complete, step-by-step process across speaking, listening, reading and writing.</p>
+          <p class="desc" lang-es>Recién empiezas tu camino con el inglés y quieres un proceso completo, paso a paso, en conversación, escucha, lectura y escritura.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1 or 4-hour pack above.</p>
+          <p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas de arriba.</p>
+          <a class="btn btn-ghost pay" data-pay="h20" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+
       </div>
-
     </div>
 
     <div class="sec-head center reveal" style="margin-top:64px">
@@ -751,7 +804,7 @@
       <details open><summary><span><span lang-en>Which exam should I take: PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar: PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you. Many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida. Muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
       <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level, whatever that is. Plenty of students start well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real, sea cual sea. Muchos estudiantes empiezan muy por debajo del aprobado.</span></p></details>
       <details><summary><span><span lang-en>How are lessons scheduled?</span><span lang-es>¿Cómo se agendan las clases?</span></span><span class="plus">+</span></summary><p><span lang-en>Online and flexible. You book timeslots that suit you, and every lesson is recorded so you can review it later.</span><span lang-es>Online y flexibles. Reservas los horarios que te convienen, y cada clase se graba para que la repases después.</span></p></details>
-      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. After your mock test we recommend a package: 1, 4, 10 or 20 hours. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Tras tu examen de prueba te recomendamos un paquete: 1, 4, 10 o 20 horas. Sin curso fijo, sin desperdicio.</span></p></details>
+      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. Exam prep (PTE, IELTS, CELPIP) uses the purple 1 and 4-hour packs. General English uses the green 10 and 20-hour packs, which do not include exam preparation. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para preparación de examen (PTE, IELTS, CELPIP) están los paquetes morados de 1 y 4 horas. Para inglés general están los paquetes verdes de 10 y 20 horas, que no incluyen preparación de examen. Sin curso fijo, sin desperdicio.</span></p></details>
       <details><summary><span><span lang-en>How much does it cost?</span><span lang-es>¿Cuánto cuesta?</span></span><span class="plus">+</span></summary><p><span lang-en>Because every plan is personalised, we share pricing directly. Message us on WhatsApp with your target and we'll send options.</span><span lang-es>Como cada plan es personalizado, compartimos los precios directamente. Escríbenos por WhatsApp con tu meta y te enviamos opciones.</span></p></details>
     </div>
   </div>
@@ -858,6 +911,19 @@
       a.querySelector('[lang-es]').textContent = PAY_LABEL[kind].es;
     });
   }
+  /* General-English packs are often bought by mistake by exam students who
+     skip the labels, so the checkout link asks once before leaving the page. */
+  var GENERAL_CONFIRM = {
+    en: 'This is a GENERAL ENGLISH pack (one-to-one coaching).\n\nIt is NOT for PTE, IELTS or CELPIP preparation. For exam prep, choose the 1 or 4-hour pack.\n\nContinue with this general English pack?',
+    es: 'Este es un paquete de INGLÉS GENERAL (coaching individual).\n\nNO es para preparación de PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas.\n\n¿Quieres continuar con este paquete de inglés general?'
+  };
+  document.querySelectorAll('a.pay[data-general]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if(!PAY_LINKS[a.getAttribute('data-pay')]) return; /* "Ask" goes to WhatsApp, no need to confirm */
+      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      if(!window.confirm(GENERAL_CONFIRM[lang] || GENERAL_CONFIRM.en)) e.preventDefault();
+    });
+  });
 
   /* ---- language toggle ---- */
   function setLang(lang){
