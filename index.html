@@ -186,6 +186,12 @@
   .pkg-group-head .note{flex-basis:100%;margin:0;color:var(--muted);font-size:.92rem}
   .grp{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:.74rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
   .pkg-grid.two{grid-template-columns:repeat(2,1fr);max-width:640px;margin:0 auto}
+  .pkg-grid.three{grid-template-columns:repeat(3,1fr)}
+  .pkg .hrs.txt{font-size:1.55rem;line-height:1.15;padding-top:6px}
+  .pkg .tagline{font-size:.95rem;font-weight:800;color:var(--ink);margin:12px 0 0}
+  .pkg .price-note{font-size:.78rem;font-weight:700;color:var(--muted);margin-top:4px}
+  .pkg .desc{text-align:left}
+  .addon-head{margin:26px 0 12px;text-align:center;font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--primary-d)}
   .pkg-group.exam{border-color:var(--primary);background:linear-gradient(180deg,var(--bg2),var(--surface2))}
   .pkg-group.exam .grp{background:var(--primary);color:#fff}
   .pkg-group.exam .pkg{border-top:6px solid var(--primary)}
@@ -308,7 +314,7 @@
   @media (max-width:900px){
     .nav-links{display:none}
     .hero-grid,.split,.results-grid{grid-template-columns:1fr}
-    .g3,.g4,.steps,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+    .g3,.g4,.steps,.pkg-grid,.pkg-grid.three{grid-template-columns:repeat(2,1fr)}
     .rev{flex-basis:300px}
     .trust-in{grid-template-columns:1fr}
     .trust-label{max-width:none}
@@ -317,7 +323,7 @@
   }
   @media (max-width:560px){
     section{padding:56px 0}
-    .g2,.g3,.g4,.steps,.pkg-grid,.pkg-grid.two,.stat-row{grid-template-columns:1fr}
+    .g2,.g3,.g4,.steps,.pkg-grid,.pkg-grid.two,.pkg-grid.three,.stat-row{grid-template-columns:1fr}
     .pkg-group{padding:16px 14px 18px}
     .badges{grid-template-columns:1fr}
     .rev{flex-basis:80vw}
@@ -519,7 +525,7 @@
       <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
       <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in 10 and 20-hour packs (not for exam prep).</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 10 y 20 horas (no es para preparación de examen).</p></div>
+      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in packages of 4, 10 and 20 classes (not for exam prep).</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 4, 10 y 20 clases (no es para preparación de examen).</p></div>
     </div>
   </div>
 </section>
@@ -573,8 +579,8 @@
       </div>
       <div class="card hoverable"><div class="ic">⏱️</div>
         <h3 lang-en>Buy by the hour, at your own pace</h3><h3 lang-es>Compra por horas, a tu ritmo</h3>
-        <p lang-en>Exam prep (PTE, IELTS, CELPIP): 1 or 4-hour packs. General English: 10 or 20-hour packs.</p>
-        <p lang-es>Preparación de examen (PTE, IELTS, CELPIP): paquetes de 1 o 4 horas. Inglés general: paquetes de 10 o 20 horas.</p>
+        <p lang-en>Exam mentoring (PTE, IELTS, CELPIP): a 1-hour class or a 3-class package. General English: 4, 10 or 20 classes.</p>
+        <p lang-es>Mentoría de examen (PTE, IELTS, CELPIP): clase de 1 hora o paquete de 3 clases. Inglés general: 4, 10 o 20 clases.</p>
       </div>
     </div>
   </div>
@@ -654,76 +660,121 @@
 <section id="packages" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow"><span lang-en>Hour packs</span><span lang-es>Paquetes de horas</span></span>
-      <h2><span lang-en>Two kinds of packs. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose a <strong>purple exam pack</strong> (1 or 4 hours). Want to improve your everyday English? Choose a <strong>green general English pack</strong> (10 or 20 hours). If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige un <strong>paquete morado de examen</strong> (1 o 4 horas). ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (10 o 20 horas). Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <span class="eyebrow"><span lang-en>Prices</span><span lang-es>Precios</span></span>
+      <h2><span lang-en>Two kinds of packages. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>purple exam mentoring</strong> (1-hour class or 3-class package, plus optional add-ons). Want to improve your everyday English? Choose a <strong>green general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen morada</strong> (clase de 1 hora o paquete de 3 clases, más complementos opcionales). ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
 
     <div class="pkg-group exam reveal" id="exam-packs">
       <div class="pkg-group-head">
-        <span class="grp"><span lang-en>Exam prep</span><span lang-es>Preparación de examen</span></span>
+        <span class="grp"><span lang-en>Exam mentoring</span><span lang-es>Mentoría para tu examen</span></span>
         <h3>PTE · IELTS · CELPIP</h3>
-        <p class="note" lang-en>For students with an exam date or a target score. Only these two packs are for exam preparation.</p>
-        <p class="note" lang-es>Para estudiantes con fecha de examen o puntaje objetivo. Solo estos dos paquetes son de preparación de examen.</p>
+        <p class="note" lang-en>For students with an exam date or a target score. We start with a diagnostic mock test, build your plan and work only on what you need.</p>
+        <p class="note" lang-es>Para estudiantes con fecha de examen o puntaje objetivo. Empezamos con un mock test de diagnóstico, armamos tu plan y trabajamos solo lo que te hace falta.</p>
       </div>
       <div class="pkg-grid two">
-
         <div class="pkg">
           <span class="tag"></span>
-          <div class="hrs">1</div><div class="unit" lang-en>hour</div><div class="unit" lang-es>hora</div>
-          <span class="for" lang-en>Exam prep · PTE · IELTS · CELPIP</span><span class="for" lang-es>Examen · PTE · IELTS · CELPIP</span>
-          <div class="price"><span class="cur">$</span>80<span class="cur"> AUD</span></div>
-          <p class="desc" lang-en>You want a diagnosis of your current level and only need to clear up specific doubts, or a final review before your exam date.</p>
-          <p class="desc" lang-es>Quieres un diagnóstico de tu nivel actual y solo necesitas resolver dudas puntuales o un repaso final antes de tu fecha del examen.</p>
+          <div class="hrs">1</div><div class="unit" lang-en>class</div><div class="unit" lang-es>clase</div>
+          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
+          <div class="price"><span class="cur">$</span>95<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Polish the one detail that is costing you points.</p><p class="tagline" lang-es>Pule ese detalle que te está costando puntos.</p>
+          <p class="desc" lang-en>Almost there, but one skill or question type keeps holding you back? In this session we go straight to the point: we find what is failing and you leave with concrete strategies to fix it. Ideal for a final push before your exam. Want more? Add hours whenever you need them.</p>
+          <p class="desc" lang-es>¿Ya casi llegas, pero hay una habilidad o un tipo de pregunta que no te deja avanzar? En esta sesión vamos directo al punto: identificamos qué está fallando y te llevas estrategias concretas para corregirlo. Ideal si necesitas un empujón final antes de tu examen. Y si quieres más, puedes sumar horas cuando lo necesites.</p>
+          
           <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
         </div>
-
         <div class="pkg featured">
           <span class="tag" lang-en>Most chosen for exams</span><span class="tag" lang-es>El más elegido para examen</span>
-          <div class="hrs">4</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
-          <span class="for" lang-en>Exam prep · PTE · IELTS · CELPIP</span><span class="for" lang-es>Examen · PTE · IELTS · CELPIP</span>
+          <div class="hrs">3</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
           <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
-          <p class="desc" lang-en>You want a clear guide on how to study. Your score is close to the target; we fine-tune the one or two specific skills holding you back.</p>
-          <p class="desc" lang-es>Quieres una guía clara de cómo estudiar. Tu puntaje está cerca de la meta; afinamos 1 o 2 habilidades específicas que te están frenando.</p>
-          <a class="btn btn-primary pay" data-pay="h4" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+          <p class="tagline" lang-en>Your complete game plan to raise your scores.</p><p class="tagline" lang-es>Tu plan de ataque completo para subir tus puntajes.</p>
+          <p class="desc" lang-en>Three sessions focused 100% on you: we work on your weakest skills without wasting time on what you already master. You learn exactly what to do in every question type that troubles you, with proven strategies and a mentor who speaks your language. Includes access to the Bilingualearn APP to practise every day and to our WhatsApp community with daily tips.</p>
+          <p class="desc" lang-es>Tres sesiones enfocadas 100% en ti: trabajamos tus habilidades más débiles, sin perder tiempo en lo que ya dominas. Aprendes qué hacer exactamente en cada tipo de pregunta que te cuesta, con estrategias probadas y una mentora que entiende tu idioma. Incluye acceso a la Bilingualearn APP para practicar todos los días y a nuestra comunidad de WhatsApp con tips diarios.</p>
+          
+          <a class="btn btn-primary pay" data-pay="c3" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
         </div>
-
+      </div>
+      <p class="addon-head"><span lang-en>Add-ons for your mentoring</span><span lang-es>Complementos para tu mentoría</span></p>
+      <div class="pkg-grid three">
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs txt">📊 <span lang-en>Exam app</span><span lang-es>App de tu examen</span></div>
+          <span class="for" lang-en>Your specific exam’s app (1 month) + analysis + study plan</span><span class="for" lang-es>App de tu examen específico (1 mes) + análisis + plan de estudios</span>
+          <div class="price"><span class="cur">$</span>50<span class="cur"> AUD</span></div><div class="price-note" lang-en>Extend your membership one more month for $20 AUD</div><div class="price-note" lang-es>Extiende la membresía un mes más por $20 AUD</div>
+          <p class="tagline" lang-en>Stop practising blind.</p><p class="tagline" lang-es>Deja de practicar a ciegas.</p>
+          <p class="desc" lang-en>One month of access to the practice app for your specific exam. Every time you take a mock test we study your scores, tell you what is failing and give you a study plan made for you. You will know what to practise each day and where to focus to go up. Need more time? Extend your membership one more month for just $20 AUD.</p>
+          <p class="desc" lang-es>Acceso por un mes a la app de práctica de tu examen específico. Cada vez que hagas un mock test, estudiamos tus puntajes, te decimos qué está fallando y te damos un plan de estudios hecho para ti. Sabrás qué practicar cada día y en qué enfocarte para subir. ¿Necesitas más tiempo? Extiende la membresía un mes más por solo $20 AUD.</p>
+          
+          <a class="btn btn-ghost pay" data-pay="alfa" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs txt">📘 Book</div>
+          <span class="for" lang-en>Strategy book · 100% in Spanish</span><span class="for" lang-es>Libro de estrategias · 100% en español</span>
+          <div class="price"><span class="cur">$</span>150<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD in the combo</div><div class="price-note" lang-es>$50 AUD en combo</div>
+          <p class="tagline" lang-en>All our exam secrets, in your language.</p><p class="tagline" lang-es>Todos nuestros secretos para el examen, en tu idioma.</p>
+          <p class="desc" lang-en>Exactly what to do in every question type, explained in Spanish with proven strategies. Your reference guide to study on your own and walk into the exam knowing how to answer every question. Get it for only $50 when you take it in combo with the 3-class package and your exam’s app.</p>
+          <p class="desc" lang-es>Qué hacer exactamente en cada tipo de pregunta, explicado en español y con estrategias probadas. Tu guía de consulta para estudiar por tu cuenta y llegar al examen sabiendo cómo responder cada pregunta. Llévatelo por solo $50 al tomarlo en combo con el paquete de 3 clases y la app de tu examen.</p>
+          
+          <a class="btn btn-ghost pay" data-pay="book" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg featured">
+          <span class="tag" lang-en>Save $100</span><span class="tag" lang-es>Ahorras $100</span>
+          <div class="hrs txt">🏆 Combo</div>
+          <span class="for" lang-en>Full combo</span><span class="for" lang-es>Combo completo</span>
+          <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div><div class="price-note" lang-en>Separately: $450 AUD</div><div class="price-note" lang-es>Por separado: $450 AUD</div>
+          <p class="tagline" lang-en>Everything you need to reach your score, in one package.</p><p class="tagline" lang-es>Todo lo que necesitas para llegar a tu puntaje, en un solo paquete.</p>
+          <p class="desc" lang-en>3 mentoring classes, your exam’s app with analysis and study plan, and the complete strategy book in Spanish. The most complete (and most affordable) way to prepare: you practise, we measure, we adjust, and you arrive ready.</p>
+          <p class="desc" lang-es>3 clases de mentoría, la app de tu examen con análisis y plan de estudios, y el libro completo de estrategias en español. La forma más completa (y más económica) de prepararte: practicas, medimos, ajustamos y llegas con todo.</p>
+          
+          <a class="btn btn-primary pay" data-pay="combo" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
       </div>
     </div>
 
     <div class="pkg-group general reveal" id="general-packs">
       <div class="pkg-group-head">
         <span class="grp"><span lang-en>General English</span><span lang-es>Inglés general</span></span>
-        <h3><span lang-en>One-to-one coaching · not for exams</span><span lang-es>Coaching individual · no es para examen</span></h3>
-        <p class="note" lang-en>For confidence, pronunciation and everyday fluency. These packs do <strong>not</strong> include PTE, IELTS or CELPIP preparation.</p>
+        <h3><span lang-en>One-to-one classes · not for exams</span><span lang-es>Clases individuales · no es para examen</span></h3>
+        <p class="note" lang-en>For confidence, pronunciation and everyday fluency. These packages do <strong>not</strong> include PTE, IELTS or CELPIP preparation.</p>
         <p class="note" lang-es>Para ganar confianza, pronunciación y fluidez cotidiana. Estos paquetes <strong>no</strong> incluyen preparación de PTE, IELTS ni CELPIP.</p>
       </div>
-      <div class="pkg-grid two">
-
-        <div class="pkg featured">
-          <span class="tag" lang-en>Most popular for general English</span><span class="tag" lang-es>El más popular en inglés general</span>
-          <div class="hrs">10</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
-          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
-          <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
-          <p class="desc" lang-en>You want to gain confidence and fluency. We work on conversation, pronunciation and the English you need for your work and daily life.</p>
-          <p class="desc" lang-es>Quieres ganar confianza y fluidez. Trabajamos conversación, pronunciación y el inglés que necesitas para tu trabajo y tu vida diaria.</p>
-          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1 or 4-hour pack above.</p>
-          <p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas de arriba.</p>
-          <a class="btn btn-primary pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-
+      <div class="pkg-grid three">
         <div class="pkg">
           <span class="tag"></span>
-          <div class="hrs">20</div><div class="unit" lang-en>hours</div><div class="unit" lang-es>horas</div>
+          <div class="hrs">4</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
           <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
-          <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div>
-          <p class="desc" lang-en>You're just starting your English journey and want a complete, step-by-step process across speaking, listening, reading and writing.</p>
-          <p class="desc" lang-es>Recién empiezas tu camino con el inglés y quieres un proceso completo, paso a paso, en conversación, escucha, lectura y escritura.</p>
-          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1 or 4-hour pack above.</p>
-          <p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas de arriba.</p>
+          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Take the first step with confidence.</p><p class="tagline" lang-es>Da el primer paso con confianza.</p>
+          <p class="desc" lang-en>Perfect to get started and feel the change. With a certified teacher who understands your language, you start speaking more fluently and loosening up without fear. You choose the focus: English for your day to day, or getting to know the exam you are going to take.</p>
+          <p class="desc" lang-es>Perfecto para empezar y sentir el cambio. Con un profe certificado que entiende tu idioma, empiezas a hablar con más fluidez y a soltarte sin miedo. Tú eliges el enfoque: inglés para tu día a día o para ir conociendo el examen que vas a presentar.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
+          <a class="btn btn-ghost pay" data-pay="g4" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg featured">
+          <span class="tag" lang-en>Most popular for general English</span><span class="tag" lang-es>El más popular en inglés general</span>
+          <div class="hrs">10</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Consistency that shows.</p><p class="tagline" lang-es>Constancia que se nota.</p>
+          <p class="desc" lang-en>Ten classes to build a solid base and see real progress in your fluency and confidence. Enough time to work at your own pace, fix your usual mistakes and start feeling comfortable speaking English. With a teacher who adapts to what you want to achieve.</p>
+          <p class="desc" lang-es>Diez clases para construir una base sólida y ver avances reales en tu fluidez y tu confianza. Tiempo suficiente para trabajar a tu ritmo, corregir tus errores de siempre y empezar a sentirte cómodo hablando inglés. Con un profe que se ajusta a lo que tú quieres lograr.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
+          <a class="btn btn-primary pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">20</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD per class</div><div class="price-note" lang-es>$50 AUD por clase</div>
+          <p class="tagline" lang-en>The best price per class to transform your English.</p><p class="tagline" lang-es>El mejor precio por clase para transformar tu inglés.</p>
+          <p class="desc" lang-en>Only $50 per class. This is the package for people who mean it: twenty classes to go from “it’s hard for me” to “I feel confident”. You gain fluency, accuracy and the confidence to use your English in any situation.</p>
+          <p class="desc" lang-es>Solo $50 por clase. Es el paquete para quienes van en serio: veinte clases para pasar de “me cuesta” a “me siento seguro”. Ganas fluidez, precisión y la seguridad para usar tu inglés en cualquier situación.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
           <a class="btn btn-ghost pay" data-pay="h20" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
         </div>
-
       </div>
     </div>
 
@@ -804,7 +855,7 @@
       <details open><summary><span><span lang-en>Which exam should I take: PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar: PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you. Many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida. Muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
       <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level, whatever that is. Plenty of students start well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real, sea cual sea. Muchos estudiantes empiezan muy por debajo del aprobado.</span></p></details>
       <details><summary><span><span lang-en>How are lessons scheduled?</span><span lang-es>¿Cómo se agendan las clases?</span></span><span class="plus">+</span></summary><p><span lang-en>Online and flexible. You book timeslots that suit you, and every lesson is recorded so you can review it later.</span><span lang-es>Online y flexibles. Reservas los horarios que te convienen, y cada clase se graba para que la repases después.</span></p></details>
-      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. Exam prep (PTE, IELTS, CELPIP) uses the purple 1 and 4-hour packs. General English uses the green 10 and 20-hour packs, which do not include exam preparation. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para preparación de examen (PTE, IELTS, CELPIP) están los paquetes morados de 1 y 4 horas. Para inglés general están los paquetes verdes de 10 y 20 horas, que no incluyen preparación de examen. Sin curso fijo, sin desperdicio.</span></p></details>
+      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. Exam mentoring (PTE, IELTS, CELPIP) uses the purple 1-hour class or 3-class package, plus optional add-ons like your exam’s app with analysis and the strategy book. General English uses the green packages of 4, 10 or 20 classes, which do not include exam preparation. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para la mentoría de examen (PTE, IELTS, CELPIP) están la clase de 1 hora o el paquete de 3 clases morados, más complementos opcionales como la app de tu examen con análisis y el libro de estrategias. Para inglés general están los paquetes verdes de 4, 10 o 20 clases, que no incluyen preparación de examen. Sin curso fijo, sin desperdicio.</span></p></details>
       <details><summary><span><span lang-en>How much does it cost?</span><span lang-es>¿Cuánto cuesta?</span></span><span class="plus">+</span></summary><p><span lang-en>Because every plan is personalised, we share pricing directly. Message us on WhatsApp with your target and we'll send options.</span><span lang-es>Como cada plan es personalizado, compartimos los precios directamente. Escríbenos por WhatsApp con tu meta y te enviamos opciones.</span></p></details>
     </div>
   </div>
@@ -890,12 +941,16 @@
      the page is ever a dead link.                                          */
   var BASE = 'https://calendly.com/aura-estacio-bilingualearneduau/';
   var PAY_LINKS = {
-    h1:  BASE + 'bilingualearn',                                        /* 1 hour  · $80 AUD   */
-    h4:  BASE + 'packages/5d764ee8-5cb7-4dd7-9385-cc6b69ab41c1',        /* 4 hours · $250 AUD  */
-    h10: BASE + 'packages/0f7db65f-6dce-419a-93ab-46a640d24f9e',        /* 10 hours · $600 AUD */
-    h20: ''  /* 20 hours · $1000 AUD. The supplied URL 404s: the UUID
-                .../packages/87baedb3-907b-4794-97fe-36561a6bdb0 ends in 11
-                characters instead of 12, so one was lost when copying.     */
+    h1:    BASE + 'bilingualearn',                                      /* 1-hour exam class · $95 AUD (price set in Calendly) */
+    c3:    '',  /* 3-class exam package · $250 AUD — create the Calendly package and paste its URL */
+    alfa:  '',  /* Alfa PTE + analysis + study plan · $50 AUD */
+    book:  '',  /* Strategy book · $150 AUD ($50 in combo) */
+    combo: '',  /* Full combo · $350 AUD */
+    g4:    BASE + 'packages/5d764ee8-5cb7-4dd7-9385-cc6b69ab41c1',      /* 4 classes · $250 AUD (general English) */
+    h10:   BASE + 'packages/0f7db65f-6dce-419a-93ab-46a640d24f9e',      /* 10 classes · $600 AUD */
+    h20:   ''   /* 20 classes · $1000 AUD. The supplied URL 404s: the UUID
+                   .../packages/87baedb3-907b-4794-97fe-36561a6bdb0 ends in 11
+                   characters instead of 12, so one was lost when copying.   */
   };
   var PAY_LABEL = {
     pay: { en: 'Book',         es: 'Reservar' },
@@ -914,8 +969,8 @@
   /* General-English packs are often bought by mistake by exam students who
      skip the labels, so the checkout link asks once before leaving the page. */
   var GENERAL_CONFIRM = {
-    en: 'This is a GENERAL ENGLISH pack (one-to-one coaching).\n\nIt is NOT for PTE, IELTS or CELPIP preparation. For exam prep, choose the 1 or 4-hour pack.\n\nContinue with this general English pack?',
-    es: 'Este es un paquete de INGLÉS GENERAL (coaching individual).\n\nNO es para preparación de PTE, IELTS ni CELPIP. Para examen, elige el paquete de 1 o 4 horas.\n\n¿Quieres continuar con este paquete de inglés general?'
+    en: 'This is a GENERAL ENGLISH pack (one-to-one coaching).\n\nIt is NOT for PTE, IELTS or CELPIP preparation. For exam prep, choose the 1-hour class or the 3-class package.\n\nContinue with this general English package?',
+    es: 'Este es un paquete de INGLÉS GENERAL (coaching individual).\n\nNO es para preparación de PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases.\n\n¿Quieres continuar con este paquete de inglés general?'
   };
   document.querySelectorAll('a.pay[data-general]').forEach(function(a){
     a.addEventListener('click', function(e){
