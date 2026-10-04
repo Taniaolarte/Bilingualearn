@@ -17,7 +17,11 @@
       'h20': 'https://buy.stripe.com/14A9AT3Vl7PI0vIc4q53O04'
     };
     if (pkg && stripe_links[pkg]) {
+      // Mark as paid in session when they return
+      sessionStorage.setItem('stripe_paid', 'true');
       window.location.href = stripe_links[pkg];
+    } else {
+      window.location.href = '/';
     }
   </script>
 </head>

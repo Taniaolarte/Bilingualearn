@@ -354,46 +354,74 @@
     .teacher-card .expertise { font-size: .85rem; color: var(--primary); font-weight: 700; margin: 0 0 20px; background: rgba(99,102,241,.08); padding: 8px 12px; border-radius: 6px; display: inline-block; }
     .teacher-card a { display: inline-block; padding: 14px 28px; background: var(--primary); color: white; border-radius: 6px; text-decoration: none; font-weight: 700; margin-top: 16px; transition: all .2s; }
     .teacher-card a:hover { background: var(--primary-d); transform: scale(1.05); }
+    .error-box { background: #fee2e2; border: 2px solid #dc2626; color: #991b1b; padding: 20px; border-radius: 8px; margin: 40px auto; max-width: 500px; }
   </style>
 </head>
 <body>
   <div class="success-wrap">
-    <div class="success-icon">✅</div>
-    <h1 lang-en>Payment successful!</h1>
-    <h1 lang-es>¡Pago exitoso!</h1>
-    <p lang-en>Your payment has been processed. Choose your teacher and book your class below.</p>
-    <p lang-es>Tu pago ha sido procesado. Elige tu profesor y agenda tu clase abajo.</p>
-
-    <div class="teachers-grid" id="teachers"></div>
-
-    <p style="margin-top: 40px; color: var(--muted); font-size: .9rem;">
-      <span lang-en>Questions? <a href="https://wa.me/61468261956" style="color: var(--primary); text-decoration: none;">Message us on WhatsApp</a></span>
-      <span lang-es>¿Preguntas? <a href="https://wa.me/61468261956" style="color: var(--primary); text-decoration: none;">Escríbenos por WhatsApp</a></span>
-    </p>
+    <div id="content"></div>
   </div>
 
   <script>
     const teacherData = {'aura': 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1Pc539fg9DT8dxFn7dOHHWgdE6mYb1KwhwrKQB3qj0MBn3YM3dUjpeO6y43yym08AfIrq9goNr', 'harold': 'https://calendar.app.google/dqW8gAsDSozRxdCz5', 'andrea': 'https://calendar.app.google/EfuJZbPzZT3xLCP28', 'kevin': 'https://calendar.app.google/7UmcC9Cd9rXtce4h8'};
     const teacherInfo = {'aura': {'name': 'Aura María Estacio', 'title': 'Fundadora de BilinguaLearn', 'expertise': 'PTE, IELTS, CELPIP'}, 'harold': {'name': 'Harold', 'title': 'Profesor de Inglés y Francés', 'expertise': 'PTE, IELTS'}, 'andrea': {'name': 'Andrea', 'title': 'Coach de Inglés General e IELTS', 'expertise': 'Inglés general, IELTS'}, 'kevin': {'name': 'Kevin', 'title': 'Profesor de Estudiantes Internacionales', 'expertise': 'Inglés general'}};
-    const allTeachers = Object.keys(teacherInfo);
+    const content = document.getElementById('content');
     
-    const container = document.getElementById('teachers');
-    allTeachers.forEach(t => {
-      const info = teacherInfo[t];
-      const link = teacherData[t];
-      const card = document.createElement('div');
-      card.className = 'teacher-card';
-      card.innerHTML = `
-        <h3>${info.name}</h3>
-        <div class="title">${info.title}</div>
-        <div class="expertise">${info.expertise}</div>
-        <a href="${link}" target="_blank" rel="noopener">
-          <span lang-en>→ Book with ${info.name.split(' ')[0]}</span>
-          <span lang-es>→ Agenda con ${info.name.split(' ')[0]}</span>
-        </a>
+    // Check if coming from Stripe or checkout (validate with sessionStorage)
+    const paid = sessionStorage.getItem('stripe_paid');
+    
+    if (!paid) {
+      // Not paid - show error
+      content.innerHTML = `
+        <div class="error-box">
+          <div style="font-size: 2rem; margin-bottom: 12px;">❌</div>
+          <h1 lang-en>Not authorized</h1>
+          <h1 lang-es>No autorizado</h1>
+          <p lang-en>Please complete your payment first by clicking the pay button.</p>
+          <p lang-es>Por favor completa el pago haciendo clic en el botón de pagar.</p>
+          <a href="/" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background: var(--primary); color: white; border-radius: 6px; text-decoration: none; font-weight: 700;">
+            <span lang-en>← Go back</span><span lang-es>← Volver</span>
+          </a>
+        </div>
       `;
-      container.appendChild(card);
-    });
+    } else {
+      // Paid - show teachers
+      content.innerHTML = `
+        <div class="success-icon">✅</div>
+        <h1 lang-en>Payment successful!</h1>
+        <h1 lang-es>¡Pago exitoso!</h1>
+        <p lang-en>Your payment has been processed. Choose your teacher and book your class below.</p>
+        <p lang-es>Tu pago ha sido procesado. Elige tu profesor y agenda tu clase abajo.</p>
+        <div class="teachers-grid" id="teachers"></div>
+        <p style="margin-top: 40px; color: var(--muted); font-size: .9rem;">
+          <span lang-en>Questions? <a href="https://wa.me/61468261956" style="color: var(--primary); text-decoration: none;">Message us on WhatsApp</a></span>
+          <span lang-es>¿Preguntas? <a href="https://wa.me/61468261956" style="color: var(--primary); text-decoration: none;">Escríbenos por WhatsApp</a></span>
+        </p>
+      `;
+      
+      const container = document.getElementById('teachers');
+      if (container) {
+        Object.keys(teacherInfo).forEach(t => {
+          const info = teacherInfo[t];
+          const link = teacherData[t];
+          const card = document.createElement('div');
+          card.className = 'teacher-card';
+          card.innerHTML = `
+            <h3>${info.name}</h3>
+            <div class="title">${info.title}</div>
+            <div class="expertise">${info.expertise}</div>
+            <a href="${link}" target="_blank" rel="noopener">
+              <span lang-en>→ Book with ${info.name.split(' ')[0]}</span>
+              <span lang-es>→ Agenda con ${info.name.split(' ')[0]}</span>
+            </a>
+          `;
+          container.appendChild(card);
+        });
+      }
+      
+      // Clear the session after showing
+      sessionStorage.removeItem('stripe_paid');
+    }
 
     // Language toggle
     const lang = localStorage.getItem('lang') || 'en';
