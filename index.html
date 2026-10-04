@@ -1126,20 +1126,5 @@
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 </script>
 
-
-  <script>
-    // After Stripe payment, redirect to success page
-    document.querySelectorAll('a.pay').forEach(a => {
-      a.addEventListener('click', function(e) {
-        const pkg = this.getAttribute('data-pay');
-        if (pkg) {
-          // Open Stripe in new tab, then show success page in current tab
-          setTimeout(() => {
-            window.location.href = '/success.html?pkg=' + pkg;
-          }, 500);
-        }
-      });
-    });
-  </script>
 </body>
 </html>
