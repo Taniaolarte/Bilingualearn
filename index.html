@@ -204,6 +204,11 @@
   .pkg-group.general .pkg .btn-primary{background:var(--good-d)}
   .pkg-group.general .pkg .btn-primary:hover{background:#22704f}
   .pkg-group.general .pkg .btn-ghost:hover{border-color:var(--good-d);color:var(--good-d)}
+  .pkg.best{position:relative;border:2px solid var(--primary);border-top-width:6px;background:linear-gradient(180deg,var(--bg2),var(--surface));box-shadow:var(--shadow)}
+  .pkg .ribbon{position:absolute;top:-15px;left:50%;transform:translateX(-50%);white-space:nowrap;padding:5px 14px;border-radius:999px;background:var(--accent-ink);color:#fff;font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-sm)}
+  .pkg-group.exam .pkg-grid.three{padding-top:10px}
+  .pkg .upsell{display:block;text-align:left;margin:0 0 14px;padding:9px 11px;border-radius:12px;background:var(--bg2);border:1px dashed var(--primary);color:var(--primary-d);font-size:.8rem;font-weight:700;line-height:1.35;text-decoration:none}
+  .pkg .upsell:hover{background:var(--surface2)}
   .pkg .warn{display:flex;align-items:flex-start;gap:6px;text-align:left;margin:0 0 14px;padding:8px 10px;border-radius:12px;background:#fff1f6;border:1px solid #f7c6da;color:var(--accent-ink);font-size:.78rem;font-weight:800;line-height:1.3}
   .pkg .warn::before{content:"⚠";flex:none}
 
@@ -663,7 +668,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Prices</span><span lang-es>Precios</span></span>
       <h2><span lang-en>Two kinds of packages. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>purple exam mentoring</strong> (1-hour class or 3-class package, plus optional add-ons). Want to improve your everyday English? Choose a <strong>green general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen morada</strong> (clase de 1 hora o paquete de 3 clases, más complementos opcionales). ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>purple exam mentoring</strong>: the <strong>combo</strong> (3 classes + your exam’s app + strategy book) is the best value, or take the 1-hour class or 3-class package on their own. Want to improve your everyday English? Choose a <strong>green general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen morada</strong>: el <strong>combo</strong> (3 clases + app de tu examen + libro de estrategias) es la mejor opción, o toma la clase de 1 hora o el paquete de 3 clases por separado. ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
 
     <div class="pkg-group exam reveal" id="exam-packs">
@@ -673,7 +678,30 @@
         <p class="note" lang-en>For students with an exam date or a target score. We start with a diagnostic mock test, build your plan and work only on what you need.</p>
         <p class="note" lang-es>Para estudiantes con fecha de examen o puntaje objetivo. Empezamos con un mock test de diagnóstico, armamos tu plan y trabajamos solo lo que te hace falta.</p>
       </div>
-      <div class="pkg-grid two">
+      <div class="pkg-grid three">
+        <div class="pkg featured best" id="combo">
+          <span class="ribbon" lang-en>Best value · save $100</span><span class="ribbon" lang-es>Mejor opción · ahorras $100</span>
+          <span class="tag" lang-en>Recommended for exams</span><span class="tag" lang-es>Recomendado para examen</span>
+          <div class="hrs txt">🏆 Combo</div>
+          <span class="for" lang-en>3 classes + exam app + book</span><span class="for" lang-es>3 clases + app de tu examen + libro</span>
+          <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div><div class="price-note" lang-en>Separately: $450 AUD</div><div class="price-note" lang-es>Por separado: $450 AUD</div>
+          <p class="tagline" lang-en>Everything you need to reach your score, in one package.</p><p class="tagline" lang-es>Todo lo que necesitas para llegar a tu puntaje, en un solo paquete.</p>
+          <p class="desc" lang-en>3 mentoring classes, your exam’s app with analysis and study plan, and the complete strategy book in Spanish. The most complete (and most affordable) way to prepare: you practise, we measure, we adjust, and you arrive ready.</p>
+          <p class="desc" lang-es>3 clases de mentoría, la app de tu examen con análisis y plan de estudios, y el libro completo de estrategias en español. La forma más completa (y más económica) de prepararte: practicas, medimos, ajustamos y llegas con todo.</p>
+          
+          <a class="btn btn-primary pay" data-pay="combo" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">3</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
+          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Your complete game plan to raise your scores.</p><p class="tagline" lang-es>Tu plan de ataque completo para subir tus puntajes.</p>
+          <p class="desc" lang-en>Three sessions focused 100% on you: we work on your weakest skills without wasting time on what you already master. You learn exactly what to do in every question type that troubles you, with proven strategies and a mentor who speaks your language. Includes access to the Bilingualearn APP to practise every day and to our WhatsApp community with daily tips.</p>
+          <p class="desc" lang-es>Tres sesiones enfocadas 100% en ti: trabajamos tus habilidades más débiles, sin perder tiempo en lo que ya dominas. Aprendes qué hacer exactamente en cada tipo de pregunta que te cuesta, con estrategias probadas y una mentora que entiende tu idioma. Incluye acceso a la Bilingualearn APP para practicar todos los días y a nuestra comunidad de WhatsApp con tips diarios.</p>
+          <a class="upsell" href="#combo"><span lang-en>For $100 more you also get your exam’s app and the strategy book. <b>See the combo ↑</b></span><span lang-es>Por $100 más te llevas también la app de tu examen y el libro de estrategias. <b>Ver el combo ↑</b></span></a>
+          <a class="btn btn-ghost pay" data-pay="c3" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
         <div class="pkg">
           <span class="tag"></span>
           <div class="hrs">1</div><div class="unit" lang-en>class</div><div class="unit" lang-es>clase</div>
@@ -685,20 +713,9 @@
           
           <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
         </div>
-        <div class="pkg featured">
-          <span class="tag" lang-en>Most chosen for exams</span><span class="tag" lang-es>El más elegido para examen</span>
-          <div class="hrs">3</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
-          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
-          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
-          <p class="tagline" lang-en>Your complete game plan to raise your scores.</p><p class="tagline" lang-es>Tu plan de ataque completo para subir tus puntajes.</p>
-          <p class="desc" lang-en>Three sessions focused 100% on you: we work on your weakest skills without wasting time on what you already master. You learn exactly what to do in every question type that troubles you, with proven strategies and a mentor who speaks your language. Includes access to the Bilingualearn APP to practise every day and to our WhatsApp community with daily tips.</p>
-          <p class="desc" lang-es>Tres sesiones enfocadas 100% en ti: trabajamos tus habilidades más débiles, sin perder tiempo en lo que ya dominas. Aprendes qué hacer exactamente en cada tipo de pregunta que te cuesta, con estrategias probadas y una mentora que entiende tu idioma. Incluye acceso a la Bilingualearn APP para practicar todos los días y a nuestra comunidad de WhatsApp con tips diarios.</p>
-          
-          <a class="btn btn-primary pay" data-pay="c3" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
       </div>
       <p class="addon-head"><span lang-en>Add-ons for your mentoring</span><span lang-es>Complementos para tu mentoría</span></p>
-      <div class="pkg-grid three">
+      <div class="pkg-grid two">
         <div class="pkg">
           <span class="tag"></span>
           <div class="hrs txt">📊 <span lang-en>Exam app</span><span lang-es>App de tu examen</span></div>
@@ -714,23 +731,12 @@
           <span class="tag"></span>
           <div class="hrs txt">📘 Book</div>
           <span class="for" lang-en>Strategy book · 100% in Spanish</span><span class="for" lang-es>Libro de estrategias · 100% en español</span>
-          <div class="price"><span class="cur">$</span>150<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD in the combo</div><div class="price-note" lang-es>$50 AUD en combo</div>
+          <div class="price"><span class="cur">$</span>150<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD in the <a href="#combo">combo</a></div><div class="price-note" lang-es>$50 AUD en el <a href="#combo">combo</a></div>
           <p class="tagline" lang-en>All our exam secrets, in your language.</p><p class="tagline" lang-es>Todos nuestros secretos para el examen, en tu idioma.</p>
           <p class="desc" lang-en>Exactly what to do in every question type, explained in Spanish with proven strategies. Your reference guide to study on your own and walk into the exam knowing how to answer every question. Get it for only $50 when you take it in combo with the 3-class package and your exam’s app.</p>
           <p class="desc" lang-es>Qué hacer exactamente en cada tipo de pregunta, explicado en español y con estrategias probadas. Tu guía de consulta para estudiar por tu cuenta y llegar al examen sabiendo cómo responder cada pregunta. Llévatelo por solo $50 al tomarlo en combo con el paquete de 3 clases y la app de tu examen.</p>
           
           <a class="btn btn-ghost pay" data-pay="book" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg featured">
-          <span class="tag" lang-en>Save $100</span><span class="tag" lang-es>Ahorras $100</span>
-          <div class="hrs txt">🏆 Combo</div>
-          <span class="for" lang-en>Full combo</span><span class="for" lang-es>Combo completo</span>
-          <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div><div class="price-note" lang-en>Separately: $450 AUD</div><div class="price-note" lang-es>Por separado: $450 AUD</div>
-          <p class="tagline" lang-en>Everything you need to reach your score, in one package.</p><p class="tagline" lang-es>Todo lo que necesitas para llegar a tu puntaje, en un solo paquete.</p>
-          <p class="desc" lang-en>3 mentoring classes, your exam’s app with analysis and study plan, and the complete strategy book in Spanish. The most complete (and most affordable) way to prepare: you practise, we measure, we adjust, and you arrive ready.</p>
-          <p class="desc" lang-es>3 clases de mentoría, la app de tu examen con análisis y plan de estudios, y el libro completo de estrategias en español. La forma más completa (y más económica) de prepararte: practicas, medimos, ajustamos y llegas con todo.</p>
-          
-          <a class="btn btn-primary pay" data-pay="combo" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
         </div>
       </div>
     </div>
