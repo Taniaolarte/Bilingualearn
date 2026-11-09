@@ -22,7 +22,7 @@
     --ink:#17153b; --muted:#5b5878; --line:#e8e4f5;
     --primary:#17153b; --primary-d:#17153b; --on-primary:#ffffff; --deep:#17153b; --deep2:#0e0d24;
     --lav:#c4b5fd; --accent:#c4b5fd; --accent-ink:#5b5878; --gold:#c98a12;
-    --good:#2e8b6e; --good-d:#2e8b6e; --good-bg:#f1faf6; --good-line:#cdeadf; --on-good:#ffffff;
+    --good:#ec7fb6; --good-d:#f9a8d4; --good-bg:#fdf0f7; --good-line:#f8cfe4; --on-good:#17153b;
     --bad:#c2353a; --bad-bg:#fdf1f1; --bad-line:#f3cfd0;
     --halo:#eee9ff; --shadow:0 14px 34px -22px rgba(23,21,59,.35);
     --shadow-sm:0 6px 16px -12px rgba(23,21,59,.3);
@@ -35,7 +35,7 @@
     --ink:#f1eeff; --muted:#b4afd6; --line:#2e2b5c;
     --primary:#c4b5fd; --primary-d:#c4b5fd; --on-primary:#17153b; --deep:#1b1940; --deep2:#0b0a1f;
     --lav:#c4b5fd; --accent:#c4b5fd; --accent-ink:#b4afd6; --gold:#ffd36b;
-    --good:#5fd3ab; --good-d:#5fd3ab; --good-bg:#12302b; --good-line:#245247; --on-good:#0e0d24;
+    --good:#f9a8d4; --good-d:#f9a8d4; --good-bg:#35203a; --good-line:#6a3a5e; --on-good:#17153b;
     --bad:#ff8a8d; --bad-bg:#3a1e2a; --bad-line:#6a3040;
     --halo:#2a2660; --shadow:0 14px 34px -20px rgba(0,0,0,.7);
     --shadow-sm:0 6px 16px -10px rgba(0,0,0,.6);
@@ -456,7 +456,7 @@
   .pkg .ribbon{background:var(--primary);color:var(--on-primary);box-shadow:none;border-radius:8px;font-weight:600}
   .pkg .upsell{background:var(--halo);border:1px dashed var(--lav);color:var(--ink);border-radius:10px}
   .pkg .upsell:hover{background:var(--surface2)}
-  .pkg .warn{background:var(--bad-bg);border-color:var(--bad-line);color:var(--bad);border-radius:10px}
+  .pkg .warn{background:var(--halo);border-color:var(--lav);color:var(--ink);border-radius:10px}
 
   /* reviews, stats, faq */
   .rev{border-radius:var(--radius)}
@@ -873,7 +873,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Prices</span><span lang-es>Precios</span></span>
       <h2><span lang-en>Two kinds of packages. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>purple exam mentoring</strong>: the <strong>combo</strong> (3 classes + your exam’s app + strategy book) is the best value, or take the 1-hour class or 3-class package on their own. Want to improve your everyday English? Choose a <strong>green general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen morada</strong>: el <strong>combo</strong> (3 clases + app de tu examen + libro de estrategias) es la mejor opción, o toma la clase de 1 hora o el paquete de 3 clases por separado. ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete verde de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>lilac exam mentoring</strong>: the <strong>combo</strong> (3 classes + your exam’s app + strategy book) is the best value, or take the 1-hour class or 3-class package on their own. Want to improve your everyday English? Choose a <strong>pink general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen lila</strong>: el <strong>combo</strong> (3 clases + app de tu examen + libro de estrategias) es la mejor opción, o toma la clase de 1 hora o el paquete de 3 clases por separado. ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete rosado de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
     </div>
 
     <div class="pkg-group exam reveal" id="exam-packs">
@@ -1067,7 +1067,7 @@
       <details open><summary><span><span lang-en>Which exam should I take: PTE, IELTS or CELPIP?</span><span lang-es>¿Qué examen debo tomar: PTE, IELTS o CELPIP?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on your visa, destination and how you learn best. Message us your goal and we'll recommend the fastest path for you. Many migrants find PTE the quickest.</span><span lang-es>Depende de tu visa, destino y cómo aprendes mejor. Escríbenos tu meta y te recomendamos la vía más rápida. Muchos migrantes encuentran que PTE es la más veloz.</span></p></details>
       <details><summary><span><span lang-en>Do lessons work if my English is still low?</span><span lang-es>¿Funcionan las clases si mi inglés aún es bajo?</span></span><span class="plus">+</span></summary><p><span lang-en>Yes. We explain in Spanish when you need it and build from your real starting level, whatever that is. Plenty of students start well below a pass.</span><span lang-es>Sí. Explicamos en español cuando lo necesitas y partimos de tu nivel real, sea cual sea. Muchos estudiantes empiezan muy por debajo del aprobado.</span></p></details>
       <details><summary><span><span lang-en>How are lessons scheduled?</span><span lang-es>¿Cómo se agendan las clases?</span></span><span class="plus">+</span></summary><p><span lang-en>Online and flexible. You book timeslots that suit you, and every lesson is recorded so you can review it later.</span><span lang-es>Online y flexibles. Reservas los horarios que te convienen, y cada clase se graba para que la repases después.</span></p></details>
-      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. Exam mentoring (PTE, IELTS, CELPIP) uses the purple 1-hour class or 3-class package, plus optional add-ons like your exam’s app with analysis and the strategy book. General English uses the green packages of 4, 10 or 20 classes, which do not include exam preparation. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para la mentoría de examen (PTE, IELTS, CELPIP) están la clase de 1 hora o el paquete de 3 clases morados, más complementos opcionales como la app de tu examen con análisis y el libro de estrategias. Para inglés general están los paquetes verdes de 4, 10 o 20 clases, que no incluyen preparación de examen. Sin curso fijo, sin desperdicio.</span></p></details>
+      <details><summary><span><span lang-en>How many hours do I need?</span><span lang-es>¿Cuántas horas necesito?</span></span><span class="plus">+</span></summary><p><span lang-en>It depends on the gap to your target score. Exam mentoring (PTE, IELTS, CELPIP) uses the lilac 1-hour class or 3-class package, plus optional add-ons like your exam’s app with analysis and the strategy book. General English uses the pink packages of 4, 10 or 20 classes, which do not include exam preparation. No fixed course, no waste.</span><span lang-es>Depende de la distancia a tu puntaje objetivo. Para la mentoría de examen (PTE, IELTS, CELPIP) están la clase de 1 hora o el paquete de 3 clases lilas, más complementos opcionales como la app de tu examen con análisis y el libro de estrategias. Para inglés general están los paquetes rosados de 4, 10 o 20 clases, que no incluyen preparación de examen. Sin curso fijo, sin desperdicio.</span></p></details>
       <details><summary><span><span lang-en>How much does it cost?</span><span lang-es>¿Cuánto cuesta?</span></span><span class="plus">+</span></summary><p><span lang-en>Because every plan is personalised, we share pricing directly. Message us on WhatsApp with your target and we'll send options.</span><span lang-es>Como cada plan es personalizado, compartimos los precios directamente. Escríbenos por WhatsApp con tu meta y te enviamos opciones.</span></p></details>
     </div>
   </div>
