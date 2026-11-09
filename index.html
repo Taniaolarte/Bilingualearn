@@ -3,9 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="theme-color" content="#7c6ff0"/>
+<meta name="theme-color" content="#17153B"/>
 <meta name="description" content="PTE, IELTS & CELPIP coaching for Spanish-speaking migrants, online worldwide. Certified, personalised, bilingual."/>
 <link rel="icon" type="image/png" href="koala/face.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Comfortaa:wght@400;600;700&display=swap"/>
+<script>(function(){var t;try{t=localStorage.getItem('bl-theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
 <title>BilinguaLearn · Online English Exam Coaching for Migrants</title>
 </head>
 <body>
@@ -13,14 +17,29 @@
 <script>document.documentElement.setAttribute('data-lang','en');</script>
 <style>
   :root{
-    --bg:#f4f3fe; --bg2:#eceafc; --surface:#ffffff; --surface2:#faf9ff;
-    --ink:#221d47; --muted:#6c6790; --line:#e6e2f7;
-    --primary:#7c6ff0; --primary-d:#6357cf; --deep:#5b52b8; --deep2:#463f97;
-    --accent:#ef8fbb; --accent-ink:#c04d80; --gold:#f2b757; --good:#57b98d; --good-d:#2a8a62; --good-bg:#e8f7ef; --good-line:#bfe6d2;
-    --halo:rgba(124,111,240,.16); --shadow:0 22px 48px -26px rgba(70,55,150,.55);
-    --shadow-sm:0 12px 26px -16px rgba(70,55,150,.5);
-    --radius:26px; --maxw:1120px;
-    --sans:ui-rounded,'SF Pro Rounded','Segoe UI',Roboto,'Helvetica Neue',Arial,system-ui,sans-serif;
+    /* light: very pale lavender-white with deep navy accents (same palette as the CELPIP platform) */
+    --bg:#fbfaff; --bg2:#f4f2fc; --surface:#ffffff; --surface2:#f8f6fe;
+    --ink:#17153b; --muted:#5b5878; --line:#e8e4f5;
+    --primary:#17153b; --primary-d:#17153b; --on-primary:#ffffff; --deep:#17153b; --deep2:#0e0d24;
+    --lav:#c4b5fd; --accent:#c4b5fd; --accent-ink:#5b5878; --gold:#c98a12;
+    --good:#2e8b6e; --good-d:#2e8b6e; --good-bg:#f1faf6; --good-line:#cdeadf; --on-good:#ffffff;
+    --bad:#c2353a; --bad-bg:#fdf1f1; --bad-line:#f3cfd0;
+    --halo:#eee9ff; --shadow:0 14px 34px -22px rgba(23,21,59,.35);
+    --shadow-sm:0 6px 16px -12px rgba(23,21,59,.3);
+    --radius:16px; --maxw:1120px;
+    --display:"Fredoka",system-ui,sans-serif; --sans:"Comfortaa",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color-scheme:light;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e0d24; --bg2:#13112e; --surface:#1b1940; --surface2:#16143a;
+    --ink:#f1eeff; --muted:#b4afd6; --line:#2e2b5c;
+    --primary:#c4b5fd; --primary-d:#c4b5fd; --on-primary:#17153b; --deep:#1b1940; --deep2:#0b0a1f;
+    --lav:#c4b5fd; --accent:#c4b5fd; --accent-ink:#b4afd6; --gold:#ffd36b;
+    --good:#5fd3ab; --good-d:#5fd3ab; --good-bg:#12302b; --good-line:#245247; --on-good:#0e0d24;
+    --bad:#ff8a8d; --bad-bg:#3a1e2a; --bad-line:#6a3040;
+    --halo:#2a2660; --shadow:0 14px 34px -20px rgba(0,0,0,.7);
+    --shadow-sm:0 6px 16px -10px rgba(0,0,0,.6);
+    color-scheme:dark;
   }
 
   *{box-sizing:border-box}
@@ -94,17 +113,6 @@
   .hero .lead{margin-top:18px;max-width:34ch}
   .hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
   .hero-art{position:relative;display:grid;place-items:center;min-height:360px}
-  .blob{position:absolute;inset:6% 4%;
-    background:radial-gradient(circle at 40% 35%,#b7aef8,var(--primary) 55%,var(--deep));
-    border-radius:44% 56% 58% 42%/52% 44% 56% 48%;filter:blur(2px);opacity:.9;
-    animation:morph 14s ease-in-out infinite}
-  .hero-art img.koala{position:relative;width:min(88%,420px);filter:drop-shadow(0 26px 30px rgba(70,55,150,.4));animation:floaty 5s ease-in-out infinite}
-  .chip{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:10px 14px;box-shadow:var(--shadow);font-weight:800;font-size:.86rem;display:flex;align-items:center;gap:9px}
-  .chip small{display:block;font-weight:650;color:var(--muted);font-size:.72rem}
-  .chip.c1{top:8%;left:-2%}
-  .chip.c3{bottom:32%;left:-4%;background:var(--primary);color:#fff;border-color:transparent}
-  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes morph{0%,100%{border-radius:44% 56% 58% 42%/52% 44% 56% 48%}50%{border-radius:58% 42% 44% 56%/46% 58% 42% 54%}}
 
   /* trust bar */
   .trust{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -132,16 +140,12 @@
 
   /* about + meet aura split */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-  .aura-card{position:relative;background:linear-gradient(150deg,var(--primary),var(--deep));border-radius:32px;padding:34px;color:#fff;box-shadow:var(--shadow);overflow:hidden}
-  .aura-card::after{content:"";position:absolute;width:230px;height:230px;right:-60px;top:-70px;border-radius:50%;background:rgba(255,255,255,.12)}
-  .aura-card img{width:min(78%,300px);margin:6px auto 0;position:relative;animation:floaty 6s ease-in-out infinite}
   /* coach photo frame */
   .coach-photo{position:relative;width:min(100%,420px);margin:0 auto}
   .coach-photo .frame{border-radius:30px;overflow:hidden;border:6px solid var(--surface);box-shadow:var(--shadow);background:var(--halo)}
   .coach-photo .frame img{width:100%;display:block;animation:none}
   .coach-photo .halo-bg{position:absolute;inset:-14px -14px auto auto;width:64%;height:78%;z-index:-1;border-radius:38% 42% 46% 40%/44% 48% 40% 46%;background:linear-gradient(150deg,var(--primary),var(--deep));opacity:.9}
   .coach-badge{position:absolute;left:-14px;bottom:-14px;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;box-shadow:var(--shadow)}
-  .coach-badge img{width:38px;height:38px;border-radius:10px;background:var(--halo)}
   .coach-badge b{display:block;font-size:.82rem}
   .coach-badge small{color:var(--muted);font-size:.72rem}
   .coach-creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
@@ -274,13 +278,6 @@
 
   /* final cta */
   .final{background:linear-gradient(150deg,var(--primary),var(--deep));color:#fff;border-radius:36px;padding:56px 44px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  /* m-grad.png bakes CELPIP/IELTS/PTE labels at y62-85 and y435-454, which
-     read as dirt on the purple panel. Crop to the koala itself: the 300px
-     square at (105,95) of the 512px artwork. The float runs on the frame so
-     the motion can never uncover a label. */
-  .final .koala-crop{position:relative;width:min(280px,64vw);aspect-ratio:1;margin:0 auto 20px;
-                     overflow:hidden;animation:floaty 5s ease-in-out infinite}
-  .final img.koala{position:absolute;width:170.7%;max-width:none;left:-35%;top:-31.7%;margin:0}
   .final h2{color:#fff;max-width:16ch;margin:0 auto}
   .final p{color:rgba(255,255,255,.85);margin:14px auto 0;max-width:52ch}
   .final .hero-cta{justify-content:center}
@@ -350,12 +347,164 @@
     .brand b{display:none}
     .brand{font-size:.94rem}
   }
+
+  /* ===== Serious look: flat surfaces, navy accents, light + dark ===== */
+  body{background:var(--bg);font-size:15px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand,.btn,.eyebrow,.toggle,summary,.pkg .hrs,.pkg .price,.stat .v,.step .n,.grp,.pkg .ribbon,.pkg .tag,.addon-head,.foot-col h4{font-family:var(--display)}
+  h1,h2,h3{font-weight:600;letter-spacing:-.01em}
+  h1{line-height:1.1} h2{line-height:1.15}
+  .eyebrow{background:none;padding:0;border-radius:0;font-size:.78rem;font-weight:600;letter-spacing:.1em;color:var(--muted);margin-bottom:12px}
+  .lead{font-size:clamp(1rem,1.5vw,1.12rem)}
+  section{padding:68px 0}
+  .btn{font-weight:600;border-radius:12px;padding:13px 22px;font-size:.95rem}
+  .btn-primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary);box-shadow:none}
+  .btn-primary:hover{background:var(--primary);filter:brightness(1.12);transform:none}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+  .btn-light{background:transparent;color:var(--on-panel,#fff);border:1.5px solid rgba(255,255,255,.4)}
+  .btn-wa{background:#25d366;color:#08351a;box-shadow:none}
+  .btn-wa:hover{transform:none;filter:brightness(1.05);box-shadow:none}
+  .btn:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+
+  /* nav */
+  header.nav{background:color-mix(in srgb,var(--bg) 88%,transparent)}
+  .brand{font-weight:600}
+  .brand img{border-radius:8px;background:none}
+  .nav-links a{font-weight:600;font-size:.9rem}
+  .toggle{background:var(--halo);border-radius:10px;padding:3px}
+  .toggle button{border-radius:8px;font-weight:600;font-size:.8rem}
+  .toggle button.on{background:var(--primary);color:var(--on-primary);box-shadow:none}
+  .theme-btn{border:1.5px solid var(--line);background:transparent;color:var(--ink);font:600 .8rem var(--display);border-radius:10px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+  .theme-btn:hover{border-color:var(--ink)}
+  .theme-btn:focus-visible{outline:2px solid var(--lav);outline-offset:2px}
+
+  /* hero: navy panel like the platform home */
+  .hero{padding:28px 0 0}
+  .hero-grid{width:calc(100% - 32px)}
+  .hero-grid{background:#17153b;color:#fff;border-radius:24px;padding:48px 44px;gap:44px;position:relative;overflow:hidden;align-items:center}
+  :root[data-theme="dark"] .hero-grid{background:var(--surface);border:1px solid var(--line)}
+  .hero-grid::after{content:"";position:absolute;right:-90px;bottom:-110px;width:320px;height:320px;border-radius:50%;background:#c4b5fd;opacity:.12;pointer-events:none}
+  .hero-grid>*{position:relative;z-index:1}
+  .hero .eyebrow{color:#c4b5fd}
+  .hero h1{color:#fff;font-size:clamp(1.9rem,4.4vw,3rem)}
+  .hero h1 .hl{color:#c4b5fd}
+  .hero .lead{color:#d9d3ff;max-width:44ch}
+  .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .hero .btn-ghost:hover{border-color:#fff;color:#fff}
+  .hero-art{display:block;min-height:0}
+  .glance{background:rgba(255,255,255,.06);border:1px solid rgba(196,181,253,.28);border-radius:18px;padding:22px 24px}
+  .glance h3{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#c4b5fd;font-weight:600;margin-bottom:6px}
+  .glance ul{list-style:none;margin:0;padding:0}
+  .glance li{padding:13px 0;border-top:1px solid rgba(196,181,253,.2);color:#d9d3ff;font-size:.9rem;line-height:1.45}
+  .glance li:first-child{border-top:0}
+  .glance li b{display:block;color:#fff;font-family:var(--display);font-weight:600;font-size:1rem}
+
+  /* trust bar */
+  .badge{border-radius:12px;padding:12px 14px}
+  .badge b{font-family:var(--display);font-weight:600}
+  .trust-label{font-family:var(--display);font-weight:600}
+  .trust-label span{color:var(--muted)}
+
+  /* cards */
+  .card{box-shadow:none;border-radius:var(--radius);padding:22px}
+  .card.hoverable:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .card.top{border-top:4px solid var(--lav)}
+  .speech .dot{width:8px;height:8px;border-radius:50%;background:var(--lav);margin-top:.55em;font-size:0}
+  .coach-creds span{background:var(--halo);color:var(--ink);font-weight:600;border-radius:8px}
+  .pullquote{background:var(--halo);border-left-color:var(--primary);border-radius:0 10px 10px 0;font-weight:600}
+  .coach-photo .frame{border-radius:20px;border-width:4px;box-shadow:none}
+  .coach-photo .halo-bg{display:none}
+  .coach-badge{border-radius:12px;box-shadow:none;padding:10px 14px}
+  .panel{background:#17153b;color:#fff;border-radius:20px;padding:34px;position:relative;overflow:hidden}
+  :root[data-theme="dark"] .panel{background:var(--surface);border:1px solid var(--line)}
+  .panel::after{content:"";position:absolute;right:-70px;bottom:-70px;width:220px;height:220px;border-radius:50%;background:#c4b5fd;opacity:.12}
+  .panel>*{position:relative;z-index:1}
+  .panel .eyebrow{color:#c4b5fd}
+  .panel h2{color:#fff}
+  .panel p{color:#d9d3ff;margin-top:12px}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .skills span{font:600 .8rem var(--display);border:1px solid rgba(196,181,253,.45);color:#fff;border-radius:99px;padding:6px 14px}
+
+  /* method steps */
+  .step{border-radius:var(--radius)}
+  .step .n{background:var(--halo);color:var(--ink);box-shadow:none;border-radius:10px;font-weight:600}
+
+  /* packages */
+  .pkg{border-radius:var(--radius)}
+  .pkg:hover{transform:translateY(-2px);border-color:var(--ink);box-shadow:var(--shadow)}
+  .pkg.featured{box-shadow:none}
+  .pkg .tag{color:var(--muted);font-weight:600}
+  .pkg .hrs{color:var(--ink);font-weight:600}
+  .pkg .for{background:var(--halo);border-color:transparent;color:var(--ink);font-weight:600}
+  .pkg .price{color:var(--ink);font-weight:600}
+  .pkg-group{border-radius:20px;border:1px solid var(--line);background:var(--surface2)}
+  .pkg-group.exam{border-color:var(--line);background:var(--surface2)}
+  .pkg-group.exam .grp{background:var(--primary);color:var(--on-primary)}
+  .pkg-group.exam .pkg{border-top:4px solid var(--lav)}
+  .pkg-group.general{border-color:var(--line);background:var(--surface2)}
+  .pkg-group.general .grp{background:var(--good-d);color:var(--on-good)}
+  .pkg-group.general .pkg{border-top:4px solid var(--good)}
+  .pkg-group.general .pkg:hover,.pkg-group.general .pkg.featured{border-color:var(--ink);border-top-color:var(--good)}
+  .pkg-group.general .pkg .hrs{color:var(--ink)}
+  .pkg-group.general .pkg .for{background:var(--good-bg);border-color:var(--good-line);color:var(--ink)}
+  .pkg-group.general .pkg .btn-primary{background:var(--good-d);border-color:var(--good-d);color:var(--on-good)}
+  .pkg-group.general .pkg .btn-primary:hover{background:var(--good-d);filter:brightness(1.1)}
+  .pkg-group.general .pkg .btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+  .grp{border-radius:8px;font-weight:600;letter-spacing:.08em}
+  .addon-head{color:var(--muted);font-weight:600}
+  .pkg.best{border:1.5px solid var(--ink);border-top:4px solid var(--lav);background:var(--surface);box-shadow:none}
+  .pkg .ribbon{background:var(--primary);color:var(--on-primary);box-shadow:none;border-radius:8px;font-weight:600}
+  .pkg .upsell{background:var(--halo);border:1px dashed var(--lav);color:var(--ink);border-radius:10px}
+  .pkg .upsell:hover{background:var(--surface2)}
+  .pkg .warn{background:var(--bad-bg);border-color:var(--bad-line);color:var(--bad);border-radius:10px}
+
+  /* reviews, stats, faq */
+  .rev{border-radius:var(--radius)}
+  .rev .more{color:var(--ink)}
+  .rev .who .av{background:var(--halo);color:var(--ink);font-weight:600}
+  .rev-nav button{color:var(--ink);font-weight:600}
+  .rev-nav button:hover:not(:disabled){background:var(--halo);border-color:var(--ink)}
+  .rev-cta{background:#17153b;border-radius:20px;box-shadow:none;color:#fff}
+  :root[data-theme="dark"] .rev-cta{background:var(--surface);border:1px solid var(--line)}
+  .rev-cta .btn-primary{background:#c4b5fd;border-color:#c4b5fd;color:#17153b}
+  .rev-score .v{color:#ffd36b}
+  .stat{border-radius:var(--radius)}
+  .stat .v{color:var(--ink);font-weight:600}
+  details{border-radius:12px}
+  details[open]{border-color:var(--ink)}
+  summary{font-weight:600}
+  summary .plus{background:var(--halo);color:var(--ink);border-radius:8px;font-weight:600}
+  .story summary{color:var(--ink)}
+
+  /* final CTA */
+  .final{background:#17153b;border-radius:24px;box-shadow:none;padding:60px 44px;color:#fff}
+  :root[data-theme="dark"] .final{background:var(--surface);border:1px solid var(--line)}
+  .final::after{content:"";position:absolute;right:-90px;bottom:-110px;width:320px;height:320px;border-radius:50%;background:#c4b5fd;opacity:.12;pointer-events:none}
+  .final>*{position:relative;z-index:1}
+  .final h2{color:#fff}
+
+  /* footer */
+  .foot-brand{font-family:var(--display);font-weight:600}
+  .foot-brand img{background:none}
+  .foot-col a{font-weight:600}
+  .foot-col a:hover{color:var(--ink);text-decoration:underline}
+  .socials a{border-radius:10px;color:var(--ink)}
+  .socials a:hover{border-color:var(--ink);transform:none}
+  .wa-float{box-shadow:0 8px 20px -8px rgba(0,0,0,.4)}
+
+  @media (max-width:900px){.hero-grid{padding:34px 24px;gap:28px}}
+  @media (max-width:560px){
+    .hero{padding-top:16px}
+    .hero-grid{padding:28px 20px;border-radius:18px}
+    .final{padding:40px 22px}
+    header.nav .btn{display:none}
+  }
 </style>
 
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top"><img data-img="face" alt="BilinguaLearn koala mascot"/><span>Bilingua<b>Learn</b></span></a>
+    <a class="brand" href="#top"><img data-img="face" alt="BilinguaLearn"/><span>Bilingua<b>Learn</b></span></a>
     <nav class="nav-links">
       <a href="#programs" lang-en>Programs</a><a href="#programs" lang-es>Programas</a>
       <a href="#method" lang-en>Method</a><a href="#method" lang-es>Método</a>
@@ -369,6 +518,7 @@
         <button data-lang-btn="en" class="on" aria-pressed="true">EN</button>
         <button data-lang-btn="es" aria-pressed="false">ES</button>
       </div>
+      <button type="button" class="theme-btn" id="themeBtn"><span lang-en data-theme-label="en">Dark</span><span lang-es data-theme-label="es">Oscuro</span></button>
       <a class="btn btn-primary" href="#packages"><span lang-en>Book</span><span lang-es>Reservar</span></a>
     </div>
   </div>
@@ -395,10 +545,15 @@
       </div>
     </div>
     <div class="hero-art reveal">
-      <div class="blob" aria-hidden="true"></div>
-      <img class="koala" data-img="m-idle" alt="Aura, the BilinguaLearn koala, studying on a laptop"/>
-      <div class="chip c1">🎓 <span>VIT / AITSL<small lang-en>Registered teacher</small><small lang-es>Docente registrada</small></span></div>
-      <div class="chip c3">💬 <span lang-en>Book online, learn anywhere</span><span lang-es>Reserva online, estudia donde sea</span></div>
+      <div class="glance">
+        <h3><span lang-en>At a glance</span><span lang-es>De un vistazo</span></h3>
+        <ul>
+          <li><b>VIT / AITSL</b><span lang-en>Registered Australian teacher</span><span lang-es>Docente registrada en Australia</span></li>
+          <li><b lang-en>1-to-1, live on Google Meet</b><b lang-es>1 a 1, en vivo por Google Meet</b><span lang-en>Every lesson recorded so you can review it</span><span lang-es>Cada clase grabada para que la repases</span></li>
+          <li><b lang-en>Bilingual support</b><b lang-es>Apoyo bilingüe</b><span lang-en>Explained in Spanish, practised in English</span><span lang-es>Explicado en español, practicado en inglés</span></li>
+          <li><b lang-en>You choose when</b><b lang-es>Tú eliges cuándo</b><span lang-en>Book each class at a time that suits you</span><span lang-es>Agenda cada clase en el horario que te sirva</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -411,10 +566,10 @@
       <span lang-es>Formada y certificada por quienes <span>crean los exámenes</span></span>
     </div>
     <div class="badges">
-      <div class="badge"><span class="b-ic">V</span><span><b>VIT / AITSL</b><small lang-en>Registered Australian teacher</small><small lang-es>Docente registrada en Australia</small></span></div>
-      <div class="badge"><span class="b-ic">P</span><span><b>Pearson</b><small lang-en>Certified PTE coach</small><small lang-es>Coach de PTE certificada</small></span></div>
-      <div class="badge"><span class="b-ic">I</span><span><b>IDP</b><small lang-en>Certified IELTS coach</small><small lang-es>Coach de IELTS certificada</small></span></div>
-      <div class="badge"><span class="b-ic">◆</span><span><b>Paragon</b><small lang-en>Certified CELPIP coach</small><small lang-es>Coach de CELPIP certificada</small></span></div>
+      <div class="badge"><span><b>VIT / AITSL</b><small lang-en>Registered Australian teacher</small><small lang-es>Docente registrada en Australia</small></span></div>
+      <div class="badge"><span><b>Pearson</b><small lang-en>Certified PTE coach</small><small lang-es>Coach de PTE certificada</small></span></div>
+      <div class="badge"><span><b>IDP</b><small lang-en>Certified IELTS coach</small><small lang-es>Coach de IELTS certificada</small></span></div>
+      <div class="badge"><span><b>Paragon</b><small lang-en>Certified CELPIP coach</small><small lang-es>Coach de CELPIP certificada</small></span></div>
     </div>
   </div>
 </div>
@@ -430,17 +585,17 @@
         <span lang-es>Visa, trabajo o estudio: el examen de inglés es lo único entre tú y tu siguiente paso. BilinguaLearn es el coaching que te hace cruzar la meta, sin la clase genérica que ignora dónde realmente te cuesta.</span>
       </p>
       <ul class="speech" style="margin-top:22px">
-        <li><span class="dot">✓</span><span lang-en><b>Bilingual support</b>, explained in Spanish when you need it and practised in English.</span><span lang-es><b>Apoyo bilingüe</b>: te lo explico en español cuando lo necesitas y practicamos en inglés.</span></li>
-        <li><span class="dot">✓</span><span lang-en><b>Only what you need</b>, so we skip the skills you've already mastered.</span><span lang-es><b>Solo lo que necesitas</b>, así que saltamos las habilidades que ya dominas.</span></li>
-        <li><span class="dot">✓</span><span lang-en><b>Real deadlines</b>, with coaching built around your visa or application date.</span><span lang-es><b>Fechas reales</b>, con coaching pensado según tu fecha de visa o postulación.</span></li>
+        <li><span class="dot"></span><span lang-en><b>Bilingual support</b>, explained in Spanish when you need it and practised in English.</span><span lang-es><b>Apoyo bilingüe</b>: te lo explico en español cuando lo necesitas y practicamos en inglés.</span></li>
+        <li><span class="dot"></span><span lang-en><b>Only what you need</b>, so we skip the skills you've already mastered.</span><span lang-es><b>Solo lo que necesitas</b>, así que saltamos las habilidades que ya dominas.</span></li>
+        <li><span class="dot"></span><span lang-en><b>Real deadlines</b>, with coaching built around your visa or application date.</span><span lang-es><b>Fechas reales</b>, con coaching pensado según tu fecha de visa o postulación.</span></li>
       </ul>
     </div>
     <div class="reveal">
       <div class="grid g2">
-        <div class="card hoverable"><div class="ic">🛂</div><h3 lang-en>For your visa</h3><h3 lang-es>Para tu visa</h3><p lang-en>Points-tested visas need proof. We target the exact band you're missing.</p><p lang-es>Las visas por puntaje exigen prueba. Apuntamos a la banda que te falta.</p></div>
-        <div class="card hoverable"><div class="ic">💼</div><h3 lang-en>For work</h3><h3 lang-es>Para trabajo</h3><p lang-en>Registration and employers that require certified English scores.</p><p lang-es>Colegiaturas y empleadores que piden puntajes certificados.</p></div>
-        <div class="card hoverable"><div class="ic">🎓</div><h3 lang-en>For study</h3><h3 lang-es>Para estudiar</h3><p lang-en>University and college entry with the score you actually need.</p><p lang-es>Ingreso a universidad e instituto con el puntaje que de verdad necesitas.</p></div>
-        <div class="card hoverable"><div class="ic">🗣️</div><h3 lang-en>For confidence</h3><h3 lang-es>Para confianza</h3><p lang-en>General English coaching so you thrive after the test, too.</p><p lang-es>Coaching de inglés general para que también brilles después del examen.</p></div>
+        <div class="card hoverable top"><h3 lang-en>For your visa</h3><h3 lang-es>Para tu visa</h3><p lang-en>Points-tested visas need proof. We target the exact band you're missing.</p><p lang-es>Las visas por puntaje exigen prueba. Apuntamos a la banda que te falta.</p></div>
+        <div class="card hoverable top"><h3 lang-en>For work</h3><h3 lang-es>Para trabajo</h3><p lang-en>Registration and employers that require certified English scores.</p><p lang-es>Colegiaturas y empleadores que piden puntajes certificados.</p></div>
+        <div class="card hoverable top"><h3 lang-en>For study</h3><h3 lang-es>Para estudiar</h3><p lang-en>University and college entry with the score you actually need.</p><p lang-es>Ingreso a universidad e instituto con el puntaje que de verdad necesitas.</p></div>
+        <div class="card hoverable top"><h3 lang-en>For confidence</h3><h3 lang-es>Para confianza</h3><p lang-en>General English coaching so you thrive after the test, too.</p><p lang-es>Coaching de inglés general para que también brilles después del examen.</p></div>
       </div>
     </div>
   </div>
@@ -453,7 +608,7 @@
       <div class="coach-photo">
         <div class="halo-bg" aria-hidden="true"></div>
         <div class="frame"><img data-img="aura-coach" alt="Aura, your BilinguaLearn English coach"/></div>
-        <div class="coach-badge"><img data-img="face" alt=""/><span><b>Aura María Estacio</b><small lang-en>Founder &amp; coach · VIT/AITSL</small><small lang-es>Fundadora y coach · VIT/AITSL</small></span></div>
+        <div class="coach-badge"><span><b>Aura María Estacio</b><small lang-en>Founder &amp; coach · VIT/AITSL</small><small lang-es>Fundadora y coach · VIT/AITSL</small></span></div>
       </div>
     </div>
     <div class="reveal">
@@ -472,10 +627,10 @@
         <span lang-es>"No enseño solo estrategias de examen. Acompaño todo un proceso migratorio, porque lo he vivido."</span>
       </p>
       <div class="coach-creds">
-        <span>✔ VIT / AITSL</span>
-        <span>✔ IDP · IELTS</span>
-        <span>✔ Pearson · PTE</span>
-        <span>✔ Paragon · CELPIP</span>
+        <span>VIT / AITSL</span>
+        <span>IDP · IELTS</span>
+        <span>Pearson · PTE</span>
+        <span>Paragon · CELPIP</span>
       </div>
       <details class="story">
         <summary><span><span lang-en>Read my full story</span><span lang-es>Lee mi historia completa</span></span><span class="plus">+</span></summary>
@@ -499,20 +654,21 @@
       <span class="eyebrow"><span lang-en>Between your lessons</span><span lang-es>Entre tus clases</span></span>
       <h2><span lang-en>Keep improving with the Aura practice app.</span><span lang-es>Sigue mejorando con la app de práctica Aura.</span></h2>
       <p class="lead" style="margin-top:16px">
-        <span lang-en>Your coaching comes with our friendly koala's free general-English app. Small daily tasks keep your English warm, so every paid session goes straight to strategy, not warm-ups.</span>
-        <span lang-es>Tu coaching incluye la app gratuita de inglés general de nuestro koala. Tareas diarias cortas mantienen tu inglés activo, así que cada sesión pagada va directo a la estrategia, no al calentamiento.</span>
+        <span lang-en>Your coaching comes with our free general-English app. Small daily tasks keep your English warm, so every paid session goes straight to strategy, not warm-ups.</span>
+        <span lang-es>Tu coaching incluye nuestra app gratuita de inglés general. Tareas diarias cortas mantienen tu inglés activo, así que cada sesión pagada va directo a la estrategia, no al calentamiento.</span>
       </p>
       <ul class="speech" style="margin-top:20px">
-        <li><span class="dot">📅</span><span lang-en><b>Daily micro-practice</b>: a few minutes a day, offline and private.</span><span lang-es><b>Micro-práctica diaria</b>: unos minutos al día, offline y privada.</span></li>
-        <li><span class="dot">🎧</span><span lang-en><b>All four skills</b>: speaking, writing, reading and listening.</span><span lang-es><b>Las cuatro habilidades</b>: speaking, writing, reading y listening.</span></li>
-        <li><span class="dot">📼</span><span lang-en><b>Every lesson recorded</b>, so you can review your session any time.</span><span lang-es><b>Cada clase grabada</b>, para que repases tu sesión cuando quieras.</span></li>
+        <li><span class="dot"></span><span lang-en><b>Daily micro-practice</b>: a few minutes a day, offline and private.</span><span lang-es><b>Micro-práctica diaria</b>: unos minutos al día, offline y privada.</span></li>
+        <li><span class="dot"></span><span lang-en><b>All four skills</b>: speaking, writing, reading and listening.</span><span lang-es><b>Las cuatro habilidades</b>: speaking, writing, reading y listening.</span></li>
+        <li><span class="dot"></span><span lang-en><b>Every lesson recorded</b>, so you can review your session any time.</span><span lang-es><b>Cada clase grabada</b>, para que repases tu sesión cuando quieras.</span></li>
       </ul>
     </div>
     <div class="reveal">
-      <div class="aura-card">
-        <span class="eyebrow" style="background:rgba(255,255,255,.18);color:#fff"><span lang-en>Your study companion</span><span lang-es>Tu compañera de estudio</span></span>
-        <h2 style="color:#fff"><span lang-en>Powered by Aura 🐨</span><span lang-es>Con la ayuda de Aura 🐨</span></h2>
-        <img data-img="m-grad" alt="Aura the koala mascot wearing a graduation cap surrounded by PTE, IELTS and CELPIP"/>
+      <div class="panel">
+        <span class="eyebrow"><span lang-en>Included with your coaching</span><span lang-es>Incluida con tu coaching</span></span>
+        <h2><span lang-en>The Aura practice app.</span><span lang-es>La app de práctica Aura.</span></h2>
+        <p><span lang-en>Free general-English practice for the days between lessons.</span><span lang-es>Práctica gratuita de inglés general para los días entre clases.</span></p>
+        <div class="skills"><span>Speaking</span><span>Writing</span><span>Reading</span><span>Listening</span></div>
       </div>
     </div>
   </div>
@@ -527,10 +683,10 @@
       <p class="lead" style="margin-top:12px"><span lang-en>Choose your test, or build general English fluency. Every path is personalised.</span><span lang-es>Elige tu examen, o desarrolla fluidez en inglés general. Cada camino es personalizado.</span></p>
     </div>
     <div class="grid g4 reveal">
-      <div class="card hoverable"><div class="ic" style="background:#e9f6ee"><img data-img="s-speaking" alt=""/></div><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef1fb"><img data-img="s-writing" alt=""/></div><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#fdeef4"><img data-img="s-reading" alt=""/></div><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
-      <div class="card hoverable"><div class="ic" style="background:#eef7f2"><img data-img="s-listening" alt=""/></div><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in packages of 4, 10 and 20 classes (not for exam prep).</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 4, 10 y 20 clases (no es para preparación de examen).</p></div>
+      <div class="card hoverable top"><h3>PTE</h3><p lang-en>Computer-scored strategy for Speaking, Writing, Reading and Listening, the fastest route for many migrants.</p><p lang-es>Estrategia para el examen por computadora en Speaking, Writing, Reading y Listening, la vía más rápida para muchos migrantes.</p></div>
+      <div class="card hoverable top"><h3>IELTS</h3><p lang-en>Academic and General Training: band-focused prep for visa, study and registration.</p><p lang-es>Academic y General Training: preparación enfocada en la banda para visa, estudio y colegiatura.</p></div>
+      <div class="card hoverable top"><h3>CELPIP</h3><p lang-en>The option almost nobody in Australia knows about, and often the easiest one to pass. Fully computer-delivered, with Paragon-certified methods. It also counts for Canada.</p><p lang-es>La opción que casi nadie conoce en Australia, y muchas veces la más fácil de aprobar. 100% por computadora, con métodos certificados por Paragon. También te sirve para Canadá.</p></div>
+      <div class="card hoverable top"><h3 lang-en>General English</h3><h3 lang-es>Inglés general</h3><p lang-en>One-to-one coaching for confidence, pronunciation and everyday fluency for your life and work, wherever you are. Available in packages of 4, 10 and 20 classes (not for exam prep).</p><p lang-es>Coaching individual para ganar confianza, pronunciación y fluidez cotidiana para tu vida y tu trabajo, estés donde estés. Disponible en paquetes de 4, 10 y 20 clases (no es para preparación de examen).</p></div>
     </div>
   </div>
 </section>
@@ -572,17 +728,17 @@
       <h2><span lang-en>Personalised online lessons.</span><span lang-es>Clases virtuales personalizadas.</span></h2>
     </div>
     <div class="grid g3 reveal">
-      <div class="card hoverable"><div class="ic">💻</div>
+      <div class="card hoverable top">
         <h3 lang-en>1-to-1 on Google Meet</h3><h3 lang-es>Clases 1 a 1 por Google Meet</h3>
         <p lang-en>Fully personalised live sessions, working directly with you: solving your doubts, finding the real reasons you're not hitting your target score, and practising by your side.</p>
         <p lang-es>Sesiones virtuales totalmente personalizadas, en vivo, trabajando directamente contigo: resolviendo tus dudas, identificando las razones por las cuales no alcanzas tu puntaje deseado y practicando a tu lado.</p>
       </div>
-      <div class="card hoverable"><div class="ic">📅</div>
+      <div class="card hoverable top">
         <h3 lang-en>You choose when to take them</h3><h3 lang-es>Tú eliges cuándo tomarlas</h3>
         <p lang-en>Book your sessions at whatever time fits your routine.</p>
         <p lang-es>Agenda tus sesiones en el horario que mejor se acomode a tu rutina.</p>
       </div>
-      <div class="card hoverable"><div class="ic">⏱️</div>
+      <div class="card hoverable top">
         <h3 lang-en>Buy by the hour, at your own pace</h3><h3 lang-es>Compra por horas, a tu ritmo</h3>
         <p lang-en>Exam mentoring (PTE, IELTS, CELPIP): a 1-hour class or a 3-class package. General English: 4, 10 or 20 classes.</p>
         <p lang-es>Mentoría de examen (PTE, IELTS, CELPIP): clase de 1 hora o paquete de 3 clases. Inglés general: 4, 10 o 20 clases.</p>
@@ -600,17 +756,17 @@
       <p class="lead" style="margin-top:12px"><span lang-en>More than a lesson: a whole system that keeps working between sessions.</span><span lang-es>Más que una clase: todo un sistema que sigue trabajando entre sesiones.</span></p>
     </div>
     <div class="grid g3 reveal">
-      <div class="card hoverable"><div class="ic">🐨</div>
+      <div class="card hoverable top">
         <h3 lang-en>Official BilinguaLearn app</h3><h3 lang-es>App oficial Bilingualearn</h3>
         <p lang-en>Your daily guide: what to study each day to strengthen your general English, practice links and daily vocabulary exercises.</p>
         <p lang-es>Tu guía diaria: qué estudiar cada día para fortalecer tu inglés general, links de práctica y ejercicios de vocabulario diario.</p>
       </div>
-      <div class="card hoverable"><div class="ic">📈</div>
+      <div class="card hoverable top">
         <h3>Score Tracker</h3>
         <p lang-en>A defined study plan for each day, plus an app where you log your scores, see your progress and get tips to attack your weak spots. I review your progress too, and we meet to work on every weak area.</p>
         <p lang-es>Un plan de estudio definido para cada día, y una app donde registras tus puntajes, ves tu progreso y recibes consejos para atacar las partes débiles. Yo reviso tu progreso también y nos reunimos para ver cómo mejorar cada aspecto débil.</p>
       </div>
-      <div class="card hoverable"><div class="ic">📚</div>
+      <div class="card hoverable top">
         <h3 lang-en>Study guide</h3><h3 lang-es>Guía de estudio</h3>
         <p lang-en>A manual in Spanish explaining what to do in every question type, with proven strategies.</p>
         <p lang-es>Te entrego un manual en español donde te explico qué hacer en cada tipo de pregunta y te doy estrategias probadas.</p>
@@ -623,12 +779,12 @@
       <p class="lead" style="margin-top:12px"><span lang-en>You don't study alone: you have constant support.</span><span lang-es>No estudias sola/o: tienes soporte constante.</span></p>
     </div>
     <div class="grid g2 reveal">
-      <div class="card hoverable"><div class="ic">💬</div>
+      <div class="card hoverable top">
         <h3 lang-en>Community WhatsApp group</h3><h3 lang-es>Grupo de WhatsApp de la comunidad</h3>
         <p lang-en>I constantly post study tips for the whole BilinguaLearn community: strategies, reminders and motivation.</p>
         <p lang-es>Publico constantemente tips de estudio para toda la comunidad de Bilingualearn: estrategias, recordatorios y motivación.</p>
       </div>
-      <div class="card hoverable"><div class="ic">📲</div>
+      <div class="card hoverable top">
         <h3 lang-en>Direct contact whenever you need it</h3><h3 lang-es>Contacto directo cuando lo necesites</h3>
         <p lang-en>You can message me on WhatsApp whenever you have a question, and I'll gladly sort it out.</p>
         <p lang-es>Me puedes escribir por WhatsApp cuando tengas cualquier duda, y te la resuelvo con gusto.</p>
@@ -658,7 +814,7 @@
         <div class="pkg featured best" id="combo">
           <span class="ribbon" lang-en>Best value · save $100</span><span class="ribbon" lang-es>Mejor opción · ahorras $100</span>
           <span class="tag" lang-en>Recommended for exams</span><span class="tag" lang-es>Recomendado para examen</span>
-          <div class="hrs txt">🏆 Combo</div>
+          <div class="hrs txt">Combo</div>
           <span class="for" lang-en>3 classes + exam app + book</span><span class="for" lang-es>3 clases + app de tu examen + libro</span>
           <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div><div class="price-note" lang-en>Separately: $450 AUD</div><div class="price-note" lang-es>Por separado: $450 AUD</div>
           <p class="tagline" lang-en>Everything you need to reach your score, in one package.</p><p class="tagline" lang-es>Todo lo que necesitas para llegar a tu puntaje, en un solo paquete.</p>
@@ -694,7 +850,7 @@
       <div class="pkg-grid two">
         <div class="pkg">
           <span class="tag"></span>
-          <div class="hrs txt">📊 <span lang-en>Exam app</span><span lang-es>App de tu examen</span></div>
+          <div class="hrs txt"><span lang-en>Exam app</span><span lang-es>App de tu examen</span></div>
           <span class="for" lang-en>Your specific exam’s app (1 month) + analysis + study plan</span><span class="for" lang-es>App de tu examen específico (1 mes) + análisis + plan de estudios</span>
           <div class="price"><span class="cur">$</span>50<span class="cur"> AUD</span></div><div class="price-note" lang-en>Extend your membership one more month for $20 AUD</div><div class="price-note" lang-es>Extiende la membresía un mes más por $20 AUD</div>
           <p class="tagline" lang-en>Stop practising blind.</p><p class="tagline" lang-es>Deja de practicar a ciegas.</p>
@@ -705,7 +861,7 @@
         </div>
         <div class="pkg">
           <span class="tag"></span>
-          <div class="hrs txt">📘 Book</div>
+          <div class="hrs txt">Book</div>
           <span class="for" lang-en>Strategy book · 100% in Spanish</span><span class="for" lang-es>Libro de estrategias · 100% en español</span>
           <div class="price"><span class="cur">$</span>150<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD in the <a href="#combo">combo</a></div><div class="price-note" lang-es>$50 AUD en el <a href="#combo">combo</a></div>
           <p class="tagline" lang-en>All our exam secrets, in your language.</p><p class="tagline" lang-es>Todos nuestros secretos para el examen, en tu idioma.</p>
@@ -848,7 +1004,6 @@
 <section>
   <div class="wrap">
     <div class="final reveal">
-      <div class="koala-crop"><img class="koala" data-img="m-grad" alt="Aura the koala celebrating a graduation"/></div>
       <h2><span lang-en>Your target score is one message away.</span><span lang-es>Tu puntaje objetivo está a un mensaje de distancia.</span></h2>
       <p><span lang-en>Tell us your exam and your deadline. We'll build the plan, you bring the ambition.</span><span lang-es>Cuéntanos tu examen y tu fecha límite. Nosotros armamos el plan, tú pones la ambición.</span></p>
       <div class="hero-cta">
@@ -961,6 +1116,24 @@
     });
   });
 
+  /* ---- theme toggle (light / dark), remembers the choice ---- */
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    try{ localStorage.setItem('bl-theme', t); }catch(e){}
+    var m = document.querySelector('meta[name="theme-color"]'); if(m) m.setAttribute('content', t === 'dark' ? '#0e0d24' : '#17153B');
+    var btn = document.getElementById('themeBtn');
+    if(btn){
+      btn.querySelector('[data-theme-label="en"]').textContent = t === 'dark' ? 'Light' : 'Dark';
+      btn.querySelector('[data-theme-label="es"]').textContent = t === 'dark' ? 'Claro' : 'Oscuro';
+    }
+  }
+  (function(){
+    var btn = document.getElementById('themeBtn');
+    setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+    if(btn) btn.addEventListener('click', function(){
+      setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  })();
   /* ---- language toggle ---- */
   function setLang(lang){
     document.documentElement.setAttribute('data-lang', lang);
