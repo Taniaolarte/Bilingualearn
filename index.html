@@ -215,6 +215,20 @@
   .pkg .upsell:hover{background:var(--surface2)}
   .pkg .warn{display:flex;align-items:flex-start;gap:6px;text-align:left;margin:0 0 14px;padding:8px 10px;border-radius:12px;background:#fff1f6;border:1px solid #f7c6da;color:var(--accent-ink);font-size:.78rem;font-weight:800;line-height:1.3}
   .pkg .warn::before{content:"⚠";flex:none}
+  /* Precios + autonomo (rev. Nov 2026): one row of 3 cards, navy combo, lavender self-study cards */
+  .pkg .ideal{font-size:.84rem;font-weight:700;color:var(--ink);background:var(--halo);border-radius:14px;padding:9px 11px;margin:auto 0 14px;text-align:left;line-height:1.35}
+  .pkg .desc{min-height:0}
+  .pkg .desc+.ideal{margin-top:auto}
+  .pkg.navy{background:#17153b;border-color:#17153b;color:#f1eeff}
+  .pkg.navy .tag,.pkg.navy .hrs,.pkg.navy .price,.pkg.navy .price .cur,.pkg.navy .desc{color:#f1eeff}
+  .pkg.navy .tag{color:#c4b5fd}
+  .pkg.navy .ideal{background:rgba(255,255,255,.12);color:#f1eeff}
+  .pkg.navy .btn{background:#fff;color:#17153b;border-color:#fff}
+  .pkg.navy .btn:hover{background:#e9e4ff;border-color:#e9e4ff}
+  .pkg.navy:hover{border-color:#17153b}
+  .pkg.lav{background:var(--halo);border-color:var(--lav)}
+  .pkg.lav:hover{border-color:var(--lav)}
+  .general-line{margin:26px 0 0;color:var(--muted);font-weight:700;font-size:.95rem}
 
   /* results */
   .results{background:var(--surface);border-radius:34px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
@@ -561,7 +575,7 @@
       <a href="#method" lang-en>Method</a><a href="#method" lang-es>Método</a>
       <a href="#aura" lang-en>Meet Aura</a><a href="#aura" lang-es>Conoce a Aura</a>
       <a href="#team" lang-en>Team</a><a href="#team" lang-es>Equipo</a>
-      <a href="#packages" lang-en>Prices</a><a href="#packages" lang-es>Precios</a>
+      <a href="#precios" lang-en>Prices</a><a href="#precios" lang-es>Precios</a>
       <a href="#results" lang-en>Reviews</a><a href="#results" lang-es>Reseñas</a>
       <a href="#faq" lang-en>FAQ</a><a href="#faq" lang-es>Preguntas</a>
     </nav>
@@ -571,7 +585,7 @@
         <button data-lang-btn="es" aria-pressed="false">ES</button>
       </div>
       <button type="button" class="theme-btn" id="themeBtn"><span lang-en data-theme-label="en">Dark</span><span lang-es data-theme-label="es">Oscuro</span></button>
-      <a class="btn btn-primary" href="#packages"><span lang-en>Book</span><span lang-es>Reservar</span></a>
+      <a class="btn btn-primary" href="#precios"><span lang-en>Book</span><span lang-es>Reservar</span></a>
     </div>
   </div>
 </header>
@@ -593,7 +607,7 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
-        <a class="btn btn-ghost" href="#packages"><span lang-en>See prices</span><span lang-es>Ver precios</span></a>
+        <a class="btn btn-ghost" href="#precios"><span lang-en>See prices</span><span lang-es>Ver precios</span></a>
       </div>
     </div>
     <div class="hero-art reveal">
@@ -868,152 +882,72 @@
 
 
 <!-- ============ PACKAGES ============ -->
-<section id="packages" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="precios" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow"><span lang-en>Prices</span><span lang-es>Precios</span></span>
-      <h2><span lang-en>Two kinds of packages. Pick the right one for you.</span><span lang-es>Dos tipos de paquetes. Elige el correcto para ti.</span></h2>
-      <p class="lead" style="margin-top:12px"><span lang-en>Preparing for PTE, IELTS or CELPIP? Choose the <strong>lilac exam mentoring</strong>: the <strong>combo</strong> (3 classes + your exam’s app + strategy book) is the best value, or take the 1-hour class or 3-class package on their own. Want to improve your everyday English? Choose a <strong>pink general English package</strong> (4, 10 or 20 classes). All prices in Australian dollars. If you have a friend and want a two-person option, message me and I'll give you more options.</span><span lang-es>¿Te preparas para PTE, IELTS o CELPIP? Elige la <strong>mentoría de examen lila</strong>: el <strong>combo</strong> (3 clases + app de tu examen + libro de estrategias) es la mejor opción, o toma la clase de 1 hora o el paquete de 3 clases por separado. ¿Quieres mejorar tu inglés del día a día? Elige un <strong>paquete rosado de inglés general</strong> (4, 10 o 20 clases). Todos los precios en dólares australianos. Si tienes un amigo y quieres una opción en pareja, escríbeme y te doy más opciones.</span></p>
+      <h2><span lang-en>Exam preparation for your test</span><span lang-es>Preparación para tu examen</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>PTE, IELTS or CELPIP. Choose the option that suits you.</span><span lang-es>PTE, IELTS o CELPIP. Elige la opción que va contigo.</span></p>
     </div>
 
-    <div class="pkg-group exam reveal" id="exam-packs">
-      <div class="pkg-group-head">
-        <span class="grp"><span lang-en>Exam mentoring</span><span lang-es>Mentoría para tu examen</span></span>
-        <h3>PTE · IELTS · CELPIP</h3>
-        <p class="note" lang-en>For students with an exam date or a target score. We start with a diagnostic mock test, build your plan and work only on what you need.</p>
-        <p class="note" lang-es>Para estudiantes con fecha de examen o puntaje objetivo. Empezamos con un mock test de diagnóstico, armamos tu plan y trabajamos solo lo que te hace falta.</p>
+    <div class="pkg-grid three reveal">
+      <div class="pkg">
+        <span class="tag"></span>
+        <div class="hrs txt"><span lang-en>Individual class</span><span lang-es>Clase individual</span></div>
+        <div class="price"><span class="cur">$</span>95<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>Polish the one detail that is costing you points.</p><p class="desc" lang-es>Pule ese detalle que te está costando puntos.</p>
+        <p class="ideal"><span lang-en>Ideal if you’re almost there.</span><span lang-es>Ideal si ya casi llegas.</span></p>
+        <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en>Choose</span><span lang-es>Elegir</span></a>
       </div>
-      <div class="pkg-grid three">
-        <div class="pkg featured best" id="combo">
-          <span class="ribbon" lang-en>Best value · save $100</span><span class="ribbon" lang-es>Mejor opción · ahorras $100</span>
-          <span class="tag" lang-en>Recommended for exams</span><span class="tag" lang-es>Recomendado para examen</span>
-          <div class="hrs txt">Combo</div>
-          <span class="for" lang-en>3 classes + exam app + book</span><span class="for" lang-es>3 clases + app de tu examen + libro</span>
-          <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div><div class="price-note" lang-en>Separately: $450 AUD</div><div class="price-note" lang-es>Por separado: $450 AUD</div>
-          <p class="tagline" lang-en>Everything you need to reach your score, in one package.</p><p class="tagline" lang-es>Todo lo que necesitas para llegar a tu puntaje, en un solo paquete.</p>
-          <p class="desc" lang-en>3 mentoring classes, your exam’s app with analysis and study plan, and the complete strategy book in Spanish. The most complete (and most affordable) way to prepare: you practise, we measure, we adjust, and you arrive ready.</p>
-          <p class="desc" lang-es>3 clases de mentoría, la app de tu examen con análisis y plan de estudios, y el libro completo de estrategias en español. La forma más completa (y más económica) de prepararte: practicas, medimos, ajustamos y llegas con todo.</p>
-          
-          <a class="btn btn-primary pay" data-pay="combo" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs">3</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
-          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
-          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
-          <p class="tagline" lang-en>Your complete game plan to raise your scores.</p><p class="tagline" lang-es>Tu plan de ataque completo para subir tus puntajes.</p>
-          <p class="desc" lang-en>Three sessions focused 100% on you: we work on your weakest skills without wasting time on what you already master. You learn exactly what to do in every question type that troubles you, with proven strategies and a mentor who speaks your language. Includes access to our WhatsApp community with daily tips.</p>
-          <p class="desc" lang-es>Tres sesiones enfocadas 100% en ti: trabajamos tus habilidades más débiles, sin perder tiempo en lo que ya dominas. Aprendes qué hacer exactamente en cada tipo de pregunta que te cuesta, con estrategias probadas y una mentora que entiende tu idioma. Incluye acceso a nuestra comunidad de WhatsApp con tips diarios.</p>
-          <a class="upsell" href="#combo"><span lang-en>For $100 more you also get your exam’s app and the strategy book. <b>See the combo ↑</b></span><span lang-es>Por $100 más te llevas también la app de tu examen y el libro de estrategias. <b>Ver el combo ↑</b></span></a>
-          <a class="btn btn-ghost pay" data-pay="c3" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs">1</div><div class="unit" lang-en>class</div><div class="unit" lang-es>clase</div>
-          <span class="for" lang-en>Exam mentoring · PTE · IELTS · CELPIP</span><span class="for" lang-es>Mentoría de examen · PTE · IELTS · CELPIP</span>
-          <div class="price"><span class="cur">$</span>95<span class="cur"> AUD</span></div>
-          <p class="tagline" lang-en>Polish the one detail that is costing you points.</p><p class="tagline" lang-es>Pule ese detalle que te está costando puntos.</p>
-          <p class="desc" lang-en>Almost there, but one skill or question type keeps holding you back? In this session we go straight to the point: we find what is failing and you leave with concrete strategies to fix it. Ideal for a final push before your exam. Want more? Add hours whenever you need them.</p>
-          <p class="desc" lang-es>¿Ya casi llegas, pero hay una habilidad o un tipo de pregunta que no te deja avanzar? En esta sesión vamos directo al punto: identificamos qué está fallando y te llevas estrategias concretas para corregirlo. Ideal si necesitas un empujón final antes de tu examen. Y si quieres más, puedes sumar horas cuando lo necesites.</p>
-          
-          <a class="btn btn-ghost pay" data-pay="h1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
+
+      <div class="pkg navy">
+        <span class="tag"><span lang-en>The most complete, 1 to 1</span><span lang-es>La más completa 1 a 1</span></span>
+        <div class="hrs txt"><span lang-en>Combo</span><span lang-es>Combo complete</span></div>
+        <div class="price"><span class="cur">$</span>350<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>3 classes + your exam’s app with analysis of each mock + study plan + book in Spanish.</p><p class="desc" lang-es>3 clases + app de tu examen con análisis de cada mock + plan de estudios + libro en español.</p>
+        <p class="ideal"><span lang-en>Ideal if you study on your own or already sat the exam and didn’t get the score you needed.</span><span lang-es>Ideal si eres autónomo o ya presentaste el examen y no lo lograste.</span></p>
+        <a class="btn btn-primary pay" data-pay="combo" target="_blank" rel="noopener"><span lang-en>I want the combo</span><span lang-es>Quiero el combo</span></a>
       </div>
-      <p class="addon-head"><span lang-en>Add-ons for your mentoring</span><span lang-es>Complementos para tu mentoría</span></p>
-      <div class="pkg-grid two">
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs txt"><span lang-en>Exam app</span><span lang-es>App de tu examen</span></div>
-          <span class="for" lang-en>Your specific exam’s app (1 month) + analysis + study plan</span><span class="for" lang-es>App de tu examen específico (1 mes) + análisis + plan de estudios</span>
-          <div class="price"><span class="cur">$</span>50<span class="cur"> AUD</span></div><div class="price-note" lang-en>Extend your membership one more month for $20 AUD</div><div class="price-note" lang-es>Extiende la membresía un mes más por $20 AUD</div>
-          <p class="tagline" lang-en>Stop practising blind.</p><p class="tagline" lang-es>Deja de practicar a ciegas.</p>
-          <p class="desc" lang-en>One month of access to the practice app for your specific exam. Every time you take a mock test we study your scores, tell you what is failing and give you a study plan made for you. You will know what to practise each day and where to focus to go up. Need more time? Extend your membership one more month for just $20 AUD.</p>
-          <p class="desc" lang-es>Acceso por un mes a la app de práctica de tu examen específico. Cada vez que hagas un mock test, estudiamos tus puntajes, te decimos qué está fallando y te damos un plan de estudios hecho para ti. Sabrás qué practicar cada día y en qué enfocarte para subir. ¿Necesitas más tiempo? Extiende la membresía un mes más por solo $20 AUD.</p>
-          
-          <a class="btn btn-ghost pay" data-pay="alfa" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs txt">Book</div>
-          <span class="for" lang-en>Strategy book · 100% in Spanish</span><span class="for" lang-es>Libro de estrategias · 100% en español</span>
-          <div class="price"><span class="cur">$</span>150<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD in the <a href="#combo">combo</a></div><div class="price-note" lang-es>$50 AUD en el <a href="#combo">combo</a></div>
-          <p class="tagline" lang-en>All our exam secrets, in your language.</p><p class="tagline" lang-es>Todos nuestros secretos para el examen, en tu idioma.</p>
-          <p class="desc" lang-en>Exactly what to do in every question type, explained in Spanish with proven strategies. Your reference guide to study on your own and walk into the exam knowing how to answer every question. Get it for only $50 when you take it in combo with the 3-class package and your exam’s app.</p>
-          <p class="desc" lang-es>Qué hacer exactamente en cada tipo de pregunta, explicado en español y con estrategias probadas. Tu guía de consulta para estudiar por tu cuenta y llegar al examen sabiendo cómo responder cada pregunta. Llévatelo por solo $50 al tomarlo en combo con el paquete de 3 clases y la app de tu examen.</p>
-          
-          <a class="btn btn-ghost pay" data-pay="book" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
+
+      <div class="pkg">
+        <span class="tag"><span lang-en>Group · Launch price</span><span lang-es>Grupal · Precio de lanzamiento</span></span>
+        <div class="hrs txt"><span lang-en>Bootcamp</span><span lang-es>Bootcamp</span></div>
+        <div class="price"><span class="cur">$</span>349<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>8 live 2-hour classes in one month · max. 8 people · 2 times a week, 6–8 pm (Melbourne).</p><p class="desc" lang-es>8 clases en vivo de 2 h en un mes · máx. 8 personas · 2 veces por semana, 6–8 pm (Melbourne).</p>
+        <p class="ideal"><span lang-en>Ideal if you don’t know the exam yet. Includes an individual plan and a report for each mock.</span><span lang-es>Ideal si no conoces el examen. Incluye plan individual y reporte de cada mock.</span></p>
+        <a class="btn btn-ghost" href="https://www.instagram.com/bilingualearn.au/" target="_blank" rel="noopener"><span lang-en>Reserve your spot by DM</span><span lang-es>Aparta tu cupo por DM</span></a>
       </div>
     </div>
 
-    <div class="pkg-group general reveal" id="general-packs">
-      <div class="pkg-group-head">
-        <span class="grp"><span lang-en>General English</span><span lang-es>Inglés general</span></span>
-        <h3><span lang-en>One-to-one classes · not for exams</span><span lang-es>Clases individuales · no es para examen</span></h3>
-        <p class="note" lang-en>For confidence, pronunciation and everyday fluency. These packages do <strong>not</strong> include PTE, IELTS or CELPIP preparation.</p>
-        <p class="note" lang-es>Para ganar confianza, pronunciación y fluidez cotidiana. Estos paquetes <strong>no</strong> incluyen preparación de PTE, IELTS ni CELPIP.</p>
-      </div>
-      <div class="pkg-grid three">
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs">4</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
-          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
-          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
-          <p class="tagline" lang-en>Take the first step with confidence.</p><p class="tagline" lang-es>Da el primer paso con confianza.</p>
-          <p class="desc" lang-en>Perfect to get started and feel the change. With a certified teacher who understands your language, you start speaking more fluently and loosening up without fear. You choose the focus: English for your day to day, or getting to know the exam you are going to take.</p>
-          <p class="desc" lang-es>Perfecto para empezar y sentir el cambio. Con un profe certificado que entiende tu idioma, empiezas a hablar con más fluidez y a soltarte sin miedo. Tú eliges el enfoque: inglés para tu día a día o para ir conociendo el examen que vas a presentar.</p>
-          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
-          <a class="btn btn-ghost pay" data-pay="g4" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg featured">
-          <span class="tag" lang-en>Most popular for general English</span><span class="tag" lang-es>El más popular en inglés general</span>
-          <div class="hrs">10</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
-          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
-          <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
-          <p class="tagline" lang-en>Consistency that shows.</p><p class="tagline" lang-es>Constancia que se nota.</p>
-          <p class="desc" lang-en>Ten classes to build a solid base and see real progress in your fluency and confidence. Enough time to work at your own pace, fix your usual mistakes and start feeling comfortable speaking English. With a teacher who adapts to what you want to achieve.</p>
-          <p class="desc" lang-es>Diez clases para construir una base sólida y ver avances reales en tu fluidez y tu confianza. Tiempo suficiente para trabajar a tu ritmo, corregir tus errores de siempre y empezar a sentirte cómodo hablando inglés. Con un profe que se ajusta a lo que tú quieres lograr.</p>
-          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
-          <a class="btn btn-primary pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-        <div class="pkg">
-          <span class="tag"></span>
-          <div class="hrs">20</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
-          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
-          <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD per class</div><div class="price-note" lang-es>$50 AUD por clase</div>
-          <p class="tagline" lang-en>The best price per class to transform your English.</p><p class="tagline" lang-es>El mejor precio por clase para transformar tu inglés.</p>
-          <p class="desc" lang-en>Only $50 per class. This is the package for people who mean it: twenty classes to go from “it’s hard for me” to “I feel confident”. You gain fluency, accuracy and the confidence to use your English in any situation.</p>
-          <p class="desc" lang-es>Solo $50 por clase. Es el paquete para quienes van en serio: veinte clases para pasar de “me cuesta” a “me siento seguro”. Ganas fluidez, precisión y la seguridad para usar tu inglés en cualquier situación.</p>
-          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
-          <a class="btn btn-ghost pay" data-pay="h20" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
-        </div>
-      </div>
+    <p class="center general-line reveal"><span lang-en>General English: 4 classes $250 · 10 classes $600 · 20 classes $1000.</span><span lang-es>Inglés general: 4 clases $250 · 10 clases $600 · 20 clases $1000.</span></p>
+  </div>
+</section>
+
+<section id="autonomo">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span lang-en>Prepare on your own</span><span lang-es>Prepárate por tu cuenta</span></span>
+      <h2><span lang-en>Don’t need classes?</span><span lang-es>¿No necesitas clases?</span></h2>
+      <p class="lead" style="margin-top:12px"><span lang-en>We help you prepare on your own, with a clear guide on what to do and what to practise.</span><span lang-es>Te ayudamos a que te prepares de forma autónoma, con una guía clara de qué hacer y qué practicar.</span></p>
     </div>
 
-    <div class="sec-head center reveal" style="margin-top:64px">
-      <span class="eyebrow"><span lang-en>Join</span><span lang-es>Únete</span></span>
-      <h2><span lang-en>Want to be part of this community?</span><span lang-es>¿Quieres ser parte de esta comunidad?</span></h2>
-    </div>
-    <div class="steps reveal">
-      <div class="step"><div class="n"></div>
-        <h3 lang-en>Confirm your payment</h3><h3 lang-es>Confirma tu pago</h3>
-        <p lang-en>Choose your pack, pay via Calendly and confirm the payment with me on WhatsApp.</p>
-        <p lang-es>Elige tu paquete, realiza el pago vía Calendly y confirma el proceso de pago conmigo vía WhatsApp.</p>
+    <div class="pkg-grid two reveal">
+      <div class="pkg lav">
+        <span class="tag"></span>
+        <div class="hrs txt"><span lang-en>Strategy book</span><span lang-es>Libro de estrategias</span></div>
+        <div class="price"><span class="cur">$</span>100<span class="cur"> AUD</span></div>
+        <p class="desc" lang-en>Strategies question by question: exactly what to do for each type of question, 100% in Spanish.</p><p class="desc" lang-es>Estrategias pregunta por pregunta: qué hacer exactamente en cada tipo de pregunta, 100% en español.</p>
+        <a class="btn btn-ghost pay" data-pay="book" target="_blank" rel="noopener"><span lang-en>Buy the book</span><span lang-es>Comprar el libro</span></a>
       </div>
-      <div class="step"><div class="n"></div>
-        <h3 lang-en>Get your calendar</h3><h3 lang-es>Recibe tu calendario</h3>
-        <p lang-en>Your first payment-confirmation email contains the link to book each session.</p>
-        <p lang-es>En tu primer correo de confirmación de pago encuentras el link para agendar cada sesión.</p>
-      </div>
-      <div class="step"><div class="n"></div>
-        <h3 lang-en>Attend your session</h3><h3 lang-es>Asiste a tu sesión</h3>
-        <p lang-en>Your access link arrives by email as soon as you book each session.</p>
-        <p lang-es>Tu link de acceso llegará a tu correo una vez agendes cada sesión.</p>
+
+      <div class="pkg lav">
+        <span class="tag"></span>
+        <div class="hrs txt"><span lang-en>Your exam’s app + study plan</span><span lang-es>App de tu examen + plan de estudios</span></div>
+        <div class="price"><span class="cur">$</span>50<span class="cur"> AUD / <span lang-en>month</span><span lang-es>mes</span></span></div>
+        <p class="desc" lang-en>One month of practice in your exam’s app, with the analysis of each mock and a study plan made for you.</p><p class="desc" lang-es>Un mes de práctica en la app de tu examen, con el análisis de cada mock y un plan de estudios hecho para ti.</p>
+        <a class="btn btn-ghost pay" data-pay="alfa" target="_blank" rel="noopener"><span lang-en>Choose</span><span lang-es>Elegir</span></a>
       </div>
     </div>
-    <p class="center" style="margin-top:26px">
-      <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Questions? Message us on WhatsApp</span><span lang-es>¿Tienes dudas? Escríbenos por WhatsApp</span></a>
-    </p>
   </div>
 </section>
 
@@ -1081,7 +1015,7 @@
       <p><span lang-en>Tell us your exam and your deadline. We'll build the plan, you bring the ambition.</span><span lang-es>Cuéntanos tu examen y tu fecha límite. Nosotros armamos el plan, tú pones la ambición.</span></p>
       <div class="hero-cta">
         <a class="btn btn-wa wa" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.2.1.6-.1 1.3Z"/></svg><span lang-en>Enrol on WhatsApp</span><span lang-es>Inscríbete por WhatsApp</span></a>
-        <a class="btn btn-light" href="#packages"><span lang-en>See the hour packs</span><span lang-es>Ver los paquetes de horas</span></a>
+        <a class="btn btn-light" href="#precios"><span lang-en>See the hour packs</span><span lang-es>Ver los paquetes de horas</span></a>
       </div>
     </div>
   </div>
@@ -1106,7 +1040,7 @@
         <a href="#programs" lang-en>Programs</a><a href="#programs" lang-es>Programas</a>
         <a href="#method" lang-en>Method</a><a href="#method" lang-es>Método</a>
         <a href="#aura" lang-en>Meet Aura</a><a href="#aura" lang-es>Conoce a Aura</a>
-        <a href="#packages" lang-en>Prices</a><a href="#packages" lang-es>Precios</a>
+        <a href="#precios" lang-en>Prices</a><a href="#precios" lang-es>Precios</a>
       <a href="#results" lang-en>Reviews</a><a href="#results" lang-es>Reseñas</a>
       </div>
       <div class="foot-col">
@@ -1172,6 +1106,7 @@
       var url = PAY_LINKS[a.getAttribute('data-pay')] || '';
       var kind = url ? 'pay' : 'ask';
       a.href = url || waHref(lang);
+      if(a.querySelector('[lang-en]').textContent.trim()) return; /* label already written in the markup */
       a.querySelector('[lang-en]').textContent = PAY_LABEL[kind].en;
       a.querySelector('[lang-es]').textContent = PAY_LABEL[kind].es;
     });
