@@ -228,9 +228,6 @@
   .pkg.navy:hover{border-color:#17153b}
   .pkg.lav{background:var(--halo);border-color:var(--lav)}
   .pkg.lav:hover{border-color:var(--lav)}
-  .general-line{margin:26px 0 0;color:var(--muted);font-weight:700;font-size:.95rem}
-  .general-line a{color:var(--ink);font-weight:800;border-bottom:1.5px solid var(--good-d);padding-bottom:1px;transition:color .15s}
-  .general-line a:hover{color:var(--good-d)}
 
   /* results */
   .results{background:var(--surface);border-radius:34px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
@@ -921,7 +918,49 @@
       </div>
     </div>
 
-    <p class="center general-line reveal"><span lang-en>General English:</span><span lang-es>Inglés general:</span> <a class="pay" data-pay="g4" data-general="1" target="_blank" rel="noopener"><span lang-en>4 classes $250</span><span lang-es>4 clases $250</span></a> · <a class="pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en>10 classes $600</span><span lang-es>10 clases $600</span></a> · <a class="pay" data-pay="h20" data-general="1" target="_blank" rel="noopener"><span lang-en>20 classes $1000</span><span lang-es>20 clases $1000</span></a></p>
+    <div class="pkg-group general reveal" id="general-packs">
+      <div class="pkg-group-head">
+        <span class="grp"><span lang-en>General English</span><span lang-es>Inglés general</span></span>
+        <h3><span lang-en>One-to-one classes · not for exams</span><span lang-es>Clases individuales · no es para examen</span></h3>
+        <p class="note" lang-en>For confidence, pronunciation and everyday fluency. These packages do <strong>not</strong> include PTE, IELTS or CELPIP preparation.</p>
+        <p class="note" lang-es>Para ganar confianza, pronunciación y fluidez cotidiana. Estos paquetes <strong>no</strong> incluyen preparación de PTE, IELTS ni CELPIP.</p>
+      </div>
+      <div class="pkg-grid three">
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">4</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>250<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Take the first step with confidence.</p><p class="tagline" lang-es>Da el primer paso con confianza.</p>
+          <p class="desc" lang-en>Perfect to get started and feel the change. With a certified teacher who understands your language, you start speaking more fluently and loosening up without fear. You choose the focus: English for your day to day, or getting to know the exam you are going to take.</p>
+          <p class="desc" lang-es>Perfecto para empezar y sentir el cambio. Con un profe certificado que entiende tu idioma, empiezas a hablar con más fluidez y a soltarte sin miedo. Tú eliges el enfoque: inglés para tu día a día o para ir conociendo el examen que vas a presentar.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
+          <a class="btn btn-ghost pay" data-pay="g4" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg featured">
+          <span class="tag" lang-en>Most popular for general English</span><span class="tag" lang-es>El más popular en inglés general</span>
+          <div class="hrs">10</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>600<span class="cur"> AUD</span></div>
+          <p class="tagline" lang-en>Consistency that shows.</p><p class="tagline" lang-es>Constancia que se nota.</p>
+          <p class="desc" lang-en>Ten classes to build a solid base and see real progress in your fluency and confidence. Enough time to work at your own pace, fix your usual mistakes and start feeling comfortable speaking English. With a teacher who adapts to what you want to achieve.</p>
+          <p class="desc" lang-es>Diez clases para construir una base sólida y ver avances reales en tu fluidez y tu confianza. Tiempo suficiente para trabajar a tu ritmo, corregir tus errores de siempre y empezar a sentirte cómodo hablando inglés. Con un profe que se ajusta a lo que tú quieres lograr.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
+          <a class="btn btn-primary pay" data-pay="h10" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+        <div class="pkg">
+          <span class="tag"></span>
+          <div class="hrs">20</div><div class="unit" lang-en>classes</div><div class="unit" lang-es>clases</div>
+          <span class="for" lang-en>General English only</span><span class="for" lang-es>Solo inglés general</span>
+          <div class="price"><span class="cur">$</span>1000<span class="cur"> AUD</span></div><div class="price-note" lang-en>$50 AUD per class</div><div class="price-note" lang-es>$50 AUD por clase</div>
+          <p class="tagline" lang-en>The best price per class to transform your English.</p><p class="tagline" lang-es>El mejor precio por clase para transformar tu inglés.</p>
+          <p class="desc" lang-en>Only $50 per class. This is the package for people who mean it: twenty classes to go from “it’s hard for me” to “I feel confident”. You gain fluency, accuracy and the confidence to use your English in any situation.</p>
+          <p class="desc" lang-es>Solo $50 por clase. Es el paquete para quienes van en serio: veinte clases para pasar de “me cuesta” a “me siento seguro”. Ganas fluidez, precisión y la seguridad para usar tu inglés en cualquier situación.</p>
+          <p class="warn" lang-en>Not for PTE, IELTS or CELPIP. For exam prep, choose the 1-hour class or the 3-class package above.</p><p class="warn" lang-es>No es para PTE, IELTS ni CELPIP. Para examen, elige la clase de 1 hora o el paquete de 3 clases de arriba.</p>
+          <a class="btn btn-ghost pay" data-pay="h20" data-general="1" target="_blank" rel="noopener"><span lang-en></span><span lang-es></span></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
